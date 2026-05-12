@@ -1,14 +1,23 @@
 /**
  * Hallazgos editoriales destacados — México Bajo Lupa.
  *
- * Lista curada de hallazgos verificados sobre datos reales del proyecto
- * (ComprasMX 2024-25, CompraNet 2010-2024, FONACOT, EFOS, etc.).
+ * Lista curada que alimenta el banner rotativo `<AnomaliasDestacadas />`
+ * en la landing.
  *
- * Esta lista alimenta el componente <AnomaliasDestacadas /> que rota
- * automáticamente entre hallazgos. Para que la rotación diaria funcione
- * sin sesgo, mantener IDs estables y orden semánticamente independiente.
+ * ⚠️ VERIFICAR ANTES DE PUBLICAR EN VIVO:
+ * Algunos hallazgos aquí fueron redactados con cifras aproximadas o
+ * estimadas para el MVP. Antes de tratar este archivo como evidencia
+ * editorial, cada `cifra` debería reproducirse desde el Parquet
+ * correspondiente en `data/processed/` y dejar registro de la query
+ * en el body de cada hallazgo. Conflictos conocidos hoy:
+ *   - "hidalgo-conformidad" (AD 47.2 % y Benford OK) contradice el
+ *     README que documenta a Hidalgo con 66.1 % AD en el cluster de
+ *     captura institucional.
+ *   - "amlo-ad-record" (79.6 % AD federal 2021) y "maypo-captura"
+ *     (87.9 % AD acumulada) requieren chequeo cruzado contra
+ *     comprasmx_historico.parquet antes de citarse.
  *
- * Convenciones:
+ * Convenciones de schema:
  * - id: kebab-case, estable para deep-links (/?h=...).
  * - tag: categoría temática para el badge superior.
  * - intensidad: signal color del card (alert/warn/good).
