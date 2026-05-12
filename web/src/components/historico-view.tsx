@@ -169,14 +169,14 @@ export function HistoricoView() {
                       fontSize: 12,
                     }}
                     labelStyle={{ color: "#cccccc" }}
-                    formatter={(v: number, name) => {
+                    formatter={(value, name) => {
                       const label =
                         name === "pct_ad"
                           ? "Adj. directa"
                           : name === "pct_lp"
                             ? "Licitación pública"
                             : "Invitación 3";
-                      return [`${fmtDec(v)}%`, label];
+                      return [`${fmtDec(Number(value))}%`, label];
                     }}
                     labelFormatter={(label) => {
                       const sx = sexenioOf(label as number);

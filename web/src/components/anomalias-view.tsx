@@ -190,8 +190,8 @@ export function AnomaliasView() {
                         fontSize: 12,
                       }}
                       labelStyle={{ color: "#cccccc" }}
-                      formatter={(v: number, name) => [
-                        `${v.toFixed(2)}%`,
+                      formatter={(value, name) => [
+                        `${Number(value).toFixed(2)}%`,
                         name === "observado" ? "Observado" : "Esperado",
                       ]}
                     />

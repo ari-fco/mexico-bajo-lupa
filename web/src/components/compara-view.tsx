@@ -326,8 +326,8 @@ export function ComparaView({ options, a, b, ranges, totalEstados }: Props) {
                       }}
                       labelStyle={{ color: "#cccccc", marginBottom: 4 }}
                       itemStyle={{ color: "#ffffff" }}
-                      formatter={(value: number, name) => [
-                        fmtInt(value),
+                      formatter={(value, name) => [
+                        fmtInt(Number(value)),
                         String(name),
                       ]}
                     />

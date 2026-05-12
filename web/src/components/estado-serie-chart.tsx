@@ -119,9 +119,10 @@ export function EstadoSerieChart({ series }: { series: SerieRow[] }) {
               }}
               labelStyle={{ color: "#cccccc", marginBottom: 4 }}
               itemStyle={{ color: "#ffffff" }}
-              formatter={(value: number, name) => {
-                if (name === "total") return [fmtInt(value), "Casos"];
-                if (name === "por_100k") return [fmtDec(value), "/100k"];
+              formatter={(value, name) => {
+                const v = Number(value);
+                if (name === "total") return [fmtInt(v), "Casos"];
+                if (name === "por_100k") return [fmtDec(v), "/100k"];
                 return [String(value), String(name)];
               }}
             />
