@@ -74,7 +74,16 @@ TypeScript error.
 
 ## Environment
 
-The only env variable consumed is `NEXT_PUBLIC_SITE_URL`, used by
-`app/sitemap.ts` and `app/layout.tsx` for absolute URLs. Defaults to
-`http://localhost:3000` in dev and is set to the Vercel production
-domain at deploy time.
+`lib/site-url.ts` centralises the canonical URL with this precedence:
+
+1. `NEXT_PUBLIC_SITE_URL` — explicit override (set this when moving
+   to a custom domain).
+2. `VERCEL_PROJECT_PRODUCTION_URL` — auto-injected by Vercel at build
+   time on the production branch.
+3. `VERCEL_URL` — auto-injected on preview deployments.
+4. `http://localhost:3000` — dev fallback.
+
+So `sitemap.xml`, `robots.txt`, `metadataBase` and any other
+absolute-URL consumer "just works" on Vercel without setting any env
+var. Only define `NEXT_PUBLIC_SITE_URL` when you point a custom
+domain at the deployment.
