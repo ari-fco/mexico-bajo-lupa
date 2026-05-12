@@ -18,11 +18,13 @@ export function SiteHeader() {
   const pathname = usePathname();
   const onMapa = pathname === "/mapa";
   const [open, setOpen] = React.useState(false);
+  const [lastPath, setLastPath] = React.useState(pathname);
 
-  // Cerrar drawer al cambiar de ruta
-  React.useEffect(() => {
+  // Close drawer when route changes — adjust state during render
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   // Bloquear scroll del body cuando el drawer está abierto
   React.useEffect(() => {

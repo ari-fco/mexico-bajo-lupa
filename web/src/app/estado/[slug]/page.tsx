@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ESTADOS_BY_SLUG, slugForEstado } from "@/lib/estados";
+import { ESTADOS_BY_SLUG } from "@/lib/estados";
 import { qEstadoMetrics, qIncidenciaSerieMensual } from "@/lib/queries";
 import type { DelitoCategoria } from "@/lib/mock-data";
 import { DELITOS } from "@/lib/mock-data";

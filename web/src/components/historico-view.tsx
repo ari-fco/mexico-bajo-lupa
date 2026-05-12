@@ -3,7 +3,6 @@
 import * as React from "react";
 import {
   ResponsiveContainer,
-  AreaChart,
   Area,
   XAxis,
   YAxis,

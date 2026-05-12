@@ -161,7 +161,7 @@ export function MapaExplorer() {
     ];
     if (!def.invert) return palette;
     // Invertir: stop 0 obtiene el color de stop 100, etc.
-    return palette.map(([p, _], i) => [
+    return palette.map(([p], i) => [
       p,
       palette[palette.length - 1 - i][1],
     ]) as Array<[number, string]>;

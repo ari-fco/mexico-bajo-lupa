@@ -48,11 +48,17 @@ export function AnomaliasView() {
   const [filter, setFilter] = React.useState<Filter>("all");
   const [ramo, setRamo] = React.useState<string>("Todos");
   const [visible, setVisible] = React.useState<number>(PAGE_SIZE);
+  const [lastReset, setLastReset] = React.useState<string>(
+    `${filter}|${ramo}`,
+  );
 
-  // Reset visible count when filter or ramo changes
-  React.useEffect(() => {
+  // Reset pagination when filter or ramo changes — using the "adjust state
+  // during render" pattern instead of useEffect+setState.
+  const currentKey = `${filter}|${ramo}`;
+  if (currentKey !== lastReset) {
+    setLastReset(currentKey);
     setVisible(PAGE_SIZE);
-  }, [filter, ramo]);
+  }
 
   const allRamos = React.useMemo(() => {
     const s = new Set<string>();
