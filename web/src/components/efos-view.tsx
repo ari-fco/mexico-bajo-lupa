@@ -12,8 +12,24 @@ import efosBreakdown from "@/data/efos_estatus_breakdown.json";
 type Kpis = typeof efosKpis;
 type Proveedor = (typeof efosTopProveedores)[number];
 type Dependencia = (typeof efosTopDependencias)[number];
-type Lead = (typeof efosLeads)[number];
 type Breakdown = (typeof efosBreakdown)[number];
+
+type Lead = {
+  rfc: string;
+  contribuyente: string;
+  institucion: string;
+  ramo: string | null;
+  monto: number;
+  modalidad: string;
+  fecha_firma: string | null;
+  fecha_presuncion: string | null;
+  ano: number | null;
+  dias_despues_de_presuncion: number | null;
+  posterior_a_presuncion: boolean;
+  posterior_por_ano: boolean;
+  estatus: string;
+  descripcion: string | null;
+};
 
 function estatusBadge(estatus: string) {
   if (estatus === "DEFINITIVO") return <Badge variant="alert">Definitivo</Badge>;
@@ -172,82 +188,7 @@ export function EfosView() {
       <DependenciasSection dependencias={dependencias} />
 
       {/* Headline cases */}
-      {leads.length > 0 && (
-        <section className="py-16 md:py-20 border-b border-cloud-whisper/8">
-          <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-            <div className="eyebrow mb-3">Casos para revisar</div>
-            <h2 className="display text-[36px] md:text-[48px] tracking-tight">
-              Los contratos más grandes
-            </h2>
-            <p className="text-[13px] text-light-ash mt-3 max-w-2xl mb-8">
-              Top 15 por monto. Los marcados en rojo son contratos firmados
-              <em> después</em> de la presunción SAT — la señal más fuerte
-              para auditoría.
-            </p>
-            <ul className="grid gap-3">
-              {leads.map((l, i) => {
-                const isPost = l.posterior_a_presuncion || l.posterior_por_ano;
-                return (
-                  <li
-                    key={i}
-                    className={`rounded-card border p-5 bg-cloud-whisper/2 ${
-                      isPost
-                        ? "border-signal-alert/30"
-                        : "border-cloud-whisper/10"
-                    }`}
-                  >
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-2 mb-2 flex-wrap">
-                          {estatusBadge(l.estatus)}
-                          {isPost && (
-                            <Badge variant="alert">
-                              {l.posterior_a_presuncion
-                                ? "Posterior a presunción"
-                                : `Año del contrato posterior (${l.ano ?? "?"})`}
-                            </Badge>
-                          )}
-                          <span className="text-[11px] text-ash-accent">
-                            {l.modalidad}
-                          </span>
-                        </div>
-                        <div className="text-[15px] font-medium tracking-tight text-cloud-whisper">
-                          {l.contribuyente}
-                        </div>
-                        <div className="text-[12px] text-light-ash mt-0.5 tabular">
-                          {l.rfc} · {l.institucion}
-                        </div>
-                        {l.descripcion && (
-                          <div className="text-[12px] text-ash-accent mt-2 line-clamp-2">
-                            {l.descripcion}
-                          </div>
-                        )}
-                      </div>
-                      <div className="flex flex-row md:flex-col items-baseline md:items-end gap-3 md:gap-1 shrink-0">
-                        <div className="display text-[24px] md:text-[28px] tabular leading-none">
-                          {fmtMxn(l.monto)}
-                        </div>
-                        <div className="text-[11px] text-ash-accent">
-                          {l.fecha_firma
-                            ? `firmado ${fmtFecha(l.fecha_firma)}`
-                            : l.ano
-                              ? `año ${l.ano} · sin fecha exacta`
-                              : "sin fecha"}
-                        </div>
-                        {l.fecha_presuncion && (
-                          <div className="text-[11px] text-ash-accent">
-                            presunción SAT {fmtFecha(l.fecha_presuncion)}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </section>
-      )}
+      <LeadsSection leads={leads} />
 
       {/* Disclaimer */}
       <section className="py-16">
@@ -858,6 +799,201 @@ function DependenciasSection({ dependencias }: { dependencias: Dependencia[] }) 
               </table>
             </div>
           </>
+        )}
+      </div>
+    </section>
+  );
+}
+
+type LeadSortKey = "monto" | "fecha";
+
+function LeadsSection({ leads }: { leads: Lead[] }) {
+  const [sortKey, setSortKey] = React.useState<LeadSortKey>("monto");
+  const [sortDir, setSortDir] = React.useState<"asc" | "desc">("desc");
+  const [onlyPosteriores, setOnlyPosteriores] = React.useState(false);
+  const [estatusFilter, setEstatusFilter] = React.useState<"ALL" | "DEFINITIVO">("ALL");
+
+  const totalRaw = leads.length;
+
+  const filtered = React.useMemo<Lead[]>(() => {
+    let arr: Lead[] = leads;
+    if (onlyPosteriores) {
+      arr = arr.filter((l) => l.posterior_a_presuncion || l.posterior_por_ano);
+    }
+    if (estatusFilter === "DEFINITIVO") {
+      arr = arr.filter((l) => l.estatus === "DEFINITIVO");
+    }
+    const sorted = [...arr].sort((a, b) => {
+      const dir = sortDir === "asc" ? 1 : -1;
+      if (sortKey === "fecha") {
+        const av = a.fecha_firma ?? (a.ano ? `${a.ano}-01-01` : "");
+        const bv = b.fecha_firma ?? (b.ano ? `${b.ano}-01-01` : "");
+        return av.localeCompare(bv) * dir;
+      }
+      return (a.monto - b.monto) * dir;
+    });
+    return sorted;
+  }, [leads, sortKey, sortDir, onlyPosteriores, estatusFilter]);
+
+  if (totalRaw === 0) return null;
+
+  return (
+    <section className="py-16 md:py-20 border-b border-cloud-whisper/8">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+          <div>
+            <div className="eyebrow mb-3">Casos para revisar</div>
+            <h2 className="display text-[36px] md:text-[48px] tracking-tight">
+              Los contratos más grandes
+            </h2>
+            <p className="text-[13px] text-light-ash mt-3 max-w-2xl">
+              Los marcados en rojo son contratos firmados <em>después</em> de la
+              presunción SAT — la señal más fuerte para auditoría. Filtrá por
+              estatus o solo posteriores, y ordená por monto o fecha.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between mb-6 flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-3 flex-wrap items-start sm:items-center">
+            <div className="flex items-center gap-1 text-[12px] bg-cloud-whisper/3 border border-cloud-whisper/8 rounded-pill p-1">
+              {(
+                [
+                  ["ALL", "Todos"],
+                  ["DEFINITIVO", "Solo Definitivos"],
+                ] as const
+              ).map(([key, label]) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setEstatusFilter(key)}
+                  className={`px-3 py-1 rounded-pill transition-colors ${
+                    estatusFilter === key
+                      ? "bg-cloud-whisper text-midnight-void"
+                      : "text-light-ash hover:text-cloud-whisper"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            <label className="flex items-center gap-2 text-[12px] text-light-ash cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={onlyPosteriores}
+                onChange={(e) => setOnlyPosteriores(e.target.checked)}
+                className="accent-signal-alert"
+              />
+              Solo posteriores a presunción
+            </label>
+
+            <div className="flex items-center gap-1 text-[12px] bg-cloud-whisper/3 border border-cloud-whisper/8 rounded-pill p-1">
+              {(
+                [
+                  ["monto", "Monto"],
+                  ["fecha", "Fecha"],
+                ] as const
+              ).map(([key, label]) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => {
+                    if (sortKey === key) {
+                      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+                    } else {
+                      setSortKey(key);
+                      setSortDir("desc");
+                    }
+                  }}
+                  className={`px-3 py-1 rounded-pill transition-colors ${
+                    sortKey === key
+                      ? "bg-cloud-whisper text-midnight-void"
+                      : "text-light-ash hover:text-cloud-whisper"
+                  }`}
+                >
+                  {label}
+                  {sortKey === key && (
+                    <span className="ml-1">{sortDir === "asc" ? "↑" : "↓"}</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-[11px] text-ash-accent tabular">
+            {filtered.length === totalRaw
+              ? `${fmtInt(totalRaw)} casos`
+              : `${fmtInt(filtered.length)} de ${fmtInt(totalRaw)} casos`}
+          </div>
+        </div>
+
+        {filtered.length === 0 ? (
+          <div className="rounded-card border border-cloud-whisper/10 p-8 text-center text-[13px] text-ash-accent">
+            Sin casos con los filtros actuales.
+          </div>
+        ) : (
+          <ul className="grid gap-3">
+            {filtered.map((l, i) => {
+              const isPost = l.posterior_a_presuncion || l.posterior_por_ano;
+              return (
+                <li
+                  key={`${l.rfc}-${i}`}
+                  className={`rounded-card border p-5 bg-cloud-whisper/2 ${
+                    isPost
+                      ? "border-signal-alert/30"
+                      : "border-cloud-whisper/10"
+                  }`}
+                >
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 mb-2 flex-wrap">
+                        {estatusBadge(l.estatus)}
+                        {isPost && (
+                          <Badge variant="alert">
+                            {l.posterior_a_presuncion
+                              ? "Posterior a presunción"
+                              : `Año del contrato posterior (${l.ano ?? "?"})`}
+                          </Badge>
+                        )}
+                        <span className="text-[11px] text-ash-accent">
+                          {l.modalidad}
+                        </span>
+                      </div>
+                      <div className="text-[15px] font-medium tracking-tight text-cloud-whisper">
+                        {l.contribuyente}
+                      </div>
+                      <div className="text-[12px] text-light-ash mt-0.5 tabular">
+                        {l.rfc} · {l.institucion}
+                      </div>
+                      {l.descripcion && (
+                        <div className="text-[12px] text-ash-accent mt-2 line-clamp-2">
+                          {l.descripcion}
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex flex-row md:flex-col items-baseline md:items-end gap-3 md:gap-1 shrink-0">
+                      <div className="display text-[24px] md:text-[28px] tabular leading-none">
+                        {fmtMxn(l.monto)}
+                      </div>
+                      <div className="text-[11px] text-ash-accent">
+                        {l.fecha_firma
+                          ? `firmado ${fmtFecha(l.fecha_firma)}`
+                          : l.ano
+                            ? `año ${l.ano} · sin fecha exacta`
+                            : "sin fecha"}
+                      </div>
+                      {l.fecha_presuncion && (
+                        <div className="text-[11px] text-ash-accent">
+                          presunción SAT {fmtFecha(l.fecha_presuncion)}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         )}
       </div>
     </section>
