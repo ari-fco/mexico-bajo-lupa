@@ -1,0 +1,50 @@
+# Normalize line endings to LF on commit.
+# Working tree keeps the platform-native ending (CRLF on Windows, LF elsewhere).
+* text=auto eol=lf
+
+# Source code
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.mjs   text eol=lf
+*.cjs   text eol=lf
+*.py    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.svg   text eol=lf
+*.toml  text eol=lf
+*.lock  text eol=lf
+
+# Config dotfiles
+.gitignore       text eol=lf
+.gitattributes   text eol=lf
+.editorconfig    text eol=lf
+.env.example     text eol=lf
+
+# Windows-specific files keep CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binary files (never normalize)
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.otf    binary
+*.eot    binary
+*.parquet binary
+*.zip    binary
+*.gz     binary
+*.pdf    binary
+*.xlsx   binary
+*.xls    binary
