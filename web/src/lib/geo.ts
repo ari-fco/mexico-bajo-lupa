@@ -25,7 +25,6 @@ export function loadEstadosGeo(): Promise<EstadosFC> {
     const topo = (await res.json()) as Topology;
     const fc = feature(
       topo,
-      // @ts-expect-error — topology objects keyed dynamically
       topo.objects.states,
     ) as unknown as FeatureCollection<
       Polygon | MultiPolygon,

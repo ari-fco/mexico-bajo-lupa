@@ -265,5 +265,5 @@ export function getMockDependenciasRiesgo(): DependenciaRiesgo[] {
       });
     }
   }
-  return out.sort((a, b) => b.riesgo_score - a.riesgo_score);
+  return out.sort((a, b) => (b.riesgo_score ?? 0) - (a.riesgo_score ?? 0));
 }

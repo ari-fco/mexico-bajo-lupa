@@ -75,9 +75,9 @@ export function ButtonLink({
   if (isInternal) {
     return (
       <Link
+        {...(rest as React.ComponentProps<typeof Link>)}
         href={href}
         className={classes({ variant, size, className })}
-        {...(rest as React.ComponentProps<typeof Link>)}
       >
         {children}
       </Link>
