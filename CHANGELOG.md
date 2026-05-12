@@ -39,6 +39,13 @@ All notable changes to this project. Format follows
 
 ### Fixed
 
+- **`sitemap.xml` and `robots.txt` were advertising `localhost:3000`
+  to crawlers.** Centralised the site URL resolver in
+  `lib/site-url.ts` with Vercel-aware precedence
+  (`NEXT_PUBLIC_SITE_URL` → `VERCEL_PROJECT_PRODUCTION_URL` →
+  `VERCEL_URL` → localhost), so production now serves
+  `https://mexico-bajo-lupa.vercel.app` everywhere without any env
+  var configuration.
 - `etl/run_all.py` was missing four steps: `sat_efos`,
   `build_efos_metrics`, `build_continuidad` and the explicit
   grouping. Running it against a clean checkout will now produce
@@ -46,6 +53,15 @@ All notable changes to this project. Format follows
 - Removed six unreferenced files from `web/public/`: five default
   starter SVGs and a 1KB `mexico-estados.geojson` that contained
   the literal text "404: Not Found".
+- Sync'd stale version tags across `/fuentes`, `/transparencia` and
+  `/estado/[slug]`: V3 → V5 for transparency-related entries; V4
+  "pendiente" → "integrado" for the CompraNet 5.0 historical archive
+  now that `/historico` is live; V2 tags for not-on-roadmap files
+  changed to `próximo`. Removed the unused v2 branch from the
+  `/fuentes` badge rendering.
+- `/historico` KPI hint said "2010 → 2024" but the rest of the
+  project consistently calls CompraNet 5.0 a 2010-2022 archive.
+  Aligned to "2010 → 2022".
 
 ## [0.1.0] — 2026-05-12
 
