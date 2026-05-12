@@ -1,10 +1,11 @@
 /**
  * Single source of truth for data access.
  *
- * V1 reads pre-built JSON exported by etl/export_json.py from Parquet.
- * Same shape as mock-data so frontend doesn't change.
- *
- * V2+ will swap in DuckDB-WASM reading Parquet directly via lib/duckdb.ts.
+ * Reads pre-built JSON exported by etl/export_json.py from Parquet.
+ * Synchronous imports keep the bridge simple — once the bundle approaches
+ * the JSON size limit, swap in DuckDB-WASM reading Parquet directly via
+ * lib/duckdb.ts without changing the function signatures consumed by
+ * the UI.
  */
 
 import estadoMetricsJson from "@/data/estado_metrics.json";
@@ -20,7 +21,7 @@ import {
   type BenfordRow,
   type DependenciaRiesgo,
   type DelitoCategoria,
-} from "./mock-data";
+} from "./types";
 
 // === Real data shapes (from JSON files) ===
 type EstadoMetricsRaw = {

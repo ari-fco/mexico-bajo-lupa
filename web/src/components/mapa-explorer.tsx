@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
-import { type EstadoMetrics } from "@/lib/mock-data";
+import { type EstadoMetrics } from "@/lib/types";
 import { qEstadoMetrics } from "@/lib/queries";
 import { ESTADOS_BY_CVE, slugForEstado } from "@/lib/estados";
 import { fmtDec, fmtInt, fmtCompact, fmtMxn } from "@/lib/format";

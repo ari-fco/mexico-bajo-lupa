@@ -1,23 +1,9 @@
 /**
- * Consolidated domain types — REFERENCE COPY (V1.5 cleanup).
+ * Consolidated domain types.
  *
- * STATUS: this file is currently a *reference* copy of the types defined
- * inside `lib/mock-data.ts`. The plan is to:
- *   1. Land this file (done).
- *   2. After all parallel agents merge their work, flip imports throughout
- *      the codebase to point at `@/lib/types` instead of `@/lib/mock-data`.
- *   3. Delete the legacy `getMock*()` mock generators from `mock-data.ts`
- *      (they are no longer called — `lib/queries.ts` reads real JSON).
- *   4. Either re-export from `mock-data.ts` for back-compat or remove it.
- *
- * IMPORTANT: do NOT touch `lib/mock-data.ts` directly until the parallel
- * agents (EFOS / continuidad / anomalías destacadas) finish, because they
- * may still be reading `IncidenciaRow`, `EstadoMetrics`, `BenfordRow`,
- * `DependenciaRiesgo`, `DelitoCategoria`, or `DELITOS` from there.
- *
- * The exports below are a verbatim copy of the types in mock-data.ts at
- * the time this file was created. If you update one, update the other —
- * or finish step 2 above and delete the duplicate.
+ * Single source of truth for the shapes consumed across the app.
+ * lib/queries.ts reads real JSON exports from the ETL and casts them
+ * to these types; UI components import the types from here.
  */
 
 import type { Estado } from "./estados";

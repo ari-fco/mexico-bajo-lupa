@@ -10,7 +10,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
-import { DELITOS, type DelitoCategoria } from "@/lib/mock-data";
+import { DELITOS, type DelitoCategoria } from "@/lib/types";
 import { fmtDec, fmtInt } from "@/lib/format";
 import { ClientOnly } from "./client-only";
 

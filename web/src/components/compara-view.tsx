@@ -17,7 +17,7 @@ import { ClientOnly } from "@/components/client-only";
 import { fmtDec, fmtInt, fmtMxn, fmtCompact } from "@/lib/format";
 import { ult12mLabel } from "@/lib/data-meta";
 import type { Estado } from "@/lib/estados";
-import type { EstadoMetrics } from "@/lib/mock-data";
+import type { EstadoMetrics } from "@/lib/types";
 
 export type EstadoOption = {
   slug: string;

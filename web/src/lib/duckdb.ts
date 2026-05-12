@@ -3,9 +3,10 @@
 /**
  * Thin wrapper around @duckdb/duckdb-wasm.
  *
- * Today, the app reads mock JS objects (lib/mock-data). When the ETL produces
- * real Parquet files under /public/data/*.parquet, swap calls in `lib/queries.ts`
- * to use `runSql` instead. Same SQL works on both engines.
+ * Today, the app reads JSON exported by the ETL via lib/queries.ts.
+ * When the JSON bridge stops fitting the dataset size, swap the
+ * lib/queries.ts calls to use `runSql` from this module — same SQL
+ * works on both engines, no change to component code required.
  */
 
 import * as duckdb from "@duckdb/duckdb-wasm";
