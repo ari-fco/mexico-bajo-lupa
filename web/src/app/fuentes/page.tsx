@@ -4,7 +4,13 @@ import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "Fuentes",
-  description: "Catálogo de fuentes oficiales que alimentan el proyecto.",
+  description:
+    "Catálogo de fuentes oficiales: SESNSP, INEGI, CONAPO, CONEVAL, ComprasMX, SHCP, SAT 69-B. Cobertura, volumen y URL oficial de cada dataset que alimenta el proyecto.",
+  openGraph: {
+    title: "Fuentes oficiales · México Bajo Lupa",
+    description:
+      "Cada cifra es trazable hasta una fuente del Estado mexicano. Si no podemos trazarla, no aparece.",
+  },
 };
 
 const SOURCES = [

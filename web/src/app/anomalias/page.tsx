@@ -5,7 +5,12 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "Anomalías · Análisis Benford",
   description:
-    "Distribución del primer dígito en montos contractuales del gobierno mexicano. MAD de Nigrini por dependencia.",
+    "Test forense de Benford sobre 235k contratos federales mexicanos. 200+ dependencias APF rankeadas por MAD de Nigrini, filtrables por ramo. Las que más se alejan del corredor estadístico esperado.",
+  openGraph: {
+    title: "Anomalías Benford · México Bajo Lupa",
+    description:
+      "200+ dependencias federales rankeadas por desviación de Benford. FONACOT, Sistema Público de Radiodifusión y IABN encabezan el riesgo.",
+  },
 };
 
 export default function AnomaliasPage() {

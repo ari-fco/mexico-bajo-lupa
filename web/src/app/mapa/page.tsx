@@ -4,7 +4,12 @@ import { MapaExplorer } from "@/components/mapa-explorer";
 export const metadata: Metadata = {
   title: "Mapa interactivo",
   description:
-    "Explorador de México: incidencia delictiva, riesgo compuesto, PIB per cápita, pobreza y gasto federalizado por estado. 7 métricas reales sobre 32 entidades.",
+    "Explorador choropleth de México con 7 métricas activas: homicidios por 100k, Δ interanual, PIB per cápita, pobreza multidimensional, gasto federalizado per cápita y adjudicación directa estatal sobre las 32 entidades.",
+  openGraph: {
+    title: "Mapa interactivo · México Bajo Lupa",
+    description:
+      "32 estados, 7 métricas oficiales cruzadas. Pasá el cursor por cualquier entidad para ver su lectura forense completa.",
+  },
 };
 
 export default function MapaPage() {

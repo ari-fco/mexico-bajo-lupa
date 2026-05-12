@@ -4,7 +4,12 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "Metodología",
   description:
-    "Cómo procesamos datos oficiales, qué decisiones tomamos y por qué.",
+    "Cómo procesamos cada cifra: arquitectura estática end-to-end, normalización a CVE_ENT del INEGI, test de Benford con MAD de Nigrini, cruces SAT × ComprasMX. Trazabilidad estricta a fuente oficial.",
+  openGraph: {
+    title: "Metodología · México Bajo Lupa",
+    description:
+      "Decisiones técnicas explicadas. Por qué Benford, por qué MAD, por qué Parquet, por qué sin servidor.",
+  },
 };
 
 export default function MetodologiaPage() {
