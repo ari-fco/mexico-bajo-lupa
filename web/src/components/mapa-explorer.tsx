@@ -134,6 +134,7 @@ export function MapaExplorer() {
   );
   const [selected, setSelected] = React.useState<string | null>(null);
   const [hovered, setHovered] = React.useState<string | null>(null);
+  const [showAll, setShowAll] = React.useState(false);
 
   const def = METRICS.find((m) => m.key === metricKey)!;
 
@@ -288,7 +289,7 @@ export function MapaExplorer() {
                 Ranking · {def.short} {def.invert ? "(menor primero)" : "(mayor primero)"}
               </div>
               <div className="border-t border-cloud-whisper/10">
-                {ranking.slice(0, 10).map((row, idx) => {
+                {ranking.slice(0, showAll ? ranking.length : 10).map((row, idx) => {
                   const isFocused = focused === row.cve_ent;
                   return (
                     <button
@@ -319,6 +320,17 @@ export function MapaExplorer() {
                   );
                 })}
               </div>
+              {ranking.length > 10 && (
+                <button
+                  type="button"
+                  onClick={() => setShowAll((v) => !v)}
+                  className="mt-3 text-[11px] text-ash-accent hover:text-cloud-whisper underline decoration-1 underline-offset-4"
+                >
+                  {showAll
+                    ? "Mostrar solo top 10 ↑"
+                    : `Mostrar los ${ranking.length} estados ↓`}
+                </button>
+              )}
             </div>
           </aside>
         </div>
