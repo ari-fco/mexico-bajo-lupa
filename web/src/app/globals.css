@@ -209,3 +209,44 @@ body {
   background: rgba(216, 68, 58, 0.35);
   color: #ffffff;
 }
+
+/* Print: optimise the state dossier for paper.
+ * Strip dark backgrounds, hide nav/footer and interactive controls,
+ * and let charts and tables breathe at full width. */
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header,
+  footer,
+  nav,
+  button,
+  [role="tablist"],
+  .maplibregl-canvas,
+  .maplibregl-ctrl-attrib {
+    display: none !important;
+  }
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+    color: #555555;
+  }
+  .display,
+  .display-xl {
+    color: #000000 !important;
+  }
+  .text-light-ash,
+  .text-ash-accent {
+    color: #444444 !important;
+  }
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

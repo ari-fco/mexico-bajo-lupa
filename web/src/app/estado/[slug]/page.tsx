@@ -28,9 +28,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const e = ESTADOS_BY_SLUG[slug];
   if (!e) return { title: "Estado no encontrado" };
+  const description = `Dossier completo de ${e.nombre}: serie mensual de homicidios y otros delitos, PIB per cápita, pobreza multidimensional, gasto federalizado y posición en el ranking nacional sobre datos oficiales.`;
   return {
     title: `${e.nombre} · Dossier`,
-    description: `Datos de seguridad, economía y transparencia para ${e.nombre}.`,
+    description,
+    openGraph: {
+      title: `${e.nombre} bajo lupa`,
+      description,
+    },
   };
 }
 
