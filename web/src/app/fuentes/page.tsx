@@ -91,11 +91,11 @@ const SOURCES = [
   {
     name: "INAI",
     full: "Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales",
-    what: "Plataforma Nacional de Transparencia. Cumplimiento de obligaciones por sujeto obligado.",
+    what: "Plataforma Nacional de Transparencia. Cumplimiento de obligaciones por sujeto obligado. Pendiente: el INAI fue disuelto en 2025; la PNT sigue en línea bajo administración transitoria pero sin API estable.",
     files: ["PNT (Plataforma Nacional de Transparencia)"],
     url: "https://www.plataformadetransparencia.org.mx/",
     update: "Continuo",
-    status: "v3" as const,
+    status: "v5" as const,
   },
   {
     name: "CONEVAL",
@@ -112,11 +112,11 @@ const SOURCES = [
   {
     name: "IMCO",
     full: "Instituto Mexicano para la Competitividad",
-    what: "Índice de Competitividad Estatal — útil como referencia metodológica.",
-    files: ["ICE (anual)"],
+    what: "Índice de Competitividad Estatal e Índice BIPE (Barómetro de Información Presupuestal Estatal). Pendiente: la edición 2026 todavía no se publica como dataset estructurado.",
+    files: ["ICE (anual)", "BIPE 2019-2023 — disponible en PDF y CSV histórico"],
     url: "https://imco.org.mx/indices/",
     update: "Anual",
-    status: "v2" as const,
+    status: "v5" as const,
   },
 ] as const;
 
@@ -158,12 +158,9 @@ export default function FuentesPage() {
                   {s.status === "active" && (
                     <Badge variant="good">Activa · V1</Badge>
                   )}
-                  {s.status === "v2" && (
-                    <Badge variant="lozenge">V2</Badge>
-                  )}
-                  {s.status === "v3" && (
+                  {s.status === "v5" && (
                     <>
-                      <Badge variant="lozenge">V3</Badge>
+                      <Badge variant="lozenge">V5 · Pendiente</Badge>
                       <Link
                         href="/transparencia"
                         className="text-[10px] text-ash-accent hover:text-cloud-whisper underline decoration-1 underline-offset-4"

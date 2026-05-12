@@ -264,14 +264,22 @@ export default async function EstadoPage({
 
           <div className="eyebrow mb-3">Próximamente</div>
           <p className="text-[13px] text-light-ash leading-relaxed mb-6 max-w-3xl">
-            La siguiente capa — transparencia INAI — entra en V3.
+            La siguiente capa — transparencia estatal — entra en V5. Pendiente
+            de fuente integrable;{" "}
+            <Link
+              href="/transparencia"
+              className="text-cloud-whisper underline decoration-1 underline-offset-4 hover:text-ash-accent"
+            >
+              ver detalle
+            </Link>
+            .
           </p>
           <div className="grid sm:grid-cols-2 gap-px bg-cloud-whisper/8">
             <RoadmapCard
-              tag="V3"
+              tag="V5"
               label="Transparencia"
-              source="INAI"
-              comment="Cumplimiento de obligaciones por sujeto obligado."
+              source="IMCO BIPE · sucesor INAI"
+              comment="Cumplimiento de obligaciones por sujeto obligado y calidad de información presupuestal."
             />
           </div>
         </div>
