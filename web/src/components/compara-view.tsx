@@ -451,6 +451,12 @@ function HeroSide({
       <div className="text-[12px] text-ash-accent">
         Posición nacional violencia: #{side.rank}/{totalEstados}
       </div>
+      <a
+        href={`/estado/${side.slug}`}
+        className="self-start text-[12px] text-cloud-whisper hover:text-ash-accent underline decoration-1 underline-offset-4 mt-2"
+      >
+        Ver dossier completo →
+      </a>
     </div>
   );
 }
