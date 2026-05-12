@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { StatCard } from "@/components/ui/card";
 import { HomeMapPreview } from "@/components/home-map-preview";
+import { AnomaliasDestacadas } from "@/components/anomalias-destacadas";
 import {
   SESNSP_FIRST_YEAR,
   SESNSP_LAST_YEAR,
@@ -58,6 +59,13 @@ export default function HomePage() {
               "radial-gradient(1200px 600px at 80% 20%, rgba(255,255,255,0.06), transparent 60%)",
           }}
         />
+      </section>
+
+      {/* FEATURED FINDING */}
+      <section className="border-t border-cloud-whisper/8 py-16 md:py-20">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <AnomaliasDestacadas />
+        </div>
       </section>
 
       {/* STAT BAND */}
