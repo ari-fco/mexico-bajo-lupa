@@ -185,9 +185,15 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-px bg-cloud-whisper/8">
             <Phase
               tag="V1-V4"
-              status="now"
+              status="done"
               title="Datos integrados"
               body="SESNSP, INEGI PIB, CONEVAL pobreza, SHCP gasto federalizado, ComprasMX (federal+estatal) y 12 años de histórico CompraNet 5.0 (2.3M contratos)."
+            />
+            <Phase
+              tag="EFOS"
+              status="done"
+              title="SAT × ComprasMX"
+              body="Cruce de la lista oficial del SAT (Art. 69-B CFF) de Empresas que Facturan Operaciones Simuladas con ComprasMX federal. Contratos públicos a RFCs señalados, incluyendo los firmados después de la presunción."
             />
             <Phase
               tag="V5"
@@ -200,12 +206,6 @@ export default function HomePage() {
               status="later"
               title="Anomalía de la semana"
               body="Detección automática del contrato o dependencia con mayor desviación estadística reciente. Newsletter editorial."
-            />
-            <Phase
-              tag="V7"
-              status="now"
-              title="EFOS · proveedores señalados"
-              body="Cruce con la lista oficial del SAT (Art. 69-B CFF) de Empresas que Facturan Operaciones Simuladas. Detectamos contratos públicos a RFCs ya marcados por el SAT — incluyendo los firmados después de la presunción."
             />
           </div>
         </div>
@@ -263,18 +263,26 @@ function Phase({
   body,
 }: {
   tag: string;
-  status: "now" | "next" | "later";
+  status: "done" | "now" | "next" | "later";
   title: string;
   body: string;
 }) {
   const dot =
-    status === "now"
+    status === "done"
       ? "bg-signal-good"
-      : status === "next"
-        ? "bg-signal-warn"
-        : "bg-cloud-whisper/20";
+      : status === "now"
+        ? "bg-signal-good"
+        : status === "next"
+          ? "bg-signal-warn"
+          : "bg-cloud-whisper/20";
   const label =
-    status === "now" ? "En curso" : status === "next" ? "Próximo" : "Después";
+    status === "done"
+      ? "En vivo"
+      : status === "now"
+        ? "En curso"
+        : status === "next"
+          ? "Próximo"
+          : "Después";
   return (
     <div className="bg-midnight-void p-7 flex flex-col gap-5 min-h-[220px]">
       <div className="flex items-center justify-between">
