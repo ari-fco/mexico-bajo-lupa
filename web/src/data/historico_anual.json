@@ -1,0 +1,137 @@
+[
+  {
+    "ano": 2010,
+    "contratos": 4913,
+    "monto_total": 11495149818.0,
+    "pct_ad": 86.71,
+    "pct_lp": 3.66,
+    "pct_i3p": 8.59,
+    "benford_mad": 0.0179
+  },
+  {
+    "ano": 2011,
+    "contratos": 128890,
+    "monto_total": 247194335978.0,
+    "pct_ad": 73.04,
+    "pct_lp": 15.67,
+    "pct_i3p": 10.89,
+    "benford_mad": 0.009
+  },
+  {
+    "ano": 2012,
+    "contratos": 170770,
+    "monto_total": 361449471277.0,
+    "pct_ad": 68.02,
+    "pct_lp": 17.85,
+    "pct_i3p": 13.02,
+    "benford_mad": 0.0077
+  },
+  {
+    "ano": 2013,
+    "contratos": 181889,
+    "monto_total": 387385888276.0,
+    "pct_ad": 68.88,
+    "pct_lp": 16.51,
+    "pct_i3p": 13.73,
+    "benford_mad": 0.0073
+  },
+  {
+    "ano": 2014,
+    "contratos": 197349,
+    "monto_total": 538705644527.0,
+    "pct_ad": 67.98,
+    "pct_lp": 16.89,
+    "pct_i3p": 14.05,
+    "benford_mad": 0.007
+  },
+  {
+    "ano": 2015,
+    "contratos": 223000,
+    "monto_total": 449746877374.0,
+    "pct_ad": 73.73,
+    "pct_lp": 13.94,
+    "pct_i3p": 11.27,
+    "benford_mad": 0.0084
+  },
+  {
+    "ano": 2016,
+    "contratos": 233848,
+    "monto_total": 452753967817.0,
+    "pct_ad": 74.72,
+    "pct_lp": 12.96,
+    "pct_i3p": 11.07,
+    "benford_mad": 0.0067
+  },
+  {
+    "ano": 2017,
+    "contratos": 234210,
+    "monto_total": 571328945072.0,
+    "pct_ad": 77.32,
+    "pct_lp": 12.18,
+    "pct_i3p": 9.61,
+    "benford_mad": 0.0102
+  },
+  {
+    "ano": 2018,
+    "contratos": 198197,
+    "monto_total": 447655883547.0,
+    "pct_ad": 75.73,
+    "pct_lp": 13.92,
+    "pct_i3p": 9.16,
+    "benford_mad": 0.007
+  },
+  {
+    "ano": 2019,
+    "contratos": 193675,
+    "monto_total": 412532959154.0,
+    "pct_ad": 77.29,
+    "pct_lp": 12.05,
+    "pct_i3p": 8.43,
+    "benford_mad": 0.0075
+  },
+  {
+    "ano": 2020,
+    "contratos": 162222,
+    "monto_total": 509788054738.0,
+    "pct_ad": 77.06,
+    "pct_lp": 11.88,
+    "pct_i3p": 7.06,
+    "benford_mad": 0.0044
+  },
+  {
+    "ano": 2021,
+    "contratos": 203778,
+    "monto_total": 516442725821.0,
+    "pct_ad": 79.59,
+    "pct_lp": 10.64,
+    "pct_i3p": 6.91,
+    "benford_mad": 0.0071
+  },
+  {
+    "ano": 2022,
+    "contratos": 198316,
+    "monto_total": 573098145542.0,
+    "pct_ad": 78.79,
+    "pct_lp": 11.45,
+    "pct_i3p": 5.16,
+    "benford_mad": 0.0088
+  },
+  {
+    "ano": 2023,
+    "contratos": 16859,
+    "monto_total": 294345364422.0,
+    "pct_ad": 12.87,
+    "pct_lp": 20.74,
+    "pct_i3p": 1.91,
+    "benford_mad": 0.0034
+  },
+  {
+    "ano": 2024,
+    "contratos": 1816,
+    "monto_total": 23391408531.0,
+    "pct_ad": 0.11,
+    "pct_lp": 0.06,
+    "pct_i3p": 0.0,
+    "benford_mad": 0.0029
+  }
+]

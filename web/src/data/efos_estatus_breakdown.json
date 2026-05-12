@@ -1,0 +1,30 @@
+[
+  {
+    "estatus": "DESVIRTUADO",
+    "n_contratos": 8,
+    "n_rfcs": 5,
+    "monto_total": 100788884.85000001,
+    "posteriores": 1
+  },
+  {
+    "estatus": "DEFINITIVO",
+    "n_contratos": 2,
+    "n_rfcs": 1,
+    "monto_total": 9972892.31,
+    "posteriores": 0
+  },
+  {
+    "estatus": "PRESUNTO",
+    "n_contratos": 2,
+    "n_rfcs": 1,
+    "monto_total": 242947.52000000002,
+    "posteriores": 0
+  },
+  {
+    "estatus": "SENTENCIA_FAVORABLE",
+    "n_contratos": 2,
+    "n_rfcs": 1,
+    "monto_total": 93103.45000000001,
+    "posteriores": 2
+  }
+]

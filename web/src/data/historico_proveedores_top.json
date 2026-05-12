@@ -1,0 +1,452 @@
+[
+  {
+    "proveedor": "Grupo Farmacos Especializados Sa de Cv",
+    "contratos": 5672,
+    "monto_total": 126763564538.0,
+    "anos_activos": 11,
+    "primera_fecha": "2010-12-13",
+    "ultima_fecha": "2020-06-05",
+    "pct_ad": 82.4
+  },
+  {
+    "proveedor": "Operadora Cicsa, S.A. de C.V.",
+    "contratos": 3,
+    "monto_total": 92194153303.0,
+    "anos_activos": 2,
+    "primera_fecha": "2016-10-01",
+    "ultima_fecha": "2017-02-13",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Farmaceuticos Maypo, S.A. de C.V.",
+    "contratos": 13890,
+    "monto_total": 75611168283.0,
+    "anos_activos": 15,
+    "primera_fecha": "2010-07-15",
+    "ultima_fecha": "2024-01-18",
+    "pct_ad": 87.9
+  },
+  {
+    "proveedor": "Toka Internacional S a P I de Cv",
+    "contratos": 1713,
+    "monto_total": 65333023972.0,
+    "anos_activos": 12,
+    "primera_fecha": "2013-04-19",
+    "ultima_fecha": "2024-12-01",
+    "pct_ad": 23.4
+  },
+  {
+    "proveedor": "Electromecanica de Montacargas Sa de Cv",
+    "contratos": 26,
+    "monto_total": 64560356512.0,
+    "anos_activos": 8,
+    "primera_fecha": "2012-01-01",
+    "ultima_fecha": "2023-01-23",
+    "pct_ad": 73.1
+  },
+  {
+    "proveedor": "Distribuidora Internacional de Medicamentos y Equipo Medico Sa de Cv",
+    "contratos": 4018,
+    "monto_total": 49255000969.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-10-21",
+    "ultima_fecha": "2024-01-01",
+    "pct_ad": 75.8
+  },
+  {
+    "proveedor": "Alstom Transport Mexico Sa de Cv",
+    "contratos": 2,
+    "monto_total": 38205012930.0,
+    "anos_activos": 2,
+    "primera_fecha": "2014-11-18",
+    "ultima_fecha": "2021-06-09",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Laboratorios de Biologicos y Reactivos de Mexico Sa de Cv",
+    "contratos": 320,
+    "monto_total": 32069917254.0,
+    "anos_activos": 13,
+    "primera_fecha": "2011-01-01",
+    "ultima_fecha": "2023-08-18",
+    "pct_ad": 37.2
+  },
+  {
+    "proveedor": "Sanofi Pasteur Sa de Cv",
+    "contratos": 306,
+    "monto_total": 30758125826.0,
+    "anos_activos": 14,
+    "primera_fecha": "2011-01-01",
+    "ultima_fecha": "2024-03-10",
+    "pct_ad": 54.9
+  },
+  {
+    "proveedor": "Edenred Mexico Sa de Cv",
+    "contratos": 2284,
+    "monto_total": 30459914548.0,
+    "anos_activos": 15,
+    "primera_fecha": "2010-12-03",
+    "ultima_fecha": "2024-01-01",
+    "pct_ad": 42.5
+  },
+  {
+    "proveedor": "Laboratorios Pisa S.A. de C.V.",
+    "contratos": 6348,
+    "monto_total": 28014135204.0,
+    "anos_activos": 15,
+    "primera_fecha": "2010-10-21",
+    "ultima_fecha": "2024-01-17",
+    "pct_ad": 76.4
+  },
+  {
+    "proveedor": "Grupo Constructor Marhnos, S.A. de C.V.",
+    "contratos": 2,
+    "monto_total": 28008476803.0,
+    "anos_activos": 2,
+    "primera_fecha": "2017-11-10",
+    "ultima_fecha": "2018-02-12",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Ica Constructora Sa de Cv",
+    "contratos": 12,
+    "monto_total": 27851444297.0,
+    "anos_activos": 3,
+    "primera_fecha": "2020-02-03",
+    "ultima_fecha": "2022-07-01",
+    "pct_ad": 25.0
+  },
+  {
+    "proveedor": "Coconal  Sapi de Cv",
+    "contratos": 99,
+    "monto_total": 27502322711.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-09-08",
+    "ultima_fecha": "2023-01-16",
+    "pct_ad": 20.2
+  },
+  {
+    "proveedor": "Sixsigma Networks Mexico",
+    "contratos": 135,
+    "monto_total": 26297868510.0,
+    "anos_activos": 13,
+    "primera_fecha": "2010-09-01",
+    "ultima_fecha": "2022-12-15",
+    "pct_ad": 68.9
+  },
+  {
+    "proveedor": "Currie & Brown - Mexico Sa de Cv",
+    "contratos": 5,
+    "monto_total": 25869600980.0,
+    "anos_activos": 4,
+    "primera_fecha": "2014-03-13",
+    "ultima_fecha": "2021-12-29",
+    "pct_ad": 60.0
+  },
+  {
+    "proveedor": "Baxter Sa de Cv",
+    "contratos": 2935,
+    "monto_total": 25037077744.0,
+    "anos_activos": 15,
+    "primera_fecha": "2010-10-21",
+    "ultima_fecha": "2024-03-10",
+    "pct_ad": 72.8
+  },
+  {
+    "proveedor": "Mota-Engil Mexico Sa de Cv",
+    "contratos": 13,
+    "monto_total": 24937175486.0,
+    "anos_activos": 5,
+    "primera_fecha": "2013-06-27",
+    "ultima_fecha": "2022-08-10",
+    "pct_ad": 7.7
+  },
+  {
+    "proveedor": "Cic Corporativo Industrial Coahuila Sa de Cv",
+    "contratos": 1,
+    "monto_total": 23738400000.0,
+    "anos_activos": 1,
+    "primera_fecha": "2013-01-01",
+    "ultima_fecha": "2013-01-01",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Ralca, S.A. de C.V.",
+    "contratos": 4042,
+    "monto_total": 22573745353.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-07-15",
+    "ultima_fecha": "2023-09-18",
+    "pct_ad": 81.3
+  },
+  {
+    "proveedor": "Instrumentos y Equipos Falcon Sa de Cv",
+    "contratos": 1327,
+    "monto_total": 21153807238.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-12-03",
+    "ultima_fecha": "2023-01-01",
+    "pct_ad": 81.1
+  },
+  {
+    "proveedor": "Promotora y Desarrolladora Mexicana de Infraestructura",
+    "contratos": 3,
+    "monto_total": 21097016676.0,
+    "anos_activos": 2,
+    "primera_fecha": "2017-07-28",
+    "ultima_fecha": "2018-07-17",
+    "pct_ad": 33.3
+  },
+  {
+    "proveedor": "Vitalmex Internacional S.A. de C.V.",
+    "contratos": 489,
+    "monto_total": 20624772809.0,
+    "anos_activos": 13,
+    "primera_fecha": "2011-04-01",
+    "ultima_fecha": "2023-01-01",
+    "pct_ad": 61.8
+  },
+  {
+    "proveedor": "La Peninsular Compañia Constructora S.A. de C.V",
+    "contratos": 22,
+    "monto_total": 20607208953.0,
+    "anos_activos": 9,
+    "primera_fecha": "2011-05-16",
+    "ultima_fecha": "2022-11-08",
+    "pct_ad": 40.9
+  },
+  {
+    "proveedor": "Seguros Banorte Sa de Cv, Grupo Financiero Banorte",
+    "contratos": 328,
+    "monto_total": 20254624093.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-07-07",
+    "ultima_fecha": "2023-04-01",
+    "pct_ad": 24.7
+  },
+  {
+    "proveedor": "Comercializadora de Productos Institucionales, S.A. de C.V.",
+    "contratos": 975,
+    "monto_total": 19661700224.0,
+    "anos_activos": 15,
+    "primera_fecha": "2010-12-13",
+    "ultima_fecha": "2024-04-20",
+    "pct_ad": 43.5
+  },
+  {
+    "proveedor": "Metlife Mexico Sa de Cv",
+    "contratos": 496,
+    "monto_total": 19459837086.0,
+    "anos_activos": 13,
+    "primera_fecha": "2011-01-01",
+    "ultima_fecha": "2023-01-02",
+    "pct_ad": 45.6
+  },
+  {
+    "proveedor": "Infra, S.A. de C.V.",
+    "contratos": 3184,
+    "monto_total": 17838849269.0,
+    "anos_activos": 13,
+    "primera_fecha": "2011-01-01",
+    "ultima_fecha": "2023-03-30",
+    "pct_ad": 62.9
+  },
+  {
+    "proveedor": "Pfizer Sa de Cv",
+    "contratos": 356,
+    "monto_total": 16915029433.0,
+    "anos_activos": 11,
+    "primera_fecha": "2012-02-20",
+    "ultima_fecha": "2024-01-22",
+    "pct_ad": 32.6
+  },
+  {
+    "proveedor": "Agroasemex Sa",
+    "contratos": 276,
+    "monto_total": 16690878810.0,
+    "anos_activos": 9,
+    "primera_fecha": "2016-05-30",
+    "ultima_fecha": "2024-01-01",
+    "pct_ad": 7.2
+  },
+  {
+    "proveedor": "Ica Constructora de Infraestructura, S.A. de C.V.",
+    "contratos": 3,
+    "monto_total": 16640923705.0,
+    "anos_activos": 2,
+    "primera_fecha": "2016-12-20",
+    "ultima_fecha": "2018-07-15",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Operadora Cicsa Sa de Cv",
+    "contratos": 13,
+    "monto_total": 16553959636.0,
+    "anos_activos": 6,
+    "primera_fecha": "2011-02-25",
+    "ultima_fecha": "2020-05-12",
+    "pct_ad": 15.4
+  },
+  {
+    "proveedor": "Impromed",
+    "contratos": 259,
+    "monto_total": 15982385591.0,
+    "anos_activos": 13,
+    "primera_fecha": "2011-04-01",
+    "ultima_fecha": "2023-01-01",
+    "pct_ad": 75.7
+  },
+  {
+    "proveedor": "Bahud Processing Mexico S de Rl de Cv",
+    "contratos": 1,
+    "monto_total": 15787380000.0,
+    "anos_activos": 1,
+    "primera_fecha": "2021-10-11",
+    "ultima_fecha": "2021-10-11",
+    "pct_ad": 100.0
+  },
+  {
+    "proveedor": "Grupo Nacional Provincial, S.A.B.",
+    "contratos": 836,
+    "monto_total": 15361360710.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-03-01",
+    "ultima_fecha": "2023-12-01",
+    "pct_ad": 28.3
+  },
+  {
+    "proveedor": "Desarrollo delSureste Playa delCarmen Tulum, S.A. de C.V.",
+    "contratos": 1,
+    "monto_total": 15358287724.0,
+    "anos_activos": 1,
+    "primera_fecha": "2021-02-11",
+    "ultima_fecha": "2021-02-11",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Jet Van Car Rental Sa de Cv",
+    "contratos": 637,
+    "monto_total": 15122225414.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-09-11",
+    "ultima_fecha": "2023-04-06",
+    "pct_ad": 75.5
+  },
+  {
+    "proveedor": "Si Vale Mexico Sa de Cv",
+    "contratos": 889,
+    "monto_total": 15103385266.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-11-26",
+    "ultima_fecha": "2023-01-13",
+    "pct_ad": 59.7
+  },
+  {
+    "proveedor": "Comercializadora Milenio Sa de Cv",
+    "contratos": 38,
+    "monto_total": 13966155905.0,
+    "anos_activos": 7,
+    "primera_fecha": "2012-09-26",
+    "ultima_fecha": "2021-08-25",
+    "pct_ad": 26.3
+  },
+  {
+    "proveedor": "Grupo Mexicano de Seguros Sa de Cv",
+    "contratos": 650,
+    "monto_total": 13782957656.0,
+    "anos_activos": 14,
+    "primera_fecha": "2011-01-01",
+    "ultima_fecha": "2024-01-01",
+    "pct_ad": 36.9
+  },
+  {
+    "proveedor": "Axtel S a B de C V",
+    "contratos": 664,
+    "monto_total": 13656754300.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-07-01",
+    "ultima_fecha": "2023-04-01",
+    "pct_ad": 70.5
+  },
+  {
+    "proveedor": "Gilead Sciences Mexico S de Rl de Cv",
+    "contratos": 23,
+    "monto_total": 13622916464.0,
+    "anos_activos": 5,
+    "primera_fecha": "2019-07-08",
+    "ultima_fecha": "2023-01-20",
+    "pct_ad": 56.5
+  },
+  {
+    "proveedor": "Caf Mexico Sa de Cv",
+    "contratos": 1,
+    "monto_total": 13548838910.0,
+    "anos_activos": 1,
+    "primera_fecha": "2014-12-06",
+    "ultima_fecha": "2014-12-06",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Consorcio Lamat Tramo 1, S.A.P.I de C.V.",
+    "contratos": 1,
+    "monto_total": 13394942290.0,
+    "anos_activos": 1,
+    "primera_fecha": "2020-04-30",
+    "ultima_fecha": "2020-04-30",
+    "pct_ad": 0.0
+  },
+  {
+    "proveedor": "Hemoser, S.A. de C.V.",
+    "contratos": 258,
+    "monto_total": 13375079184.0,
+    "anos_activos": 13,
+    "primera_fecha": "2011-01-01",
+    "ultima_fecha": "2023-02-03",
+    "pct_ad": 60.5
+  },
+  {
+    "proveedor": "Savi Distribuciones, S.A. de C.V.",
+    "contratos": 457,
+    "monto_total": 13109699781.0,
+    "anos_activos": 6,
+    "primera_fecha": "2010-10-21",
+    "ultima_fecha": "2015-09-09",
+    "pct_ad": 59.1
+  },
+  {
+    "proveedor": "Centrum Promotora Internacional Sa de Cv",
+    "contratos": 332,
+    "monto_total": 13063231510.0,
+    "anos_activos": 13,
+    "primera_fecha": "2011-06-27",
+    "ultima_fecha": "2023-01-02",
+    "pct_ad": 56.9
+  },
+  {
+    "proveedor": "Mainbit Sa de Cv",
+    "contratos": 331,
+    "monto_total": 12753090591.0,
+    "anos_activos": 14,
+    "primera_fecha": "2010-08-09",
+    "ultima_fecha": "2023-01-12",
+    "pct_ad": 50.2
+  },
+  {
+    "proveedor": "Merck Sharp & Dohme Comercializadora S de Rl de Cv",
+    "contratos": 344,
+    "monto_total": 11954942070.0,
+    "anos_activos": 6,
+    "primera_fecha": "2019-05-07",
+    "ultima_fecha": "2024-01-18",
+    "pct_ad": 36.0
+  },
+  {
+    "proveedor": "Ingenieros Civiles Asociados Sa de Cv",
+    "contratos": 24,
+    "monto_total": 11717199512.0,
+    "anos_activos": 6,
+    "primera_fecha": "2010-07-26",
+    "ultima_fecha": "2015-03-11",
+    "pct_ad": 20.8
+  }
+]

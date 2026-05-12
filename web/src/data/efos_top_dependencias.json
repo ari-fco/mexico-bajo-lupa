@@ -1,0 +1,72 @@
+[
+  {
+    "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+    "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+    "n_contratos": 4,
+    "n_definitivos": 2,
+    "n_posteriores": 0,
+    "n_posteriores_amplio": 0,
+    "n_rfcs_efos": 2,
+    "monto_total": 10527547.48
+  },
+  {
+    "institucion": "INFRAESTRUCTURA, COMUNICACIONES Y TRANSPORTES",
+    "ramo": "INFRAESTRUCTURA, COMUNICACIONES Y TRANSPORTES",
+    "n_contratos": 2,
+    "n_definitivos": 0,
+    "n_posteriores": 0,
+    "n_posteriores_amplio": 0,
+    "n_rfcs_efos": 1,
+    "monto_total": 18898182.64
+  },
+  {
+    "institucion": "INSTITUTO NACIONAL DE MEDICINA GENÓMICA",
+    "ramo": "SALUD",
+    "n_contratos": 2,
+    "n_definitivos": 0,
+    "n_posteriores": 1,
+    "n_posteriores_amplio": 1,
+    "n_rfcs_efos": 1,
+    "monto_total": 471211.2
+  },
+  {
+    "institucion": "EL COLEGIO DE LA FRONTERA NORTE, A.C.",
+    "ramo": "CIENCIA, HUMANIDADES, TECNOLOGÍA E INNOVACIÓN",
+    "n_contratos": 2,
+    "n_definitivos": 0,
+    "n_posteriores": 0,
+    "n_posteriores_amplio": 0,
+    "n_rfcs_efos": 1,
+    "monto_total": 242947.52000000002
+  },
+  {
+    "institucion": "INSTITUTO NACIONAL DE ELECTRICIDAD Y ENERGIAS LIMPIAS",
+    "ramo": "ENERGÍA",
+    "n_contratos": 2,
+    "n_definitivos": 0,
+    "n_posteriores": 2,
+    "n_posteriores_amplio": 2,
+    "n_rfcs_efos": 1,
+    "monto_total": 93103.45000000001
+  },
+  {
+    "institucion": "GRUPO AEROPORTUARIO DE LA CIUDAD DE MÉXICO, S.A. DE C.V.",
+    "ramo": "MARINA",
+    "n_contratos": 1,
+    "n_definitivos": 0,
+    "n_posteriores": 0,
+    "n_posteriores_amplio": 0,
+    "n_rfcs_efos": 1,
+    "monto_total": 80773240.92
+  },
+  {
+    "institucion": "CENTRO DE INVESTIGACION Y DE ESTUDIOS AVANZADOS DEL INSTITUTO POLITECNICO NACIONAL",
+    "ramo": "EDUCACIÓN PÚBLICA",
+    "n_contratos": 1,
+    "n_definitivos": 0,
+    "n_posteriores": 0,
+    "n_posteriores_amplio": 0,
+    "n_rfcs_efos": 1,
+    "monto_total": 91594.92
+  }
+]

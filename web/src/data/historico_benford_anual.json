@@ -1,0 +1,947 @@
+[
+  {
+    "ano": 2010,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 25.158,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 23.204,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 14.024,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.014,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 6.737,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.554,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 4.702,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 4.417,
+    "contratos": 4913
+  },
+  {
+    "ano": 2010,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 5.19,
+    "contratos": 4913
+  },
+  {
+    "ano": 2011,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.451,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 20.345,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.717,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 9.781,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.672,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.359,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.53,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 4.969,
+    "contratos": 128890
+  },
+  {
+    "ano": 2011,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.176,
+    "contratos": 128890
+  },
+  {
+    "ano": 2012,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.962,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 19.803,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.758,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 9.589,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.522,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.508,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.517,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 4.949,
+    "contratos": 170770
+  },
+  {
+    "ano": 2012,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.392,
+    "contratos": 170770
+  },
+  {
+    "ano": 2013,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.911,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 19.633,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.701,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 9.602,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.617,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.466,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.513,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.156,
+    "contratos": 181889
+  },
+  {
+    "ano": 2013,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.402,
+    "contratos": 181889
+  },
+  {
+    "ano": 2014,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 28.064,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 19.419,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.704,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 9.528,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.629,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.551,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.506,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.225,
+    "contratos": 197349
+  },
+  {
+    "ano": 2014,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.374,
+    "contratos": 197349
+  },
+  {
+    "ano": 2015,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.313,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 19.242,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.633,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.539,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.755,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.651,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.38,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.291,
+    "contratos": 223000
+  },
+  {
+    "ano": 2015,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.197,
+    "contratos": 223000
+  },
+  {
+    "ano": 2016,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.963,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 18.639,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.489,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.243,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.72,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.622,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.336,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.566,
+    "contratos": 233848
+  },
+  {
+    "ano": 2016,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.423,
+    "contratos": 233848
+  },
+  {
+    "ano": 2017,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 26.983,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 18.041,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 15.968,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.268,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.584,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.499,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.312,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.239,
+    "contratos": 234210
+  },
+  {
+    "ano": 2017,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.106,
+    "contratos": 234210
+  },
+  {
+    "ano": 2018,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.697,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 17.464,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 14.252,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.359,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 8.164,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.778,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.54,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.532,
+    "contratos": 198197
+  },
+  {
+    "ano": 2018,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.215,
+    "contratos": 198197
+  },
+  {
+    "ano": 2019,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.23,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 17.198,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.842,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.633,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 8.333,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.948,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.71,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.115,
+    "contratos": 193675
+  },
+  {
+    "ano": 2019,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.99,
+    "contratos": 193675
+  },
+  {
+    "ano": 2020,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 28.645,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 17.675,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.409,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.2,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 8.385,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.728,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.636,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.013,
+    "contratos": 162222
+  },
+  {
+    "ano": 2020,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.308,
+    "contratos": 162222
+  },
+  {
+    "ano": 2021,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.78,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 17.065,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.508,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 10.29,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 9.305,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.786,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.714,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.206,
+    "contratos": 203778
+  },
+  {
+    "ano": 2021,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.345,
+    "contratos": 203778
+  },
+  {
+    "ano": 2022,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 27.881,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 16.269,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 13.184,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 11.011,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 9.717,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.826,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.591,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.033,
+    "contratos": 198316
+  },
+  {
+    "ano": 2022,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.488,
+    "contratos": 198316
+  },
+  {
+    "ano": 2023,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 29.458,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 16.989,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 12.261,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 9.681,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 8.192,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 7.148,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.973,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.724,
+    "contratos": 16859
+  },
+  {
+    "ano": 2023,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.573,
+    "contratos": 16859
+  },
+  {
+    "ano": 2024,
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 30.231,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 17.511,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 12.83,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 9.196,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 8.315,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 6.388,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 6.222,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 4.791,
+    "contratos": 1816
+  },
+  {
+    "ano": 2024,
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.515,
+    "contratos": 1816
+  }
+]
