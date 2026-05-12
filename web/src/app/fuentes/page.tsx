@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
@@ -147,7 +148,7 @@ export default function FuentesPage() {
                 <div className="text-[11px] text-ash-accent leading-relaxed">
                   {s.full}
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 flex items-center gap-2 flex-wrap">
                   {s.status === "active" && (
                     <Badge variant="good">Activa · V1</Badge>
                   )}
@@ -155,7 +156,15 @@ export default function FuentesPage() {
                     <Badge variant="lozenge">V2</Badge>
                   )}
                   {s.status === "v3" && (
-                    <Badge variant="lozenge">V3</Badge>
+                    <>
+                      <Badge variant="lozenge">V3</Badge>
+                      <Link
+                        href="/transparencia"
+                        className="text-[10px] text-ash-accent hover:text-cloud-whisper underline decoration-1 underline-offset-4"
+                      >
+                        ¿Por qué falta? →
+                      </Link>
+                    </>
                   )}
                 </div>
               </div>
