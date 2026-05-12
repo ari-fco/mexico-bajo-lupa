@@ -10,6 +10,8 @@ All notable changes to this project. Format follows
 - `Comparar` route in the main nav.
 - "Comparar con otro estado" CTA on every state dossier that deep-links
   to `/compara?a=<slug>` pre-selecting the current state.
+- "Ver dossier completo" link on each side of `/compara` pointing at
+  the corresponding `/estado/[slug]` route.
 - Per-route OpenGraph descriptions on `/mapa`, `/anomalias`,
   `/metodologia`, `/fuentes`, `/efos`, `/historico`, `/compara` and
   `/estado/[slug]`.
@@ -19,12 +21,27 @@ All notable changes to this project. Format follows
 - "Lo que sí existe" route suggestions on the 404 page.
 - Print stylesheet that flips the dark theme to white and hides
   nav/footer/buttons so state dossiers print to paper cleanly.
+- Hero secondary nav row on the home page surfacing `/efos`,
+  `/historico` and `/compara` as inline text links.
+- Search bar on the `/anomalias` 200+ dependencies table.
+- Interactive search, AD-high and 10+-years filters, and column
+  sort on the `/historico` top-50 providers table.
+- Security headers (X-Frame-Options, X-Content-Type-Options,
+  Referrer-Policy, Permissions-Policy) and React strict mode in
+  `next.config.ts`.
+- `npm run typecheck` and `npm run check` scripts in
+  `web/package.json` for pre-commit verification.
+- Enriched PWA manifest (dir, categories, orientation, icon
+  purpose).
 - SAT 69-B and CompraNet 5.0 mentions in `docs/ARQUITECTURA.md`
   intro and diagram 1.
 - `/compara` route in the sitemap.
 
 ### Changed
 
+- Hero badge updated from "MVP V1 · SESNSP + CONAPO + ComprasMX" to
+  "V1-V4 en vivo · 7 fuentes oficiales · 2.36M contratos
+  analizados".
 - Footer "Fuentes" column lists SAT and turns the INAI/IMCO entry
   into a link to `/transparencia` (with the correct V5 tag).
 - Roadmap on the home reflects the shipped state — V7 EFOS dropped
@@ -36,6 +53,8 @@ All notable changes to this project. Format follows
   `lib/mock-data.ts` deleted along with its unused mock generators.
 - Module docstrings on `lib/queries.ts` and `lib/duckdb.ts` describe
   the real architecture instead of the obsolete mock layer.
+- All `target="_blank"` external links carry `rel="noopener
+  noreferrer"` (was just `noreferrer`).
 
 ### Fixed
 
