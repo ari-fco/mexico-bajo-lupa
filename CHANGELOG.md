@@ -5,6 +5,48 @@ All notable changes to this project. Format follows
 
 ## [Unreleased]
 
+### Added
+
+- `Comparar` route in the main nav.
+- "Comparar con otro estado" CTA on every state dossier that deep-links
+  to `/compara?a=<slug>` pre-selecting the current state.
+- Per-route OpenGraph descriptions on `/mapa`, `/anomalias`,
+  `/metodologia`, `/fuentes`, `/efos`, `/historico`, `/compara` and
+  `/estado/[slug]`.
+- Dynamic OpenGraph image per state dossier (32 routes) showing the
+  state name, abbreviation, CVE_ENT and four color-coded headline
+  metrics. Pre-rendered at build via `generateStaticParams`.
+- "Lo que sí existe" route suggestions on the 404 page.
+- Print stylesheet that flips the dark theme to white and hides
+  nav/footer/buttons so state dossiers print to paper cleanly.
+- SAT 69-B and CompraNet 5.0 mentions in `docs/ARQUITECTURA.md`
+  intro and diagram 1.
+- `/compara` route in the sitemap.
+
+### Changed
+
+- Footer "Fuentes" column lists SAT and turns the INAI/IMCO entry
+  into a link to `/transparencia` (with the correct V5 tag).
+- Roadmap on the home reflects the shipped state — V7 EFOS dropped
+  from "next" since `/efos` is live; new `done` status on the
+  `Phase` component labels live work as "En vivo".
+- V5 transparency pill on `/mapa` is now a clickable link to
+  `/transparencia` with corrected version tag.
+- `lib/types.ts` is the single source of truth for domain types;
+  `lib/mock-data.ts` deleted along with its unused mock generators.
+- Module docstrings on `lib/queries.ts` and `lib/duckdb.ts` describe
+  the real architecture instead of the obsolete mock layer.
+
+### Fixed
+
+- `etl/run_all.py` was missing four steps: `sat_efos`,
+  `build_efos_metrics`, `build_continuidad` and the explicit
+  grouping. Running it against a clean checkout will now produce
+  every JSON the frontend imports.
+- Removed six unreferenced files from `web/public/`: five default
+  starter SVGs and a 1KB `mexico-estados.geojson` that contained
+  the literal text "404: Not Found".
+
 ## [0.1.0] — 2026-05-12
 
 First public release. The project goes from a local prototype to a
