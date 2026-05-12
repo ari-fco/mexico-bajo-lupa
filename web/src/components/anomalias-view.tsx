@@ -47,14 +47,15 @@ export function AnomaliasView() {
   const deps = React.useMemo(() => qDependenciasRiesgo(), []);
   const [filter, setFilter] = React.useState<Filter>("all");
   const [ramo, setRamo] = React.useState<string>("Todos");
+  const [query, setQuery] = React.useState<string>("");
   const [visible, setVisible] = React.useState<number>(PAGE_SIZE);
   const [lastReset, setLastReset] = React.useState<string>(
-    `${filter}|${ramo}`,
+    `${filter}|${ramo}|${query}`,
   );
 
-  // Reset pagination when filter or ramo changes — using the "adjust state
-  // during render" pattern instead of useEffect+setState.
-  const currentKey = `${filter}|${ramo}`;
+  // Reset pagination when any filter or query changes — adjust state during
+  // render pattern instead of useEffect + setState.
+  const currentKey = `${filter}|${ramo}|${query}`;
   if (currentKey !== lastReset) {
     setLastReset(currentKey);
     setVisible(PAGE_SIZE);
@@ -69,13 +70,21 @@ export function AnomaliasView() {
   }, [deps]);
 
   const filteredDeps = React.useMemo(() => {
+    const q = query.trim().toLowerCase();
     return deps
       .filter((d) => ramo === "Todos" || d.ramo === ramo)
       .filter((d) => {
         if (filter === "all") return true;
         return classifyDep(d) === filter;
+      })
+      .filter((d) => {
+        if (q.length === 0) return true;
+        return (
+          d.dependencia.toLowerCase().includes(q) ||
+          (d.ramo ?? "").toLowerCase().includes(q)
+        );
       });
-  }, [deps, filter, ramo]);
+  }, [deps, filter, ramo, query]);
 
   // National MAD: average of |obs - exp| in pp
   const nationalMad = React.useMemo(() => {
@@ -274,7 +283,27 @@ export function AnomaliasView() {
                 Ordenadas por riesgo compuesto
               </h2>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 items-center">
+              <label className="relative flex items-center w-full sm:w-[240px]">
+                <span className="sr-only">Buscar dependencia o ramo</span>
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Buscar dependencia…"
+                  className="w-full bg-cloud-whisper/5 border border-cloud-whisper/10 rounded-pill px-4 py-2 text-[12px] text-cloud-whisper placeholder:text-ash-accent focus:outline-none focus:border-cloud-whisper/30"
+                />
+                {query && (
+                  <button
+                    type="button"
+                    onClick={() => setQuery("")}
+                    aria-label="Limpiar búsqueda"
+                    className="absolute right-3 text-ash-accent hover:text-cloud-whisper text-[14px] leading-none"
+                  >
+                    ×
+                  </button>
+                )}
+              </label>
               <select
                 value={ramo}
                 onChange={(e) => setRamo(e.target.value)}
