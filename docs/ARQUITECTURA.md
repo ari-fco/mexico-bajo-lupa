@@ -1,6 +1,6 @@
 # Arquitectura · México Bajo Lupa
 
-Documentación técnica de cómo viajan los datos desde fuentes oficiales hasta el navegador del usuario, y cómo se compone la aplicación. Stack actual: **Next.js 16** (App Router, build estático), **Tailwind v4**, **MapLibre GL** para choropleths, **Recharts** para series, y **Python + pandas** para el ETL. Base instalada: **6 fuentes oficiales**, **7 métricas activas** en el mapa, **32 estados** prerenderizados, **200+ dependencias federales** analizadas con Benford.
+Documentación técnica de cómo viajan los datos desde fuentes oficiales hasta el navegador del usuario, y cómo se compone la aplicación. Stack actual: **Next.js 16** (App Router, build estático), **Tailwind v4**, **MapLibre GL** para choropleths, **Recharts** para series, y **Python + pandas** para el ETL. Base instalada: **7 fuentes oficiales** (SESNSP, CONAPO, INEGI, CONEVAL, ComprasMX, SHCP, SAT 69-B), **2.36M contratos** del archivo histórico CompraNet 5.0, **7 métricas activas** en el mapa, **32 estados** prerenderizados, **200+ dependencias federales** analizadas con Benford.
 
 > Convención clave del proyecto: **Parquet es el almacén canónico**, **JSON es el bridge de build** que se importa sincrónicamente en TypeScript. Toda la app es **estática**: no hay servidor de aplicación corriendo en producción.
 
@@ -18,7 +18,9 @@ flowchart TD
         INEGI[INEGI<br/>PIB estatal]
         CONEVAL[CONEVAL<br/>pobreza multidimensional]
         CMX[ComprasMX<br/>contratos federal+estatal]
+        CMXH[CompraNet 5.0<br/>archivo 2010-2022]
         SHCP[SHCP<br/>gasto federalizado]
+        SAT[SAT<br/>Listado 69-B EFOS]
     end
 
     subgraph ETL["ETL Python · etl/run_all.py"]
@@ -49,7 +51,9 @@ flowchart TD
     INEGI --> Scripts
     CONEVAL --> Scripts
     CMX --> Scripts
+    CMXH --> Scripts
     SHCP --> Scripts
+    SAT --> Scripts
 
     Scripts --> ParquetProc
     ParquetProc --> Build
@@ -76,7 +80,7 @@ flowchart TD
 
 ## Diagrama 2 · ETL pipeline
 
-`etl/run_all.py` orquesta los pasos en **orden de dependencias**: primero las fuentes crudas (SESNSP, CONAPO, INEGI, CONEVAL, SHCP, ComprasMX), después `build_metrics.py` que las cruza por `cve_ent`, y al final `export_json.py` que escupe el bridge para TypeScript. Cada script es un módulo Python independiente, importable y corrible suelto (`python etl/sesnsp.py`).
+`etl/run_all.py` orquesta los pasos en **orden de dependencias**: primero las fuentes crudas (SESNSP, CONAPO, INEGI, CONEVAL, SHCP, ComprasMX federal+estatal, CompraNet 5.0 histórico, SAT 69-B), después los builders derivados (`build_metrics.py` cruza por `cve_ent`; `build_historico_metrics.py` agrega por año y sexenio; `build_efos_metrics.py` cruza SAT × ComprasMX por RFC; `build_continuidad.py` evalúa persistencia de proveedores entre sexenios), y al final `export_json.py` que escupe el bridge para TypeScript. Cada script es un módulo Python independiente, importable y corrible suelto (`python etl/sesnsp.py`).
 
 ```mermaid
 flowchart TD
