@@ -243,40 +243,212 @@ export function HistoricoView() {
       </section>
 
       {/* Top proveedores */}
-      <section className="border-t border-cloud-whisper/8 py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="eyebrow mb-3">Captura institucional</div>
-          <h2
-            className="display tracking-tight mb-2"
-            style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}
-          >
-            Los 50 proveedores que más recibieron
-          </h2>
-          <p className="text-[13px] text-light-ash mb-8 max-w-3xl">
-            Ordenados por monto acumulado en 12 años. La columna{" "}
-            <strong className="text-cloud-whisper">Años activos</strong> mide
-            persistencia: un proveedor con 12+ años activos ha sostenido
-            relación con el Estado a lo largo de tres sexenios.
-          </p>
+      <ProveedoresHistoricoSection proveedores={proveedores} />
 
-          <div className="md:hidden text-[10px] text-ash-accent mb-2 flex items-center gap-1.5">
-            <span aria-hidden>↔</span>
-            <span>Desliza horizontalmente para ver todas las columnas</span>
+      <ContinuidadSection rows={continuidad} />
+    </>
+  );
+}
+
+type ProvHSortKey = "monto" | "contratos" | "anos" | "pct_ad" | "proveedor";
+
+function ProveedoresHistoricoSection({
+  proveedores,
+}: {
+  proveedores: ProveedorRow[];
+}) {
+  const [query, setQuery] = React.useState("");
+  const [onlyHighAd, setOnlyHighAd] = React.useState(false);
+  const [onlyPersistentes, setOnlyPersistentes] = React.useState(false);
+  const [sortKey, setSortKey] = React.useState<ProvHSortKey>("monto");
+  const [sortDir, setSortDir] = React.useState<"asc" | "desc">("desc");
+
+  const totalRaw = proveedores.length;
+
+  const filtered = React.useMemo<ProveedorRow[]>(() => {
+    const q = query.trim().toLowerCase();
+    let arr: ProveedorRow[] = proveedores;
+    if (q.length > 0) {
+      arr = arr.filter((p) => p.proveedor.toLowerCase().includes(q));
+    }
+    if (onlyHighAd) {
+      arr = arr.filter((p) => (p.pct_ad ?? 0) >= 75);
+    }
+    if (onlyPersistentes) {
+      arr = arr.filter((p) => (p.anos_activos ?? 0) >= 10);
+    }
+    const sorted = [...arr].sort((a, b) => {
+      const dir = sortDir === "asc" ? 1 : -1;
+      switch (sortKey) {
+        case "proveedor":
+          return a.proveedor.localeCompare(b.proveedor) * dir;
+        case "contratos":
+          return (a.contratos - b.contratos) * dir;
+        case "anos":
+          return ((a.anos_activos ?? 0) - (b.anos_activos ?? 0)) * dir;
+        case "pct_ad":
+          return ((a.pct_ad ?? 0) - (b.pct_ad ?? 0)) * dir;
+        case "monto":
+        default:
+          return ((a.monto_total ?? 0) - (b.monto_total ?? 0)) * dir;
+      }
+    });
+    return sorted;
+  }, [proveedores, query, onlyHighAd, onlyPersistentes, sortKey, sortDir]);
+
+  function toggleSort(key: ProvHSortKey) {
+    if (sortKey === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir(key === "proveedor" ? "asc" : "desc");
+    }
+  }
+
+  function arrow(key: ProvHSortKey) {
+    if (sortKey !== key) {
+      return <span className="text-cloud-whisper/20 ml-1">↕</span>;
+    }
+    return (
+      <span className="text-cloud-whisper ml-1">
+        {sortDir === "asc" ? "↑" : "↓"}
+      </span>
+    );
+  }
+
+  return (
+    <section className="border-t border-cloud-whisper/8 py-16 md:py-20">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="eyebrow mb-3">Captura institucional</div>
+        <h2
+          className="display tracking-tight mb-2"
+          style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}
+        >
+          Los 50 proveedores que más recibieron
+        </h2>
+        <p className="text-[13px] text-light-ash mb-6 max-w-3xl">
+          Acumulado en 12 años. La columna{" "}
+          <strong className="text-cloud-whisper">Años activos</strong> mide
+          persistencia: un proveedor con 10+ años activos ha sostenido
+          relación con el Estado a lo largo de 2-3 sexenios. Buscá por
+          nombre, filtrá por AD alta o persistentes, ordená cualquier
+          columna.
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between mb-4 flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-3 flex-wrap items-start sm:items-center">
+            <label className="relative flex items-center w-full sm:w-[280px]">
+              <span className="sr-only">Buscar proveedor</span>
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Nombre del proveedor…"
+                className="w-full bg-cloud-whisper/5 border border-cloud-whisper/10 rounded-pill px-4 py-2 text-[13px] text-cloud-whisper placeholder:text-ash-accent focus:outline-none focus:border-cloud-whisper/30"
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  aria-label="Limpiar búsqueda"
+                  className="absolute right-3 text-ash-accent hover:text-cloud-whisper text-[14px] leading-none"
+                >
+                  ×
+                </button>
+              )}
+            </label>
+
+            <label className="flex items-center gap-2 text-[12px] text-light-ash cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={onlyHighAd}
+                onChange={(e) => setOnlyHighAd(e.target.checked)}
+                className="accent-signal-alert"
+              />
+              Solo AD ≥ 75%
+            </label>
+
+            <label className="flex items-center gap-2 text-[12px] text-light-ash cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={onlyPersistentes}
+                onChange={(e) => setOnlyPersistentes(e.target.checked)}
+                className="accent-signal-warn"
+              />
+              Solo 10+ años activos
+            </label>
           </div>
-          <div className="rounded-card border border-cloud-whisper/10 overflow-x-auto">
-            <table className="w-full min-w-[760px] text-[13px]">
-              <thead className="bg-cloud-whisper/3 border-b border-cloud-whisper/8">
-                <tr className="text-left text-ash-accent">
-                  <th className="px-5 py-3 font-medium">#</th>
-                  <th className="px-5 py-3 font-medium">Proveedor</th>
-                  <th className="px-5 py-3 font-medium text-right">Contratos</th>
-                  <th className="px-5 py-3 font-medium text-right">Monto total</th>
-                  <th className="px-5 py-3 font-medium text-right">Años</th>
-                  <th className="px-5 py-3 font-medium text-right">% Adj. directa</th>
+
+          <div className="text-[11px] text-ash-accent tabular">
+            {filtered.length === totalRaw
+              ? `${fmtInt(totalRaw)} proveedores`
+              : `${fmtInt(filtered.length)} de ${fmtInt(totalRaw)} proveedores`}
+          </div>
+        </div>
+
+        <div className="md:hidden text-[10px] text-ash-accent mb-2 flex items-center gap-1.5">
+          <span aria-hidden>↔</span>
+          <span>Desliza horizontalmente para ver todas las columnas</span>
+        </div>
+
+        <div className="rounded-card border border-cloud-whisper/10 overflow-x-auto">
+          <table className="w-full min-w-[760px] text-[13px]">
+            <thead className="bg-cloud-whisper/3 border-b border-cloud-whisper/8">
+              <tr className="text-left text-ash-accent">
+                <th className="px-5 py-3 font-medium">#</th>
+                <ProvHTh
+                  label="Proveedor"
+                  active={sortKey === "proveedor"}
+                  onClick={() => toggleSort("proveedor")}
+                >
+                  Proveedor{arrow("proveedor")}
+                </ProvHTh>
+                <ProvHTh
+                  label="Contratos"
+                  align="right"
+                  active={sortKey === "contratos"}
+                  onClick={() => toggleSort("contratos")}
+                >
+                  Contratos{arrow("contratos")}
+                </ProvHTh>
+                <ProvHTh
+                  label="Monto total"
+                  align="right"
+                  active={sortKey === "monto"}
+                  onClick={() => toggleSort("monto")}
+                >
+                  Monto total{arrow("monto")}
+                </ProvHTh>
+                <ProvHTh
+                  label="Años"
+                  align="right"
+                  active={sortKey === "anos"}
+                  onClick={() => toggleSort("anos")}
+                >
+                  Años{arrow("anos")}
+                </ProvHTh>
+                <ProvHTh
+                  label="% Adj. directa"
+                  align="right"
+                  active={sortKey === "pct_ad"}
+                  onClick={() => toggleSort("pct_ad")}
+                >
+                  % Adj. directa{arrow("pct_ad")}
+                </ProvHTh>
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.length === 0 ? (
+                <tr>
+                  <td
+                    colSpan={6}
+                    className="px-5 py-10 text-center text-[13px] text-ash-accent"
+                  >
+                    Sin proveedores con los filtros actuales.
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {proveedores.map((p, i) => {
+              ) : (
+                filtered.map((p, i) => {
                   const adHigh = (p.pct_ad ?? 0) >= 75;
                   const persistente = (p.anos_activos ?? 0) >= 10;
                   return (
@@ -284,7 +456,9 @@ export function HistoricoView() {
                       key={`${p.proveedor}-${i}`}
                       className="border-b border-cloud-whisper/5 hover:bg-cloud-whisper/3"
                     >
-                      <td className="px-5 py-3 tabular text-ash-accent">{i + 1}</td>
+                      <td className="px-5 py-3 tabular text-ash-accent">
+                        {i + 1}
+                      </td>
                       <td
                         className="px-5 py-3 max-w-[300px] truncate"
                         title={p.proveedor}
@@ -300,44 +474,67 @@ export function HistoricoView() {
                           : "—"}
                       </td>
                       <td className="px-5 py-3 text-right tabular">
-                        <span
-                          className={
-                            persistente ? "text-signal-warn" : ""
-                          }
-                        >
+                        <span className={persistente ? "text-signal-warn" : ""}>
                           {p.anos_activos ?? "—"}
                         </span>
                       </td>
                       <td className="px-5 py-3 text-right tabular">
-                        <span
-                          className={
-                            adHigh ? "text-signal-alert" : ""
-                          }
-                        >
-                          {p.pct_ad !== null
-                            ? `${fmtDec(p.pct_ad)}%`
-                            : "—"}
+                        <span className={adHigh ? "text-signal-alert" : ""}>
+                          {p.pct_ad !== null ? `${fmtDec(p.pct_ad)}%` : "—"}
                         </span>
                       </td>
                     </tr>
                   );
-                })}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="text-[11px] text-ash-accent mt-4 max-w-3xl leading-relaxed">
-            <strong className="text-light-ash">Ámbar</strong> = 10+ años activos
-            (atravesando 2-3 sexenios). <strong className="text-light-ash">Rojo</strong> = ≥75% por adjudicación directa. Este ranking{" "}
-            <em>no</em> imputa irregularidad — sólo mide concentración y
-            persistencia, dos indicadores clásicos de captura institucional
-            que requieren auditoría caso por caso.
-          </p>
+                })
+              )}
+            </tbody>
+          </table>
         </div>
-      </section>
 
-      <ContinuidadSection rows={continuidad} />
-    </>
+        <p className="text-[11px] text-ash-accent mt-4 max-w-3xl leading-relaxed">
+          <strong className="text-light-ash">Ámbar</strong> = 10+ años
+          activos (atravesando 2-3 sexenios).{" "}
+          <strong className="text-light-ash">Rojo</strong> = ≥75% por
+          adjudicación directa. Este ranking <em>no</em> imputa
+          irregularidad — sólo mide concentración y persistencia, dos
+          indicadores clásicos de captura institucional que requieren
+          auditoría caso por caso.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function ProvHTh({
+  children,
+  onClick,
+  active,
+  align = "left",
+  label,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  active: boolean;
+  align?: "left" | "right";
+  label: string;
+}) {
+  return (
+    <th
+      className={`px-5 py-3 font-medium ${
+        align === "right" ? "text-right" : ""
+      }`}
+    >
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={`Ordenar por ${label}`}
+        className={`inline-flex items-center hover:text-cloud-whisper transition-colors ${
+          active ? "text-cloud-whisper" : ""
+        }`}
+      >
+        {children}
+      </button>
+    </th>
   );
 }
 
