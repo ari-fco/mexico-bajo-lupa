@@ -15,7 +15,7 @@ export default function OG() {
           color: "#ffffff",
           display: "flex",
           flexDirection: "column",
-          padding: "80px",
+          padding: "72px",
           fontFamily: "serif",
           position: "relative",
         }}
@@ -74,32 +74,71 @@ export default function OG() {
 
           <div
             style={{
-              marginTop: "40px",
-              fontSize: "26px",
+              marginTop: "36px",
+              fontSize: "24px",
               color: "#cccccc",
               fontFamily: "sans-serif",
-              maxWidth: "850px",
+              maxWidth: "920px",
               lineHeight: 1.4,
             }}
           >
-            Auditoría ciudadana de datos públicos. Cruza seguridad, economía,
-            gasto y compras del gobierno con estadística forense.
+            Mapa interactivo y análisis forense sobre datos oficiales. Benford,
+            adjudicación directa y cruce SAT × ComprasMX por entidad.
           </div>
         </div>
 
         <div
           style={{
             position: "absolute",
-            top: "80px",
-            right: "80px",
+            top: "72px",
+            right: "72px",
             display: "flex",
-            gap: "12px",
-            fontSize: "16px",
-            color: "#999999",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: "8px",
+            fontFamily: "sans-serif",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "56px",
+              lineHeight: 1,
+              color: "#d8443a",
+              fontWeight: 500,
+              fontFamily: "serif",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            72.3%
+          </div>
+          <div
+            style={{
+              fontSize: "16px",
+              color: "#999999",
+              maxWidth: "320px",
+              textAlign: "right",
+              lineHeight: 1.4,
+              fontFamily: "sans-serif",
+            }}
+          >
+            del gasto federal APF se ejecuta por adjudicación directa
+          </div>
+        </div>
+
+        <div
+          style={{
+            position: "absolute",
+            bottom: "32px",
+            left: "72px",
+            right: "72px",
+            display: "flex",
+            gap: "14px",
+            fontSize: "14px",
+            color: "#666666",
             fontFamily: "sans-serif",
             flexWrap: "wrap",
-            justifyContent: "flex-end",
-            maxWidth: "560px",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            paddingTop: "16px",
           }}
         >
           <span>SESNSP</span>
@@ -113,6 +152,8 @@ export default function OG() {
           <span>CONAPO</span>
           <span>·</span>
           <span>ComprasMX</span>
+          <span>·</span>
+          <span>SAT 69-B</span>
         </div>
       </div>
     ),
