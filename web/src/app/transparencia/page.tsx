@@ -108,7 +108,9 @@ export default function TransparenciaPage() {
                   Cuenta Pública SHCP
                 </strong>{" "}
                 con desagregado por entidad federativa en formato consistente.
-                Ya está en V3 del roadmap general.
+                Las transferencias federales ya están integradas en /mapa y
+                /estado; falta la cuenta pública completa para cerrar el
+                cuadro de transparencia presupuestal.
               </li>
             </ul>
           </div>
