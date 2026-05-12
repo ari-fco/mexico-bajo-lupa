@@ -5,22 +5,27 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "México Bajo Lupa",
     short_name: "MX Bajo Lupa",
     description:
-      "Auditoría ciudadana de datos públicos mexicanos. Mapa interactivo y análisis estadístico.",
+      "Auditoría ciudadana de datos públicos mexicanos. Mapa interactivo y análisis estadístico forense.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",
     theme_color: "#000000",
     lang: "es-MX",
+    dir: "ltr",
+    categories: ["government", "news", "education"],
+    orientation: "any",
     icons: [
       {
         src: "/icon.svg",
         sizes: "any",
         type: "image/svg+xml",
+        purpose: "any",
       },
       {
         src: "/apple-icon.svg",
         sizes: "180x180",
         type: "image/svg+xml",
+        purpose: "any",
       },
     ],
   };
