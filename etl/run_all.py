@@ -19,6 +19,7 @@ from common import setup_logging  # noqa: E402
 log = setup_logging("etl")
 
 STEPS = [
+    # Source ingestion
     "sesnsp",
     "inegi_poblacion",
     "inegi_pib",
@@ -26,8 +27,13 @@ STEPS = [
     "shcp_gasto",
     "comprasmx",
     "comprasmx_historico",
+    "sat_efos",
+    # Derived metrics (depend on the sources above)
     "build_metrics",
     "build_historico_metrics",
+    "build_efos_metrics",
+    "build_continuidad",
+    # Bridge to the frontend
     "export_json",
 ]
 
