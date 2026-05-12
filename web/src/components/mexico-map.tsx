@@ -3,7 +3,8 @@
 import * as React from "react";
 import maplibregl, {
   type Map as MapLibreMap,
-  type MapMouseEvent,
+  type MapLayerMouseEvent,
+  type MapLayerTouchEvent,
   type StyleSpecification,
 } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -193,7 +194,7 @@ export function MexicoMap({
       });
 
       if (interactive) {
-        map.on("mousemove", "estados-fill", (e: MapMouseEvent) => {
+        map.on("mousemove", "estados-fill", (e: MapLayerMouseEvent) => {
           map.getCanvas().style.cursor = "pointer";
           const f = e.features?.[0];
           if (!f) return;
@@ -224,7 +225,7 @@ export function MexicoMap({
           onHover?.(null);
         });
 
-        map.on("click", "estados-fill", (e) => {
+        map.on("click", "estados-fill", (e: MapLayerMouseEvent) => {
           const f = e.features?.[0];
           if (!f) return;
           const cve = String(f.id);
@@ -233,7 +234,7 @@ export function MexicoMap({
 
         // Touch: en mobile sin mouse, un tap fija el estado y dispara hover
         // simultáneamente para que el dossier lateral se llene al primer toque.
-        map.on("touchstart", "estados-fill", (e) => {
+        map.on("touchstart", "estados-fill", (e: MapLayerTouchEvent) => {
           const f = e.features?.[0];
           if (!f) return;
           const cve = String(f.id);
