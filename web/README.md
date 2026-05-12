@@ -65,12 +65,13 @@ fully static and can ship to any CDN.
 ## Lint and types
 
 ```powershell
-npx tsc --noEmit
-npx eslint src/
+npm run lint        # eslint over src/
+npm run typecheck   # tsc --noEmit
+npm run check       # both, sequential
 ```
 
-Both should be clean. CI/Vercel build will fail on any lint error or
-TypeScript error.
+All three should be clean. CI/Vercel build will fail on any lint
+error or TypeScript error.
 
 ## Environment
 
