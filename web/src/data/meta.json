@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-05-08T13:57:19+00:00",
+  "sesnsp": {
+    "first_year": 2015,
+    "last_year": 2025,
+    "last_month": 12,
+    "last_period": "2025-12",
+    "source": "lapanquecita/incidencia-delictiva (mirror SESNSP)"
+  },
+  "comprasmx": {
+    "years": [
+      2024,
+      2025
+    ],
+    "first_year": 2024,
+    "last_year": 2025,
+    "n_contratos": 235392
+  },
+  "conapo": null,
+  "inegi_pib": {
+    "first_year": 2023,
+    "last_year": 2024,
+    "source": "INEGI · PIBE comunicado de prensa (precios 2018)"
+  },
+  "coneval": {
+    "first_year": 2016,
+    "last_year": 2022,
+    "source": "CONEVAL · Anexo estadístico medición multidimensional"
+  },
+  "shcp": {
+    "first_year": 2011,
+    "last_year": 2025,
+    "source": "SHCP · Transferencias federales a entidades federativas (datos.gob.mx)"
+  }
+}

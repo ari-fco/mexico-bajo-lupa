@@ -1,0 +1,47 @@
+[
+  {
+    "digito": 1,
+    "esperado": 30.103,
+    "observado": 30.095
+  },
+  {
+    "digito": 2,
+    "esperado": 17.609,
+    "observado": 17.192
+  },
+  {
+    "digito": 3,
+    "esperado": 12.494,
+    "observado": 12.252
+  },
+  {
+    "digito": 4,
+    "esperado": 9.691,
+    "observado": 9.925
+  },
+  {
+    "digito": 5,
+    "esperado": 7.918,
+    "observado": 7.694
+  },
+  {
+    "digito": 6,
+    "esperado": 6.695,
+    "observado": 7.101
+  },
+  {
+    "digito": 7,
+    "esperado": 5.799,
+    "observado": 5.772
+  },
+  {
+    "digito": 8,
+    "esperado": 5.115,
+    "observado": 5.441
+  },
+  {
+    "digito": 9,
+    "esperado": 4.576,
+    "observado": 4.528
+  }
+]
