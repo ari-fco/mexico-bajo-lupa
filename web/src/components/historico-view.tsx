@@ -89,7 +89,7 @@ export function HistoricoView() {
           <KPI
             label="Contratos analizados"
             value={fmtCompact(totalContratos)}
-            hint="2010 → 2024 · CompraNet 5.0"
+            hint="2010 → 2022 · CompraNet 5.0"
           />
           <KPI
             label="Monto acumulado"
