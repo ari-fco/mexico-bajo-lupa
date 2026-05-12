@@ -122,9 +122,9 @@ const METRICS: MetricDef[] = [
   },
 ];
 
-// V3+ metrics — pendientes de ETL (transparencia INAI sigue en roadmap)
+// V5 metrics — pendientes de fuente integrable (ver /transparencia)
 const ROADMAP_METRICS = [
-  { label: "Transparencia %", group: "Gobierno", v: "V3" },
+  { label: "Transparencia %", group: "Gobierno", v: "V5" },
 ] as const;
 
 export function MapaExplorer() {
@@ -236,17 +236,18 @@ export function MapaExplorer() {
               </button>
             ))}
             {ROADMAP_METRICS.map((r) => (
-              <span
+              <a
                 key={r.label}
-                title={`Disponible en ${r.v}`}
-                className="rounded-pill px-4 py-1.5 text-[12px] border border-dashed border-cloud-whisper/15 text-ash-accent/60 cursor-default"
+                href="/transparencia"
+                title={`Disponible en ${r.v} — ver por qué`}
+                className="rounded-pill px-4 py-1.5 text-[12px] border border-dashed border-cloud-whisper/15 text-ash-accent/60 hover:text-cloud-whisper hover:border-cloud-whisper/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cloud-whisper/30 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight-void"
               >
                 <span className="mr-2 uppercase tracking-wider text-[9px]">
                   {r.group}
                 </span>
                 {r.label}
                 <span className="ml-2 text-[9px] tracking-wider">{r.v}</span>
-              </span>
+              </a>
             ))}
           </div>
         </div>
