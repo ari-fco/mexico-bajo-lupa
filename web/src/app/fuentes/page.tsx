@@ -185,7 +185,7 @@ export default function FuentesPage() {
                 <a
                   href={s.url}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="text-light-ash underline decoration-1 underline-offset-4 hover:text-cloud-whisper truncate"
                 >
                   {new URL(s.url).hostname.replace("www.", "")} →

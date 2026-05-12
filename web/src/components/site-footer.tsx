@@ -92,7 +92,7 @@ export function SiteFooter() {
               <a
                 href="https://github.com/ari-fco/mexico-bajo-lupa"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="hover:text-cloud-whisper underline decoration-1 underline-offset-4"
               >
                 Código en GitHub →

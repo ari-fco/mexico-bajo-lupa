@@ -222,7 +222,7 @@ export function EfosView() {
           <a
             href={k.fuente_url}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="text-light-ash underline decoration-1 underline-offset-4 hover:text-cloud-whisper"
           >
             SAT · Listado completo Art. 69-B CFF (CSV oficial)

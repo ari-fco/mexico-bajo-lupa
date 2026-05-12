@@ -88,7 +88,7 @@ export function ButtonLink({
       href={href}
       className={classes({ variant, size, className })}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       {...rest}
     >
       {children}
