@@ -15,13 +15,6 @@ type Dependencia = (typeof efosTopDependencias)[number];
 type Lead = (typeof efosLeads)[number];
 type Breakdown = (typeof efosBreakdown)[number];
 
-const ESTATUS_LABEL: Record<string, string> = {
-  DEFINITIVO: "Definitivo",
-  PRESUNTO: "Presunto",
-  DESVIRTUADO: "Desvirtuado",
-  SENTENCIA_FAVORABLE: "Sentencia favorable",
-};
-
 function estatusBadge(estatus: string) {
   if (estatus === "DEFINITIVO") return <Badge variant="alert">Definitivo</Badge>;
   if (estatus === "PRESUNTO") return <Badge variant="warn">Presunto</Badge>;
@@ -171,187 +164,12 @@ export function EfosView() {
       )}
 
       {/* Top proveedores */}
-      <section className="py-16 md:py-20 border-b border-cloud-whisper/8">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-            <div>
-              <div className="eyebrow mb-3">Proveedores señalados</div>
-              <h2 className="display text-[36px] md:text-[48px] tracking-tight">
-                {proveedores.length > 0
-                  ? "Quién recibe contratos del Estado"
-                  : "Sin coincidencias"}
-              </h2>
-              <p className="text-[13px] text-light-ash mt-3 max-w-2xl">
-                RFCs que aparecen tanto en la lista SAT 69-B como en
-                ComprasMX federal. Ordenados por número de contratos. La fecha
-                de presunción es cuando el SAT publicó la primera resolución
-                contra ese RFC.
-              </p>
-            </div>
-          </div>
+      <ProveedoresSection proveedores={proveedores} />
 
-          {proveedores.length === 0 ? (
-            <EmptyTable msg="No hay coincidencias en este corte." />
-          ) : (
-            <>
-              <div className="md:hidden text-[10px] text-ash-accent mb-2 flex items-center gap-1.5">
-                <span aria-hidden>↔</span>
-                <span>Desliza horizontalmente para ver todas las columnas</span>
-              </div>
-              <div className="rounded-card border border-cloud-whisper/10 overflow-x-auto">
-                <table className="w-full min-w-[820px] text-[13px]">
-                  <thead className="bg-cloud-whisper/3 border-b border-cloud-whisper/8">
-                    <tr className="text-left text-ash-accent">
-                      <th className="px-5 py-3 font-medium">RFC</th>
-                      <th className="px-5 py-3 font-medium">Contribuyente</th>
-                      <th className="px-5 py-3 font-medium">Estatus SAT</th>
-                      <th className="px-5 py-3 font-medium text-right">
-                        Contratos
-                      </th>
-                      <th className="px-5 py-3 font-medium text-right">
-                        Monto total
-                      </th>
-                      <th className="px-5 py-3 font-medium">Presunción</th>
-                      <th className="px-5 py-3 font-medium">Último contrato</th>
-                      <th className="px-5 py-3 font-medium text-right">
-                        Posteriores
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {proveedores.map((p, i) => (
-                      <tr
-                        key={`${p.rfc}-${p.estatus}-${i}`}
-                        className="border-b border-cloud-whisper/5 hover:bg-cloud-whisper/3 align-top"
-                      >
-                        <td className="px-5 py-3 tabular text-cloud-whisper">
-                          {p.rfc}
-                        </td>
-                        <td className="px-5 py-3 max-w-[280px]">
-                          <span className="block truncate" title={p.contribuyente}>
-                            {p.contribuyente}
-                          </span>
-                        </td>
-                        <td className="px-5 py-3">{estatusBadge(p.estatus)}</td>
-                        <td className="px-5 py-3 text-right tabular">
-                          {fmtInt(p.n_contratos)}
-                        </td>
-                        <td className="px-5 py-3 text-right tabular">
-                          {fmtCompact(p.monto_total)}
-                        </td>
-                        <td className="px-5 py-3 text-light-ash">
-                          {fmtFecha(p.fecha_presuncion)}
-                        </td>
-                        <td className="px-5 py-3 text-light-ash">
-                          {fmtFecha(p.ultimo_contrato)}
-                        </td>
-                        <td className="px-5 py-3 text-right tabular">
-                          {p.n_posteriores_amplio > 0 ? (
-                            <span className="text-signal-alert">
-                              {fmtInt(p.n_posteriores_amplio)}
-                            </span>
-                          ) : (
-                            <span className="text-ash-accent">0</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-[11px] text-ash-accent mt-4 max-w-2xl">
-                <strong className="text-light-ash">&ldquo;Posteriores&rdquo;:</strong>{" "}
-                contratos firmados después de que el SAT publicara la
-                presunción. La señal más fuerte. Cuando la fecha de firma del
-                contrato no fue publicada por ComprasMX (~57% del corpus
-                federal), usamos el año del contrato como señal débil — la
-                tabla cuenta ambos casos.
-              </p>
-            </>
-          )}
-        </div>
-      </section>
+      {/* /Top proveedores */}
 
       {/* Top dependencias */}
-      <section className="py-16 md:py-20 border-b border-cloud-whisper/8">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-            <div>
-              <div className="eyebrow mb-3">Dependencias expuestas</div>
-              <h2 className="display text-[36px] md:text-[48px] tracking-tight">
-                Quién firma con presuntos EFOS
-              </h2>
-              <p className="text-[13px] text-light-ash mt-3 max-w-2xl">
-                Instituciones del gobierno federal con contratos a RFCs
-                listados por SAT bajo Art. 69-B CFF. Ordenadas por número de
-                contratos.
-              </p>
-            </div>
-          </div>
-
-          {dependencias.length === 0 ? (
-            <EmptyTable msg="No hay dependencias con cruce en este corte." />
-          ) : (
-            <div className="rounded-card border border-cloud-whisper/10 overflow-x-auto">
-              <table className="w-full min-w-[760px] text-[13px]">
-                <thead className="bg-cloud-whisper/3 border-b border-cloud-whisper/8">
-                  <tr className="text-left text-ash-accent">
-                    <th className="px-5 py-3 font-medium">Dependencia</th>
-                    <th className="px-5 py-3 font-medium">Ramo</th>
-                    <th className="px-5 py-3 font-medium text-right">
-                      Contratos
-                    </th>
-                    <th className="px-5 py-3 font-medium text-right">
-                      Definitivos
-                    </th>
-                    <th className="px-5 py-3 font-medium text-right">
-                      RFCs únicos
-                    </th>
-                    <th className="px-5 py-3 font-medium text-right">
-                      Monto total
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {dependencias.map((d, i) => (
-                    <tr
-                      key={`${d.institucion}-${i}`}
-                      className="border-b border-cloud-whisper/5 hover:bg-cloud-whisper/3"
-                    >
-                      <td className="px-5 py-3 max-w-[340px]">
-                        <span className="block truncate" title={d.institucion}>
-                          {d.institucion}
-                        </span>
-                      </td>
-                      <td className="px-5 py-3 text-light-ash truncate max-w-[200px]">
-                        {d.ramo ?? "—"}
-                      </td>
-                      <td className="px-5 py-3 text-right tabular">
-                        {fmtInt(d.n_contratos)}
-                      </td>
-                      <td className="px-5 py-3 text-right tabular">
-                        {d.n_definitivos > 0 ? (
-                          <span className="text-signal-alert">
-                            {fmtInt(d.n_definitivos)}
-                          </span>
-                        ) : (
-                          <span className="text-ash-accent">0</span>
-                        )}
-                      </td>
-                      <td className="px-5 py-3 text-right tabular">
-                        {fmtInt(d.n_rfcs_efos)}
-                      </td>
-                      <td className="px-5 py-3 text-right tabular">
-                        {fmtCompact(d.monto_total)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
-      </section>
+      <DependenciasSection dependencias={dependencias} />
 
       {/* Headline cases */}
       {leads.length > 0 && (
@@ -519,5 +337,560 @@ function EmptyTable({ msg }: { msg: string }) {
     <div className="rounded-card border border-cloud-whisper/10 p-8 text-center text-[13px] text-ash-accent">
       {msg}
     </div>
+  );
+}
+
+type ProvSortKey =
+  | "contratos"
+  | "monto"
+  | "posteriores"
+  | "rfc"
+  | "presuncion"
+  | "ultimo";
+
+type ProvEstatusFilter = "ALL" | "DEFINITIVO" | "PRESUNTO" | "DESVIRTUADO" | "SENTENCIA_FAVORABLE";
+
+function ProveedoresSection({ proveedores }: { proveedores: Proveedor[] }) {
+  const [query, setQuery] = React.useState("");
+  const [estatusFilter, setEstatusFilter] = React.useState<ProvEstatusFilter>("ALL");
+  const [onlyPosteriores, setOnlyPosteriores] = React.useState(false);
+  const [sortKey, setSortKey] = React.useState<ProvSortKey>("contratos");
+  const [sortDir, setSortDir] = React.useState<"asc" | "desc">("desc");
+
+  const totalRaw = proveedores.length;
+
+  const filtered = React.useMemo(() => {
+    const q = query.trim().toLowerCase();
+    let arr = proveedores;
+    if (estatusFilter !== "ALL") {
+      arr = arr.filter((p) => p.estatus === estatusFilter);
+    }
+    if (onlyPosteriores) {
+      arr = arr.filter((p) => p.n_posteriores_amplio > 0);
+    }
+    if (q.length > 0) {
+      arr = arr.filter(
+        (p) =>
+          p.rfc.toLowerCase().includes(q) ||
+          p.contribuyente.toLowerCase().includes(q),
+      );
+    }
+    const sorted = [...arr].sort((a, b) => {
+      const dir = sortDir === "asc" ? 1 : -1;
+      switch (sortKey) {
+        case "rfc":
+          return a.rfc.localeCompare(b.rfc) * dir;
+        case "monto":
+          return (a.monto_total - b.monto_total) * dir;
+        case "posteriores":
+          return (a.n_posteriores_amplio - b.n_posteriores_amplio) * dir;
+        case "presuncion": {
+          const av = a.fecha_presuncion ?? "";
+          const bv = b.fecha_presuncion ?? "";
+          return av.localeCompare(bv) * dir;
+        }
+        case "ultimo": {
+          const av = a.ultimo_contrato ?? "";
+          const bv = b.ultimo_contrato ?? "";
+          return av.localeCompare(bv) * dir;
+        }
+        case "contratos":
+        default:
+          return (a.n_contratos - b.n_contratos) * dir;
+      }
+    });
+    return sorted;
+  }, [proveedores, query, estatusFilter, onlyPosteriores, sortKey, sortDir]);
+
+  function toggleSort(key: ProvSortKey) {
+    if (sortKey === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir(
+        key === "rfc" || key === "presuncion" || key === "ultimo" ? "asc" : "desc",
+      );
+    }
+  }
+
+  function arrow(key: ProvSortKey) {
+    if (sortKey !== key) {
+      return <span className="text-cloud-whisper/20 ml-1">↕</span>;
+    }
+    return (
+      <span className="text-cloud-whisper ml-1">
+        {sortDir === "asc" ? "↑" : "↓"}
+      </span>
+    );
+  }
+
+  return (
+    <section className="py-16 md:py-20 border-b border-cloud-whisper/8">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div>
+            <div className="eyebrow mb-3">Proveedores señalados</div>
+            <h2 className="display text-[36px] md:text-[48px] tracking-tight">
+              {totalRaw > 0
+                ? "Quién recibe contratos del Estado"
+                : "Sin coincidencias"}
+            </h2>
+            <p className="text-[13px] text-light-ash mt-3 max-w-2xl">
+              RFCs que aparecen tanto en la lista SAT 69-B como en ComprasMX
+              federal. Buscá por RFC o razón social, filtrá por estatus, y
+              ordená cualquier columna. La fecha de presunción es cuando el
+              SAT publicó la primera resolución contra ese RFC.
+            </p>
+          </div>
+        </div>
+
+        {totalRaw === 0 ? (
+          <EmptyTable msg="No hay coincidencias en este corte." />
+        ) : (
+          <>
+            {/* Controls */}
+            <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between mb-4 flex-wrap">
+              <div className="flex flex-col sm:flex-row gap-3 flex-wrap items-start sm:items-center">
+                <label className="relative flex items-center w-full sm:w-[280px]">
+                  <span className="sr-only">Buscar por RFC o contribuyente</span>
+                  <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="RFC o razón social…"
+                    className="w-full bg-cloud-whisper/5 border border-cloud-whisper/10 rounded-pill px-4 py-2 text-[13px] text-cloud-whisper placeholder:text-ash-accent focus:outline-none focus:border-cloud-whisper/30"
+                  />
+                  {query && (
+                    <button
+                      type="button"
+                      onClick={() => setQuery("")}
+                      aria-label="Limpiar búsqueda"
+                      className="absolute right-3 text-ash-accent hover:text-cloud-whisper text-[14px] leading-none"
+                    >
+                      ×
+                    </button>
+                  )}
+                </label>
+
+                <div className="flex items-center gap-1 text-[12px] bg-cloud-whisper/3 border border-cloud-whisper/8 rounded-pill p-1">
+                  {(
+                    [
+                      ["ALL", "Todos"],
+                      ["DEFINITIVO", "Definitivos"],
+                      ["PRESUNTO", "Presuntos"],
+                      ["DESVIRTUADO", "Desvirtuados"],
+                      ["SENTENCIA_FAVORABLE", "S. favorable"],
+                    ] as const
+                  ).map(([key, label]) => (
+                    <button
+                      key={key}
+                      type="button"
+                      onClick={() => setEstatusFilter(key)}
+                      className={`px-3 py-1 rounded-pill transition-colors ${
+                        estatusFilter === key
+                          ? "bg-cloud-whisper text-midnight-void"
+                          : "text-light-ash hover:text-cloud-whisper"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+
+                <label className="flex items-center gap-2 text-[12px] text-light-ash cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={onlyPosteriores}
+                    onChange={(e) => setOnlyPosteriores(e.target.checked)}
+                    className="accent-signal-alert"
+                  />
+                  Solo con contratos posteriores
+                </label>
+              </div>
+
+              <div className="text-[11px] text-ash-accent tabular">
+                {filtered.length === totalRaw
+                  ? `${fmtInt(totalRaw)} proveedores`
+                  : `${fmtInt(filtered.length)} de ${fmtInt(totalRaw)} proveedores`}
+              </div>
+            </div>
+
+            <div className="md:hidden text-[10px] text-ash-accent mb-2 flex items-center gap-1.5">
+              <span aria-hidden>↔</span>
+              <span>Desliza horizontalmente para ver todas las columnas</span>
+            </div>
+
+            <div className="rounded-card border border-cloud-whisper/10 overflow-x-auto">
+              <table className="w-full min-w-[820px] text-[13px]">
+                <thead className="bg-cloud-whisper/3 border-b border-cloud-whisper/8">
+                  <tr className="text-left text-ash-accent">
+                    <SortableTh
+                      label="RFC"
+                      active={sortKey === "rfc"}
+                      onClick={() => toggleSort("rfc")}
+                    >
+                      RFC{arrow("rfc")}
+                    </SortableTh>
+                    <th className="px-5 py-3 font-medium">Contribuyente</th>
+                    <th className="px-5 py-3 font-medium">Estatus SAT</th>
+                    <SortableTh
+                      label="Contratos"
+                      align="right"
+                      active={sortKey === "contratos"}
+                      onClick={() => toggleSort("contratos")}
+                    >
+                      Contratos{arrow("contratos")}
+                    </SortableTh>
+                    <SortableTh
+                      label="Monto total"
+                      align="right"
+                      active={sortKey === "monto"}
+                      onClick={() => toggleSort("monto")}
+                    >
+                      Monto total{arrow("monto")}
+                    </SortableTh>
+                    <SortableTh
+                      label="Presunción"
+                      active={sortKey === "presuncion"}
+                      onClick={() => toggleSort("presuncion")}
+                    >
+                      Presunción{arrow("presuncion")}
+                    </SortableTh>
+                    <SortableTh
+                      label="Último contrato"
+                      active={sortKey === "ultimo"}
+                      onClick={() => toggleSort("ultimo")}
+                    >
+                      Último contrato{arrow("ultimo")}
+                    </SortableTh>
+                    <SortableTh
+                      label="Posteriores"
+                      align="right"
+                      active={sortKey === "posteriores"}
+                      onClick={() => toggleSort("posteriores")}
+                    >
+                      Posteriores{arrow("posteriores")}
+                    </SortableTh>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filtered.length === 0 ? (
+                    <tr>
+                      <td
+                        colSpan={8}
+                        className="px-5 py-10 text-center text-[13px] text-ash-accent"
+                      >
+                        Sin resultados con los filtros actuales.
+                      </td>
+                    </tr>
+                  ) : (
+                    filtered.map((p, i) => (
+                      <tr
+                        key={`${p.rfc}-${p.estatus}-${i}`}
+                        className="border-b border-cloud-whisper/5 hover:bg-cloud-whisper/3 align-top"
+                      >
+                        <td className="px-5 py-3 tabular text-cloud-whisper">
+                          {p.rfc}
+                        </td>
+                        <td className="px-5 py-3 max-w-[280px]">
+                          <span className="block truncate" title={p.contribuyente}>
+                            {p.contribuyente}
+                          </span>
+                        </td>
+                        <td className="px-5 py-3">{estatusBadge(p.estatus)}</td>
+                        <td className="px-5 py-3 text-right tabular">
+                          {fmtInt(p.n_contratos)}
+                        </td>
+                        <td className="px-5 py-3 text-right tabular">
+                          {fmtCompact(p.monto_total)}
+                        </td>
+                        <td className="px-5 py-3 text-light-ash">
+                          {fmtFecha(p.fecha_presuncion)}
+                        </td>
+                        <td className="px-5 py-3 text-light-ash">
+                          {fmtFecha(p.ultimo_contrato)}
+                        </td>
+                        <td className="px-5 py-3 text-right tabular">
+                          {p.n_posteriores_amplio > 0 ? (
+                            <span className="text-signal-alert">
+                              {fmtInt(p.n_posteriores_amplio)}
+                            </span>
+                          ) : (
+                            <span className="text-ash-accent">0</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[11px] text-ash-accent mt-4 max-w-2xl">
+              <strong className="text-light-ash">&ldquo;Posteriores&rdquo;:</strong>{" "}
+              contratos firmados después de que el SAT publicara la presunción.
+              La señal más fuerte. Cuando la fecha de firma del contrato no fue
+              publicada por ComprasMX (~57% del corpus federal), usamos el año
+              del contrato como señal débil — la tabla cuenta ambos casos.
+            </p>
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
+
+type DepSortKey = "contratos" | "monto" | "definitivos" | "rfcs" | "institucion";
+
+function DependenciasSection({ dependencias }: { dependencias: Dependencia[] }) {
+  const [query, setQuery] = React.useState("");
+  const [onlyDefinitivos, setOnlyDefinitivos] = React.useState(false);
+  const [sortKey, setSortKey] = React.useState<DepSortKey>("contratos");
+  const [sortDir, setSortDir] = React.useState<"asc" | "desc">("desc");
+
+  const totalRaw = dependencias.length;
+
+  const filtered = React.useMemo(() => {
+    const q = query.trim().toLowerCase();
+    let arr = dependencias;
+    if (onlyDefinitivos) {
+      arr = arr.filter((d) => d.n_definitivos > 0);
+    }
+    if (q.length > 0) {
+      arr = arr.filter(
+        (d) =>
+          d.institucion.toLowerCase().includes(q) ||
+          (d.ramo ?? "").toLowerCase().includes(q),
+      );
+    }
+    const sorted = [...arr].sort((a, b) => {
+      const dir = sortDir === "asc" ? 1 : -1;
+      switch (sortKey) {
+        case "institucion":
+          return a.institucion.localeCompare(b.institucion) * dir;
+        case "monto":
+          return (a.monto_total - b.monto_total) * dir;
+        case "definitivos":
+          return (a.n_definitivos - b.n_definitivos) * dir;
+        case "rfcs":
+          return (a.n_rfcs_efos - b.n_rfcs_efos) * dir;
+        case "contratos":
+        default:
+          return (a.n_contratos - b.n_contratos) * dir;
+      }
+    });
+    return sorted;
+  }, [dependencias, query, onlyDefinitivos, sortKey, sortDir]);
+
+  function toggleSort(key: DepSortKey) {
+    if (sortKey === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir(key === "institucion" ? "asc" : "desc");
+    }
+  }
+
+  function arrow(key: DepSortKey) {
+    if (sortKey !== key) {
+      return <span className="text-cloud-whisper/20 ml-1">↕</span>;
+    }
+    return (
+      <span className="text-cloud-whisper ml-1">
+        {sortDir === "asc" ? "↑" : "↓"}
+      </span>
+    );
+  }
+
+  return (
+    <section className="py-16 md:py-20 border-b border-cloud-whisper/8">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div>
+            <div className="eyebrow mb-3">Dependencias expuestas</div>
+            <h2 className="display text-[36px] md:text-[48px] tracking-tight">
+              Quién firma con presuntos EFOS
+            </h2>
+            <p className="text-[13px] text-light-ash mt-3 max-w-2xl">
+              Instituciones del gobierno federal con contratos a RFCs listados
+              por SAT bajo Art. 69-B CFF. Buscá por nombre o ramo, filtrá las
+              que firmaron con Definitivos, y ordená por cualquier columna.
+            </p>
+          </div>
+        </div>
+
+        {totalRaw === 0 ? (
+          <EmptyTable msg="No hay dependencias con cruce en este corte." />
+        ) : (
+          <>
+            <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between mb-4 flex-wrap">
+              <div className="flex flex-col sm:flex-row gap-3 flex-wrap items-start sm:items-center">
+                <label className="relative flex items-center w-full sm:w-[320px]">
+                  <span className="sr-only">Buscar dependencia o ramo</span>
+                  <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Dependencia o ramo…"
+                    className="w-full bg-cloud-whisper/5 border border-cloud-whisper/10 rounded-pill px-4 py-2 text-[13px] text-cloud-whisper placeholder:text-ash-accent focus:outline-none focus:border-cloud-whisper/30"
+                  />
+                  {query && (
+                    <button
+                      type="button"
+                      onClick={() => setQuery("")}
+                      aria-label="Limpiar búsqueda"
+                      className="absolute right-3 text-ash-accent hover:text-cloud-whisper text-[14px] leading-none"
+                    >
+                      ×
+                    </button>
+                  )}
+                </label>
+
+                <label className="flex items-center gap-2 text-[12px] text-light-ash cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={onlyDefinitivos}
+                    onChange={(e) => setOnlyDefinitivos(e.target.checked)}
+                    className="accent-signal-alert"
+                  />
+                  Solo con EFOS Definitivos
+                </label>
+              </div>
+
+              <div className="text-[11px] text-ash-accent tabular">
+                {filtered.length === totalRaw
+                  ? `${fmtInt(totalRaw)} dependencias`
+                  : `${fmtInt(filtered.length)} de ${fmtInt(totalRaw)} dependencias`}
+              </div>
+            </div>
+
+            <div className="rounded-card border border-cloud-whisper/10 overflow-x-auto">
+              <table className="w-full min-w-[760px] text-[13px]">
+                <thead className="bg-cloud-whisper/3 border-b border-cloud-whisper/8">
+                  <tr className="text-left text-ash-accent">
+                    <SortableTh
+                      label="Dependencia"
+                      active={sortKey === "institucion"}
+                      onClick={() => toggleSort("institucion")}
+                    >
+                      Dependencia{arrow("institucion")}
+                    </SortableTh>
+                    <th className="px-5 py-3 font-medium">Ramo</th>
+                    <SortableTh
+                      label="Contratos"
+                      align="right"
+                      active={sortKey === "contratos"}
+                      onClick={() => toggleSort("contratos")}
+                    >
+                      Contratos{arrow("contratos")}
+                    </SortableTh>
+                    <SortableTh
+                      label="Definitivos"
+                      align="right"
+                      active={sortKey === "definitivos"}
+                      onClick={() => toggleSort("definitivos")}
+                    >
+                      Definitivos{arrow("definitivos")}
+                    </SortableTh>
+                    <SortableTh
+                      label="RFCs únicos"
+                      align="right"
+                      active={sortKey === "rfcs"}
+                      onClick={() => toggleSort("rfcs")}
+                    >
+                      RFCs únicos{arrow("rfcs")}
+                    </SortableTh>
+                    <SortableTh
+                      label="Monto total"
+                      align="right"
+                      active={sortKey === "monto"}
+                      onClick={() => toggleSort("monto")}
+                    >
+                      Monto total{arrow("monto")}
+                    </SortableTh>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filtered.length === 0 ? (
+                    <tr>
+                      <td
+                        colSpan={6}
+                        className="px-5 py-10 text-center text-[13px] text-ash-accent"
+                      >
+                        Sin resultados con los filtros actuales.
+                      </td>
+                    </tr>
+                  ) : (
+                    filtered.map((d, i) => (
+                      <tr
+                        key={`${d.institucion}-${i}`}
+                        className="border-b border-cloud-whisper/5 hover:bg-cloud-whisper/3"
+                      >
+                        <td className="px-5 py-3 max-w-[340px]">
+                          <span className="block truncate" title={d.institucion}>
+                            {d.institucion}
+                          </span>
+                        </td>
+                        <td className="px-5 py-3 text-light-ash truncate max-w-[200px]">
+                          {d.ramo ?? "—"}
+                        </td>
+                        <td className="px-5 py-3 text-right tabular">
+                          {fmtInt(d.n_contratos)}
+                        </td>
+                        <td className="px-5 py-3 text-right tabular">
+                          {d.n_definitivos > 0 ? (
+                            <span className="text-signal-alert">
+                              {fmtInt(d.n_definitivos)}
+                            </span>
+                          ) : (
+                            <span className="text-ash-accent">0</span>
+                          )}
+                        </td>
+                        <td className="px-5 py-3 text-right tabular">
+                          {fmtInt(d.n_rfcs_efos)}
+                        </td>
+                        <td className="px-5 py-3 text-right tabular">
+                          {fmtCompact(d.monto_total)}
+                        </td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function SortableTh({
+  children,
+  onClick,
+  active,
+  align = "left",
+  label,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  active: boolean;
+  align?: "left" | "right";
+  label: string;
+}) {
+  return (
+    <th
+      className={`px-5 py-3 font-medium ${align === "right" ? "text-right" : ""}`}
+    >
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={`Ordenar por ${label}`}
+        className={`inline-flex items-center gap-0 hover:text-cloud-whisper transition-colors ${
+          active ? "text-cloud-whisper" : ""
+        }`}
+      >
+        {children}
+      </button>
+    </th>
   );
 }
