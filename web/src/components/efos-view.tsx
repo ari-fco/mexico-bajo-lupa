@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
 import { fmtInt, fmtCompact, fmtMxn, fmtDec } from "@/lib/format";
+import { MES_ABBR } from "@/lib/data-meta";
 import efosKpis from "@/data/efos_kpis.json";
 import efosTopProveedores from "@/data/efos_top_proveedores.json";
 import efosTopDependencias from "@/data/efos_top_dependencias.json";
@@ -46,23 +47,9 @@ function fmtFecha(iso: string | null | undefined): string {
   const parts = d.split("-");
   if (parts.length !== 3) return d;
   const [y, m, dd] = parts;
-  const meses = [
-    "ene",
-    "feb",
-    "mar",
-    "abr",
-    "may",
-    "jun",
-    "jul",
-    "ago",
-    "sep",
-    "oct",
-    "nov",
-    "dic",
-  ];
   const mi = Number(m) - 1;
   if (mi < 0 || mi > 11) return d;
-  return `${Number(dd)} ${meses[mi]} ${y}`;
+  return `${Number(dd)} ${MES_ABBR[mi]} ${y}`;
 }
 
 export function EfosView() {

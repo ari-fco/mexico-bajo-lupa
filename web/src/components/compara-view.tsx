@@ -15,7 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ClientOnly } from "@/components/client-only";
 import { fmtDec, fmtInt, fmtMxn, fmtCompact } from "@/lib/format";
-import { ult12mLabel } from "@/lib/data-meta";
+import { ult12mLabel, MES_ABBR } from "@/lib/data-meta";
 import type { Estado } from "@/lib/estados";
 import type { EstadoMetrics } from "@/lib/types";
 
@@ -48,11 +48,6 @@ type Props = {
   ranges: Record<string, Range>;
   totalEstados: number;
 };
-
-const MES_ABBR = [
-  "ene", "feb", "mar", "abr", "may", "jun",
-  "jul", "ago", "sep", "oct", "nov", "dic",
-];
 
 export function ComparaView({ options, a, b, ranges, totalEstados }: Props) {
   const router = useRouter();

@@ -12,12 +12,10 @@ import {
 } from "recharts";
 import { DELITOS, type DelitoCategoria } from "@/lib/types";
 import { fmtDec, fmtInt } from "@/lib/format";
+import { MES_ABBR } from "@/lib/data-meta";
 import { ClientOnly } from "./client-only";
 
-const MESES = [
-  "ene", "feb", "mar", "abr", "may", "jun",
-  "jul", "ago", "sep", "oct", "nov", "dic",
-];
+const MESES = MES_ABBR;
 
 export type SerieRow = {
   ano: number;

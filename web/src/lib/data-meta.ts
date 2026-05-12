@@ -32,7 +32,11 @@ type Meta = {
 
 const META = metaJson as Meta;
 
-const MES_ABBR = [
+/** Short Spanish month names indexed 0..11 (ene..dic).
+ *
+ * Exported so the rest of the app shares one canonical list — avoids
+ * the four near-identical copies the codebase used to carry. */
+export const MES_ABBR = [
   "ene",
   "feb",
   "mar",
