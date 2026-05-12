@@ -5,7 +5,12 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "EFOS · Empresas señaladas que reciben contratos federales",
   description:
-    "Cruce de la lista oficial del SAT (Art. 69-B CFF) con los proveedores reales de ComprasMX. Quién factura operaciones simuladas y aún así firma con el Estado mexicano.",
+    "Cruce de la lista oficial del SAT (Art. 69-B CFF, 14,234 contribuyentes) con los proveedores reales de ComprasMX federal. Empresas que facturan operaciones simuladas y aún así firman con el Estado mexicano — incluyendo contratos posteriores a la presunción.",
+  openGraph: {
+    title: "EFOS · SAT × ComprasMX · México Bajo Lupa",
+    description:
+      "Empresas señaladas por el SAT que mantienen contratos federales. El cruce que ni el SAT ni la SFP publican lado a lado.",
+  },
 };
 
 export default function EfosPage() {

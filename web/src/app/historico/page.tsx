@@ -5,7 +5,12 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "Histórico CompraNet 2010-2022",
   description:
-    "Doce años de compras públicas federales: 2.3 millones de contratos, evolución del % adjudicación directa por sexenio, top 50 proveedores recurrentes y Benford anual.",
+    "Doce años de compras públicas federales: 2.36 millones de contratos del archivo CompraNet 5.0, evolución del % adjudicación directa por sexenio (FCH, EPN, AMLO), top 50 proveedores recurrentes y Benford anual.",
+  openGraph: {
+    title: "Histórico CompraNet · México Bajo Lupa",
+    description:
+      "12 años de compras públicas federales. Cómo evolucionó la adjudicación directa entre sexenios y qué proveedores se sostuvieron a través del tiempo.",
+  },
 };
 
 export default function HistoricoPage() {

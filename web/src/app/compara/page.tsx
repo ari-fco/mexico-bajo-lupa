@@ -29,9 +29,14 @@ export async function generateMetadata({
   const eA = resolveSlug(a, DEFAULT_A);
   const eB = resolveSlug(b, DEFAULT_B);
   const title = `${eA.nombre} vs ${eB.nombre} · Comparador`;
+  const description = `Lectura comparada entre ${eA.nombre} y ${eB.nombre}: homicidios por 100k, PIB per cápita, pobreza multidimensional, gasto federalizado y adjudicación directa estatal sobre datos oficiales.`;
   return {
     title,
-    description: `Comparación lado a lado de seguridad, economía y transparencia entre ${eA.nombre} y ${eB.nombre}.`,
+    description,
+    openGraph: {
+      title: `${eA.nombre} vs ${eB.nombre}`,
+      description,
+    },
   };
 }
 
