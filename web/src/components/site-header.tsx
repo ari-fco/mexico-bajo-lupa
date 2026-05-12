@@ -10,6 +10,7 @@ const NAV = [
   { href: "/anomalias", label: "Anomalías" },
   { href: "/efos", label: "EFOS" },
   { href: "/historico", label: "Histórico" },
+  { href: "/compara", label: "Comparar" },
   { href: "/metodologia", label: "Metodología" },
   { href: "/fuentes", label: "Fuentes" },
 ];
@@ -69,7 +70,7 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-6">
             {NAV.map((item) => {
               const active = pathname === item.href;
               return (

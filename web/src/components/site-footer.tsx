@@ -60,12 +60,18 @@ export function SiteFooter() {
             <li>SESNSP · Incidencia delictiva</li>
             <li>CONAPO · Proyecciones de población</li>
             <li>ComprasMX · Contratos federales</li>
+            <li>SAT · Listado 69-B (EFOS)</li>
             <li>INEGI · PIB estatal</li>
             <li>CONEVAL · Pobreza</li>
             <li>SHCP · Gasto federalizado</li>
             <li className="text-ash-accent">
-              INAI · IMCO
-              <span className="text-[10px] ml-1">V3+</span>
+              <Link
+                href="/transparencia"
+                className="hover:text-cloud-whisper"
+              >
+                INAI · IMCO
+                <span className="text-[10px] ml-1">V5</span>
+              </Link>
             </li>
           </ul>
         </div>
