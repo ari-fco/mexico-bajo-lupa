@@ -110,8 +110,12 @@ export default async function EstadoPage({
               </div>
             </div>
             <div className="flex flex-wrap gap-3">
-              <ButtonLink href="/mapa" variant="ghost" size="md">
-                Volver al mapa
+              <ButtonLink
+                href={`/compara?a=${slug}`}
+                variant="ghost"
+                size="md"
+              >
+                Comparar con otro estado
               </ButtonLink>
               <ButtonLink href="/anomalias" variant="primary" size="md">
                 Ver anomalías nacionales
