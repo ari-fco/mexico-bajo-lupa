@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { getSiteUrl } from "@/lib/site-url";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -19,9 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "México Bajo Lupa — Auditoría ciudadana de datos públicos",
     template: "%s · México Bajo Lupa",
