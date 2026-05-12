@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/historico`, lastModified: now, priority: 0.8, changeFrequency: "yearly" },
     { url: `${baseUrl}/metodologia`, lastModified: now, priority: 0.6, changeFrequency: "yearly" },
     { url: `${baseUrl}/fuentes`, lastModified: now, priority: 0.6, changeFrequency: "monthly" },
+    { url: `${baseUrl}/transparencia`, lastModified: now, priority: 0.5, changeFrequency: "yearly" },
   ];
 
   const estadoRoutes: MetadataRoute.Sitemap = ESTADOS.map((e) => ({

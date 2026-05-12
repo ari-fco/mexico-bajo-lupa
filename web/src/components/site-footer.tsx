@@ -26,8 +26,24 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/efos" className="text-light-ash hover:text-cloud-whisper">
+                EFOS · SAT × ComprasMX
+              </Link>
+            </li>
+            <li>
+              <Link href="/historico" className="text-light-ash hover:text-cloud-whisper">
+                Histórico CompraNet
+              </Link>
+            </li>
+            <li>
               <Link href="/metodologia" className="text-light-ash hover:text-cloud-whisper">
                 Metodología
+              </Link>
+            </li>
+            <li>
+              <Link href="/transparencia" className="text-ash-accent hover:text-cloud-whisper">
+                Transparencia
+                <span className="text-[10px] ml-1">V5</span>
               </Link>
             </li>
           </ul>
@@ -65,6 +81,16 @@ export function SiteFooter() {
               >
                 Metodología pública
               </Link>
+            </li>
+            <li>
+              <a
+                href="https://github.com/ari-fco/mexico-bajo-lupa"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-cloud-whisper underline decoration-1 underline-offset-4"
+              >
+                Código en GitHub →
+              </a>
             </li>
             <li>Sin afiliación gubernamental</li>
           </ul>
