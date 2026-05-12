@@ -134,6 +134,10 @@ Si una fuente cambia su URL o esquema, los scripts fallan **ruidosamente** con u
 
 ---
 
+## Releases
+
+Cambios entre versiones documentados en [CHANGELOG.md](CHANGELOG.md).
+
 ## Licencia
 
 [MIT](LICENSE) — Ari Francisco Flores Miranda, 2026.
