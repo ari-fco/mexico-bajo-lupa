@@ -21,7 +21,7 @@ export default function HomePage() {
           <div className="flex flex-col items-start gap-10 fade-in">
             <Badge variant="lozenge">
               <span className="h-1.5 w-1.5 rounded-full bg-signal-good" />
-              MVP V1 · Datos oficiales SESNSP + CONAPO + ComprasMX
+              V1-V4 en vivo · 7 fuentes oficiales · 2.36M contratos analizados
             </Badge>
 
             <h1
@@ -47,6 +47,29 @@ export default function HomePage() {
               <ButtonLink href="/anomalias" variant="ghost" size="lg">
                 Ver anomalías Benford
               </ButtonLink>
+            </div>
+            <div className="flex flex-wrap items-center gap-4 text-[13px] text-ash-accent">
+              <span>O salta directo a:</span>
+              <a
+                href="/efos"
+                className="text-light-ash hover:text-cloud-whisper underline decoration-1 underline-offset-4"
+              >
+                EFOS · SAT × ComprasMX
+              </a>
+              <span className="text-cloud-whisper/30">·</span>
+              <a
+                href="/historico"
+                className="text-light-ash hover:text-cloud-whisper underline decoration-1 underline-offset-4"
+              >
+                Histórico CompraNet 12 años
+              </a>
+              <span className="text-cloud-whisper/30">·</span>
+              <a
+                href="/compara"
+                className="text-light-ash hover:text-cloud-whisper underline decoration-1 underline-offset-4"
+              >
+                Comparar 2 estados
+              </a>
             </div>
           </div>
         </div>
