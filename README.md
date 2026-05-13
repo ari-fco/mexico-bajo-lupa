@@ -81,6 +81,12 @@ Fuentes oficiales ──► etl/*.py ──► data/processed/*.parquet (canóni
 
 Detalle completo en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) — 4 diagramas Mermaid + tabla de refresh por fuente.
 
+**Documentación por flujo de datos**: cada fuente y cada métrica
+derivada tiene su propio mapa conceptual (diagrama end-to-end +
+schema entrada/salida + decisiones del ETL + snippet pandas para
+verificar). Ver el índice en
+[`docs/flujos/`](docs/flujos/README.md).
+
 **Stack**
 
 | Capa | Herramienta |
