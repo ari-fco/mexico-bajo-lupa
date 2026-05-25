@@ -9,6 +9,8 @@ import {
   SESNSP_LAST_PERIOD_LABEL,
   COMPRASMX_RANGE_LABEL,
   COMPRASMX_N,
+  HISTORICO_N,
+  fmtMillones,
 } from "@/lib/data-meta";
 import { fmtCompact } from "@/lib/format";
 
@@ -21,7 +23,7 @@ export default function HomePage() {
           <div className="flex flex-col items-start gap-10 fade-in">
             <Badge variant="lozenge">
               <span className="h-1.5 w-1.5 rounded-full bg-signal-good" />
-              V1-V4 en vivo · 7 fuentes oficiales · 2.36M contratos analizados
+              V1-V4 en vivo · 7 fuentes oficiales · {fmtCompact(HISTORICO_N)} contratos analizados
             </Badge>
 
             <h1
@@ -210,7 +212,7 @@ export default function HomePage() {
               tag="V1-V4"
               status="done"
               title="Datos integrados"
-              body="SESNSP, INEGI PIB, CONEVAL pobreza, SHCP gasto federalizado, ComprasMX (federal+estatal) y 12 años de histórico CompraNet 5.0 (2.3M contratos)."
+              body={`SESNSP, INEGI PIB, CONEVAL pobreza, SHCP gasto federalizado, ComprasMX (federal+estatal) y 12 años de histórico CompraNet 5.0 (${fmtMillones(HISTORICO_N, 1)} contratos).`}
             />
             <Phase
               tag="EFOS"

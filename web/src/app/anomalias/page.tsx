@@ -1,17 +1,39 @@
 import type { Metadata } from "next";
 import { AnomaliasView } from "@/components/anomalias-view";
 import { Badge } from "@/components/ui/badge";
+import { qDependenciasRiesgo } from "@/lib/queries";
+import { COMPRASMX_N } from "@/lib/data-meta";
+import { fmtCompact } from "@/lib/format";
 
-export const metadata: Metadata = {
-  title: "Anomalías · Análisis Benford",
-  description:
-    "Test forense de Benford sobre 235k contratos federales mexicanos. 200+ dependencias APF rankeadas por MAD de Nigrini, filtrables por ramo. Las que más se alejan del corredor estadístico esperado.",
-  openGraph: {
-    title: "Anomalías Benford · México Bajo Lupa",
-    description:
-      "200+ dependencias federales rankeadas por desviación de Benford. FONACOT, Sistema Público de Radiodifusión y IABN encabezan el riesgo.",
-  },
+// Short alias para no romper el SEO description si una institución
+// se llama "INSTITUTO NACIONAL DE BELLAS ARTES Y LITERATURA" entera.
+const SHORT_ALIAS: Record<string, string> = {
+  "FONDO NACIONAL PARA EL FOMENTO DE LAS ARTESANÍAS": "FONART",
+  "SISTEMA PUBLICO DE RADIODIFUSION DEL ESTADO MEXICANO":
+    "Sistema Público de Radiodifusión",
+  "INSTITUTO DE ADMINISTRACION Y AVALUOS DE BIENES NACIONALES":
+    "INDAABIN",
 };
+
+function shortName(s: string): string {
+  return SHORT_ALIAS[s] ?? s;
+}
+
+export function generateMetadata(): Metadata {
+  const top3 = qDependenciasRiesgo()
+    .slice(0, 3)
+    .map((d) => shortName(d.dependencia))
+    .join(", ");
+  const n = fmtCompact(COMPRASMX_N);
+  return {
+    title: "Anomalías · Análisis Benford",
+    description: `Test forense de Benford sobre ${n} contratos federales mexicanos. 200+ dependencias APF rankeadas por MAD de Nigrini, filtrables por ramo. Las que más se alejan del corredor estadístico esperado.`,
+    openGraph: {
+      title: "Anomalías Benford · México Bajo Lupa",
+      description: `200+ dependencias federales rankeadas por desviación de Benford. ${top3} encabezan el riesgo.`,
+    },
+  };
+}
 
 export default function AnomaliasPage() {
   return (

@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import { HistoricoView } from "@/components/historico-view";
 import { Badge } from "@/components/ui/badge";
+import {
+  fmtMillones,
+  HISTORICO_FIRST_YEAR,
+  HISTORICO_LAST_YEAR,
+  HISTORICO_N,
+  HISTORICO_RANGE_LABEL,
+} from "@/lib/data-meta";
+import { fmtInt } from "@/lib/format";
+
+const HISTORICO_SPAN_YEARS = HISTORICO_LAST_YEAR - HISTORICO_FIRST_YEAR + 1;
 
 export const metadata: Metadata = {
-  title: "Histórico CompraNet 2010-2022",
-  description:
-    "Doce años de compras públicas federales: 2.36 millones de contratos del archivo CompraNet 5.0, evolución del % adjudicación directa por sexenio (FCH, EPN, AMLO), top 50 proveedores recurrentes y Benford anual.",
+  title: `Histórico CompraNet ${HISTORICO_RANGE_LABEL}`,
+  description: `${HISTORICO_SPAN_YEARS} años de compras públicas federales: ${fmtMillones(HISTORICO_N)} de contratos del archivo CompraNet 5.0, evolución del % adjudicación directa por sexenio (FCH, EPN, AMLO), top 50 proveedores recurrentes y Benford anual.`,
   openGraph: {
     title: "Histórico CompraNet · México Bajo Lupa",
-    description:
-      "12 años de compras públicas federales. Cómo evolucionó la adjudicación directa entre sexenios y qué proveedores se sostuvieron a través del tiempo.",
+    description: `${HISTORICO_SPAN_YEARS} años de compras públicas federales. Cómo evolucionó la adjudicación directa entre sexenios y qué proveedores se sostuvieron a través del tiempo.`,
   },
 };
 
@@ -20,16 +28,18 @@ export default function HistoricoPage() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="flex items-center gap-3 mb-5">
             <Badge variant="lozenge">V4 · Histórico</Badge>
-            <Badge variant="lozenge">CompraNet 5.0 · 2010-2022</Badge>
+            <Badge variant="lozenge">CompraNet 5.0 · {HISTORICO_RANGE_LABEL}</Badge>
           </div>
           <h1
             className="display-xl leading-[0.95] tracking-tight"
             style={{ fontSize: "clamp(2.25rem, 7vw, 5rem)" }}
           >
-            12 años bajo lupa.
+            {HISTORICO_SPAN_YEARS} años bajo lupa.
           </h1>
           <p className="text-light-ash text-[16px] mt-6 max-w-3xl leading-relaxed">
-            <strong className="text-cloud-whisper">2,356,609 contratos</strong>{" "}
+            <strong className="text-cloud-whisper">
+              {fmtInt(HISTORICO_N)} contratos
+            </strong>{" "}
             del sistema histórico CompraNet 5.0, hoy archivado. Permite
             comparar cómo evolucionó el % de adjudicación directa entre
             sexenios y qué proveedores se sostuvieron a lo largo de la

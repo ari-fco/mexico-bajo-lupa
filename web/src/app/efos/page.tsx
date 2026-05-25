@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { EfosView } from "@/components/efos-view";
 import { Badge } from "@/components/ui/badge";
+import { SAT_EFOS_N_TOTAL } from "@/lib/data-meta";
+import { fmtInt } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "EFOS · Empresas señaladas que reciben contratos federales",
-  description:
-    "Cruce de la lista oficial del SAT (Art. 69-B CFF, 14,234 contribuyentes) con los proveedores reales de ComprasMX federal. Empresas que facturan operaciones simuladas y aún así firman con el Estado mexicano — incluyendo contratos posteriores a la presunción.",
+  description: `Cruce de la lista oficial del SAT (Art. 69-B CFF, ${fmtInt(SAT_EFOS_N_TOTAL)} contribuyentes) con los proveedores reales de ComprasMX federal. Empresas que facturan operaciones simuladas y aún así firman con el Estado mexicano — incluyendo contratos posteriores a la presunción.`,
   openGraph: {
     title: "EFOS · SAT × ComprasMX · México Bajo Lupa",
     description:

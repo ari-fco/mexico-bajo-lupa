@@ -13,6 +13,8 @@ type SesnspMeta = {
   last_year: number;
   last_month: number; // 1..12
   last_period: string; // "YYYY-MM"
+  n_rows: number;
+  n_subtipos: number;
   source: string;
 };
 
@@ -21,13 +23,49 @@ type ComprasMxMeta = {
   first_year: number | null;
   last_year: number | null;
   n_contratos: number;
+  n_federal: number;
+  n_estatal: number;
+  n_sin_fecha_firma: number;
+  pct_sin_fecha_firma: number | null;
+};
+
+type ComprasMxHistoricoMeta = {
+  n_contratos: number;
+  first_year: number;
+  last_year: number;
+  source: string;
+};
+
+type ConapoMeta = {
+  n_rows: number;
+  source: string;
+};
+
+type ShcpMeta = {
+  first_year: number | null;
+  last_year: number | null;
+  n_rows: number;
+  total_last_year_mxn: number | null;
+  source: string;
+};
+
+type SatEfosMeta = {
+  n_total: number;
+  n_definitivos: number;
+  n_presuntos: number;
+  n_desvirtuados: number;
+  n_sentencia_favorable: number;
+  source: string;
 };
 
 type Meta = {
   generated_at: string;
   sesnsp: SesnspMeta | null;
   comprasmx: ComprasMxMeta | null;
-  conapo: unknown | null;
+  comprasmx_historico: ComprasMxHistoricoMeta | null;
+  conapo: ConapoMeta | null;
+  shcp: ShcpMeta | null;
+  sat_efos: SatEfosMeta | null;
 };
 
 const META = metaJson as Meta;
@@ -99,11 +137,47 @@ export const COMPRASMX_YEARS = META.comprasmx?.years ?? [2024, 2025];
 export const COMPRASMX_FIRST_YEAR = META.comprasmx?.first_year ?? 2024;
 export const COMPRASMX_LAST_YEAR = META.comprasmx?.last_year ?? 2025;
 export const COMPRASMX_N = META.comprasmx?.n_contratos ?? 0;
+export const COMPRASMX_N_FEDERAL = META.comprasmx?.n_federal ?? 0;
+export const COMPRASMX_N_ESTATAL = META.comprasmx?.n_estatal ?? 0;
+export const COMPRASMX_PCT_SIN_FECHA =
+  META.comprasmx?.pct_sin_fecha_firma ?? null;
 
 /** "2024-2025" — short range label for ComprasMX coverage. */
 export const COMPRASMX_RANGE_LABEL =
   COMPRASMX_FIRST_YEAR === COMPRASMX_LAST_YEAR
     ? String(COMPRASMX_FIRST_YEAR)
     : `${COMPRASMX_FIRST_YEAR}-${COMPRASMX_LAST_YEAR}`;
+
+// === ComprasMX histórico (CompraNet 5.0) ===
+
+export const HISTORICO_N = META.comprasmx_historico?.n_contratos ?? 0;
+export const HISTORICO_FIRST_YEAR =
+  META.comprasmx_historico?.first_year ?? 2010;
+export const HISTORICO_LAST_YEAR = META.comprasmx_historico?.last_year ?? 2024;
+export const HISTORICO_RANGE_LABEL = `${HISTORICO_FIRST_YEAR}-${HISTORICO_LAST_YEAR}`;
+
+// === Otras fuentes — counts ===
+
+export const SESNSP_N_ROWS = META.sesnsp?.n_rows ?? 0;
+export const CONAPO_N_ROWS = META.conapo?.n_rows ?? 0;
+export const SHCP_N_ROWS = META.shcp?.n_rows ?? 0;
+export const SHCP_LAST_YEAR = META.shcp?.last_year ?? null;
+export const SHCP_TOTAL_LAST_YEAR_MXN = META.shcp?.total_last_year_mxn ?? null;
+
+export const SAT_EFOS_N_TOTAL = META.sat_efos?.n_total ?? 0;
+export const SAT_EFOS_N_DEFINITIVOS = META.sat_efos?.n_definitivos ?? 0;
+
+// === Helpers de formato editorial específicos de data-meta ===
+// Para enteros y compactos, usar fmtInt y fmtCompact de lib/format.
+
+/** "2.35 millones" — long form en español. */
+export function fmtMillones(n: number, decimals: number = 2): string {
+  return `${(n / 1_000_000).toFixed(decimals)} millones`;
+}
+
+/** "2.65 billones MXN" — para gasto público (escala larga ES = 1e12). */
+export function fmtBillonesMxn(n: number, decimals: number = 2): string {
+  return `${(n / 1_000_000_000_000).toFixed(decimals)} billones MXN`;
+}
 
 export { META as DATA_META };

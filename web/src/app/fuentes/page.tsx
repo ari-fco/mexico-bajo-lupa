@@ -1,6 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import {
+  COMPRASMX_FIRST_YEAR,
+  COMPRASMX_LAST_YEAR,
+  COMPRASMX_N,
+  COMPRASMX_N_ESTATAL,
+  COMPRASMX_N_FEDERAL,
+  COMPRASMX_PCT_SIN_FECHA,
+  CONAPO_N_ROWS,
+  fmtBillonesMxn,
+  HISTORICO_N,
+  HISTORICO_RANGE_LABEL,
+  SAT_EFOS_N_DEFINITIVOS,
+  SAT_EFOS_N_TOTAL,
+  SESNSP_FIRST_YEAR,
+  SESNSP_LAST_YEAR,
+  SESNSP_N_ROWS,
+  SHCP_LAST_YEAR,
+  SHCP_N_ROWS,
+  SHCP_TOTAL_LAST_YEAR_MXN,
+} from "@/lib/data-meta";
+import { fmtCompact, fmtInt } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Fuentes",
@@ -17,7 +38,7 @@ const SOURCES = [
   {
     name: "SESNSP",
     full: "Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública",
-    what: "Incidencia delictiva del fuero común. 413,952 registros mensuales 2015-2025 integrados (32 entidades, 7 categorías de delito).",
+    what: `Incidencia delictiva del fuero común. ${fmtInt(SESNSP_N_ROWS)} registros mensuales ${SESNSP_FIRST_YEAR}-${SESNSP_LAST_YEAR} integrados (32 entidades, 7 categorías de delito).`,
     files: [
       "IDEFC_NM Estatal · fuero común (integrado vía mirror lapanquecita/incidencia-delictiva)",
       "IDEFM_NM Municipal · fuero común (V7 · ~2,400 municipios)",
@@ -44,7 +65,9 @@ const SOURCES = [
     name: "CONAPO",
     full: "Consejo Nacional de Población",
     what: "Proyecciones de población 2020-2070 por entidad y municipio. Usado para normalizar incidencia delictiva por habitantes.",
-    files: ["Proyecciones de la Población de México 1990-2040 (1,632 filas integradas)"],
+    files: [
+      `Proyecciones de la Población de México 1990-2040 (${fmtInt(CONAPO_N_ROWS)} filas integradas)`,
+    ],
     url: "https://conapo.segob.gob.mx/es/CONAPO/Datos_abiertos",
     update: "Anual (revisión)",
     status: "active" as const,
@@ -52,12 +75,11 @@ const SOURCES = [
   {
     name: "ComprasMX",
     full: "Plataforma Digital de Contrataciones Públicas (ex-CompraNet)",
-    what: "Contratos públicos: institución, monto, modalidad, ganador, fechas. 235,392 contratos 2024-25 integrados — separados en 223k FEDERALES (APF) y 12,377 ESTATALES analizados por entidad federativa (% adjudicación directa y MAD Benford).",
+    what: `Contratos públicos: institución, monto, modalidad, ganador, fechas. ${fmtInt(COMPRASMX_N)} contratos ${COMPRASMX_FIRST_YEAR}-${COMPRASMX_LAST_YEAR} integrados — ${fmtInt(COMPRASMX_N_FEDERAL)} FEDERALES (APF) y ${fmtInt(COMPRASMX_N_ESTATAL)} ESTATALES analizados por entidad federativa (% adjudicación directa y MAD Benford).${COMPRASMX_PCT_SIN_FECHA !== null ? ` Nota de calidad upstream: ${COMPRASMX_PCT_SIN_FECHA}% de las filas no traen fecha de firma del CSV oficial.` : ""}`,
     files: [
-      "Contratos_CompraNet2024.csv (143,542 contratos)",
-      "Contratos_CompraNet2025.csv (91,850 contratos)",
-      "Análisis estatal: 12,377 contratos · 32 entidades · todas con muestra ≥100",
-      "Histórico CompraNet 5.0 (2010-2022) — integrado (2.36M contratos · ver /historico)",
+      `Contratos_CompraNet${COMPRASMX_FIRST_YEAR}.csv y subsiguientes (${fmtInt(COMPRASMX_N_FEDERAL + COMPRASMX_N_ESTATAL)} contratos totales)`,
+      `Análisis estatal: ${fmtInt(COMPRASMX_N_ESTATAL)} contratos · 32 entidades · todas con muestra ≥100`,
+      `Histórico CompraNet 5.0 (${HISTORICO_RANGE_LABEL}) — integrado (${fmtCompact(HISTORICO_N)} contratos · ver /historico)`,
     ],
     url: "https://comprasmx.buengobierno.gob.mx/",
     update: "Continuo",
@@ -66,9 +88,13 @@ const SOURCES = [
   {
     name: "SHCP",
     full: "Secretaría de Hacienda y Crédito Público · Transparencia Presupuestaria",
-    what: "Transferencias federales (Ramo 28 Participaciones, Ramo 33 Aportaciones, Convenios y Subsidios) por entidad federativa. Series mensuales 2011 a 2026 integradas: total 2025 fue 2.65 billones MXN federalizados.",
+    what: `Transferencias federales (Ramo 28 Participaciones, Ramo 33 Aportaciones, Convenios y Subsidios) por entidad federativa. Series mensuales integradas${
+      SHCP_LAST_YEAR !== null && SHCP_TOTAL_LAST_YEAR_MXN !== null
+        ? `: total ${SHCP_LAST_YEAR} fue ${fmtBillonesMxn(SHCP_TOTAL_LAST_YEAR_MXN)} federalizados.`
+        : "."
+    }`,
     files: [
-      "Transferencias 2011→presente (CSV mensual · 250k filas integradas)",
+      `Transferencias 2011→presente (CSV mensual · ${fmtInt(SHCP_N_ROWS)} filas integradas)`,
       "Cuenta Pública (próximo)",
       "PEF · Programa Federalizado por programa/fondo (próximo)",
     ],
@@ -81,8 +107,8 @@ const SOURCES = [
     full: "Servicio de Administración Tributaria · Listado completo Art. 69-B CFF (EFOS)",
     what: "Listado oficial de Empresas que Facturan Operaciones Simuladas (EFOS) y categorías relacionadas: Definitivos, Presuntos, Desvirtuados y Sentencia Favorable. Cruzado con ComprasMX federal para identificar contratos públicos a proveedores señalados por el SAT.",
     files: [
-      "Listado_Completo_69-B.csv (14,234 registros · 11,270 Definitivos)",
-      "Cruce contra ComprasMX federal 2024-2025 (RFC × RFC, normalizado)",
+      `Listado_Completo_69-B.csv (${fmtInt(SAT_EFOS_N_TOTAL)} registros · ${fmtInt(SAT_EFOS_N_DEFINITIVOS)} Definitivos)`,
+      `Cruce contra ComprasMX federal ${COMPRASMX_FIRST_YEAR}-${COMPRASMX_LAST_YEAR} (RFC × RFC, normalizado)`,
     ],
     url: "http://omawww.sat.gob.mx/cifras_sat/Documents/Listado_Completo_69-B.csv",
     update: "Continuo (revisión trimestral)",

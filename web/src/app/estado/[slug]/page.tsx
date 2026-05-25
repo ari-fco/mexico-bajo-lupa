@@ -52,6 +52,15 @@ export default async function EstadoPage({
   const m = metrics.find((x) => x.cve_ent === estado.cve);
   if (!m) return notFound();
 
+  // Media nacional PIB per cápita — solo entidades con dato (>0).
+  const pibValues = metrics
+    .map((x) => x.pib_per_capita)
+    .filter((v): v is number => v > 0);
+  const mediaPibNacional =
+    pibValues.length > 0
+      ? pibValues.reduce((a, b) => a + b, 0) / pibValues.length
+      : 0;
+
   const ranked = [...metrics].sort(
     (a, b) => b.homicidios_100k_ult12m - a.homicidios_100k_ult12m,
   );
@@ -195,7 +204,7 @@ export default async function EstadoPage({
                   ? fmtMxn(m.pib_per_capita)
                   : "—"
               }
-              comment="Pesos a precios constantes 2018. La media nacional ronda los 196k MXN."
+              comment={`Pesos a precios constantes 2018. La media nacional ronda los ${fmtCompact(mediaPibNacional)} MXN.`}
             />
             <CrossStat
               label="Pobreza"
