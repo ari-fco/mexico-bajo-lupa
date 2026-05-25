@@ -70,10 +70,12 @@ def main() -> None:
         "generated_at": pd.Timestamp.utcnow().isoformat(timespec="seconds"),
         "sesnsp": None,  # filled below
         "comprasmx": None,
+        "comprasmx_historico": None,
         "conapo": None,
         "inegi_pib": None,
         "coneval": None,
         "shcp": None,
+        "sat_efos": None,
     }
 
     # === Estado metrics ===
@@ -111,6 +113,8 @@ def main() -> None:
             "last_month": last_month,  # 1..12
             # ISO-style "YYYY-MM" key for easy comparisons in the frontend.
             "last_period": f"{latest_year:04d}-{last_month:02d}",
+            "n_rows": int(len(df)),
+            "n_subtipos": int(df["subtipo"].nunique()),
             "source": "lapanquecita/incidencia-delictiva (mirror SESNSP)",
         }
 
@@ -178,7 +182,10 @@ def main() -> None:
     # === ComprasMX coverage (años cubiertos) ===
     p_cmx = DATA_PROCESSED / "comprasmx_contratos.parquet"
     if p_cmx.exists():
-        cmx_df = pd.read_parquet(p_cmx, columns=["ano"])
+        cmx_df = pd.read_parquet(
+            p_cmx,
+            columns=["ano", "orden_gobierno", "fecha_firma"],
+        )
         # Year is sourced primarily from "fecha_firma"; the CSV occasionally
         # includes outlier dates (data entry typos, far-past or future).
         # We only treat as "covered" the years that contain a meaningful
@@ -190,11 +197,32 @@ def main() -> None:
         major_years = sorted(
             int(y) for y, c in counts.items() if c >= threshold and y >= 1900
         )
+        n_federal = int((cmx_df["orden_gobierno"] == "FEDERAL").sum())
+        n_estatal = int((cmx_df["orden_gobierno"] == "ESTATAL").sum())
+        n_sin_fecha = int(cmx_df["fecha_firma"].isna().sum())
         meta["comprasmx"] = {
             "years": major_years,
             "first_year": major_years[0] if major_years else None,
             "last_year": major_years[-1] if major_years else None,
             "n_contratos": n_total,
+            "n_federal": n_federal,
+            "n_estatal": n_estatal,
+            "n_sin_fecha_firma": n_sin_fecha,
+            "pct_sin_fecha_firma": round(n_sin_fecha / n_total * 100, 1)
+            if n_total
+            else None,
+        }
+
+    # === ComprasMX histórico (CompraNet 5.0 saneado) ===
+    p_hist = DATA_PROCESSED / "historico_anual.parquet"
+    if p_hist.exists():
+        hist_df = pd.read_parquet(p_hist)
+        n_hist = int(hist_df["contratos"].sum())
+        meta["comprasmx_historico"] = {
+            "n_contratos": n_hist,
+            "first_year": int(hist_df["ano"].min()),
+            "last_year": int(hist_df["ano"].max()),
+            "source": "CompraNet 5.0 · saneado (ano 2010-2024, monto>0)",
         }
 
     # === Dependencias riesgo (top 200) ===
@@ -253,10 +281,50 @@ def main() -> None:
             .unique()
             .tolist()
         )
+        # Total federalizado del último año completo (12 meses reportados).
+        # Sirve para el copy de /fuentes — "total 2025 fue X billones MXN".
+        last_full_year = full_years[-1] if full_years else None
+        if last_full_year is not None and "gasto_federalizado_total" in shcp_df.columns:
+            total_last_year = float(
+                shcp_df[shcp_df["ano"] == last_full_year][
+                    "gasto_federalizado_total"
+                ].sum()
+            )
+        else:
+            total_last_year = None
         meta["shcp"] = {
             "first_year": full_years[0] if full_years else None,
-            "last_year": full_years[-1] if full_years else None,
+            "last_year": last_full_year,
+            "n_rows": int(len(shcp_df)),
+            "total_last_year_mxn": total_last_year,
             "source": "SHCP · Transferencias federales a entidades federativas (datos.gob.mx)",
+        }
+
+    # === CONAPO población coverage ===
+    p_conapo = DATA_PROCESSED / "conapo_poblacion.parquet"
+    if p_conapo.exists():
+        conapo_df = pd.read_parquet(p_conapo)
+        meta["conapo"] = {
+            "n_rows": int(len(conapo_df)),
+            "source": "CONAPO · Proyecciones 1990-2040",
+        }
+
+    # === SAT 69-B (EFOS) coverage ===
+    p_sat = DATA_PROCESSED / "sat_efos.parquet"
+    if p_sat.exists():
+        sat_df = pd.read_parquet(p_sat)
+        estatus_counts = (
+            sat_df["estatus"].value_counts().to_dict()
+            if "estatus" in sat_df.columns
+            else {}
+        )
+        meta["sat_efos"] = {
+            "n_total": int(len(sat_df)),
+            "n_definitivos": int(estatus_counts.get("DEFINITIVO", 0)),
+            "n_presuntos": int(estatus_counts.get("PRESUNTO", 0)),
+            "n_desvirtuados": int(estatus_counts.get("DESVIRTUADO", 0)),
+            "n_sentencia_favorable": int(estatus_counts.get("SENTENCIA_FAVORABLE", 0)),
+            "source": "SAT · Listado 69-B CFF",
         }
 
     # === Meta JSON (always last so it has the most up-to-date info) ===
