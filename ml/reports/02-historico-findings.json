@@ -1,0 +1,185 @@
+{
+  "benford": {
+    "n_cortes": 28,
+    "n_sospechosos": 27,
+    "top_5_apartados": [
+      {
+        "corte": "modalidad_AD",
+        "n": 1739624,
+        "chi2": 13924.689672461504,
+        "p_value": 0.0
+      },
+      {
+        "corte": "global",
+        "n": 2349732,
+        "chi2": 9993.993346863166,
+        "p_value": 0.0
+      },
+      {
+        "corte": "ramo_1.Adquisiciones",
+        "n": 1307593,
+        "chi2": 6274.306254028453,
+        "p_value": 0.0
+      },
+      {
+        "corte": "ramo_3.Servicios",
+        "n": 744644,
+        "chi2": 5150.861078236202,
+        "p_value": 0.0
+      },
+      {
+        "corte": "ano_2017",
+        "n": 234210,
+        "chi2": 3387.5399066952536,
+        "p_value": 0.0
+      }
+    ]
+  },
+  "outliers_monto": {
+    "top_5": [
+      {
+        "contrato_id": "1335810",
+        "expediente_id": "1110560",
+        "ramo": "4.Obra P\u00fablica",
+        "modalidad": "LP",
+        "monto": 84828377320.13,
+        "ano": 2017,
+        "fecha_firma": "2017-02-13 00:00:00",
+        "proveedor": "Operadora Cicsa, S.A. de C.V.",
+        "descripcion": "Construccion delEdificio Terminal delNuevo Aeropuerto Internacional de la Ciud \u2014 Construccion delEdificio Terminal delNuevo Aeropuerto Internacional de la Ciudad de M\u00e9xico",
+        "mad_score_log_monto": 7.417696745827679
+      },
+      {
+        "contrato_id": "2343941",
+        "expediente_id": "2040319",
+        "ramo": "3.Servicios",
+        "modalidad": "AD",
+        "monto": 64541220000.0,
+        "ano": 2019,
+        "fecha_firma": "2019-12-02 00:00:00",
+        "proveedor": "Electromecanica de Montacargas Sa de Cv",
+        "descripcion": "Aa-050Gyr0487-E100-2019,Servicio de Mantenimiento Correctivo a Equipo de Montaca \u2014 Servicio de Mantenimiento a Equipode Montacargas Electrico Tailft 31 Equipo Necesario Por Sus Caracteristicas Especiales de Maniobra, Ademas de Ser Uno de Los Dos Equipos Propiedad delImss, de la Bodega de Almacen Delegacional de Abastecimiento Regional En Nuevo Le\u00f3n .",
+        "mad_score_log_monto": 7.2668053751486275
+      },
+      {
+        "contrato_id": "2539945",
+        "expediente_id": "2191335",
+        "ramo": "1.Adquisiciones",
+        "modalidad": "LP",
+        "monto": 31520457949.24,
+        "ano": 2021,
+        "fecha_firma": "2021-06-09 00:00:00",
+        "proveedor": "Alstom Transport Mexico Sa de Cv",
+        "descripcion": "Adquisici\u00f3n de Material Rodante y Sistemas Ferroviarios Para el Tren Maya \u2014 Adquisici\u00f3n de Material Rodante y Sistemas Ferroviarios Para el Tren Maya",
+        "mad_score_log_monto": 6.871164651264349
+      },
+      {
+        "contrato_id": "2377081",
+        "expediente_id": "2161649",
+        "ramo": "4.Obra P\u00fablica",
+        "modalidad": "AD",
+        "monto": 25849460178.2,
+        "ano": 2020,
+        "fecha_firma": "2020-09-21 00:00:00",
+        "proveedor": "Ica Constructora Sa de Cv",
+        "descripcion": "Ad Proyecto Integral de Obra P\u00fablica a Precio Mixto Que \u2014 Proyecto Integral de Obra P\u00fablica a Precio Mixto Que Incluye la Elaboraci\u00f3n delProyecto Ejecutivo, Suministro de Materiales, Adecuaciones Carreteras y Construcci\u00f3n de Plataforma y V\u00eda delTren Maya Correspondiente Al Tramo Izamal - Canc\u00fan",
+        "mad_score_log_monto": 6.761665890629
+      },
+      {
+        "contrato_id": "2720098",
+        "expediente_id": "2365264",
+        "ramo": "3.Servicios",
+        "modalidad": "LP",
+        "monto": 25789000000.0,
+        "ano": 2021,
+        "fecha_firma": "2021-12-29 00:00:00",
+        "proveedor": "Currie & Brown - Mexico Sa de Cv",
+        "descripcion": "Supervisi\u00f3n App Partida 2 \u2014 \u0093Supervisi\u00f3n de Los Contratos de Prestaci\u00f3n de Servicios En la Modalidad de Asociaciones P\u00fablico Privadas, Para el Dise\u00f1o, Construcci\u00f3n, Equipamiento, Mantenimiento y Prestaci\u00f3n de Servicios Complementarios a Los Servicios de Atenci\u00f3n M\u00e9dica Que Presta el Instituto de Seguridad y Servicios Sociales de Los Trabajadores delEstado a Sus Derechohabientes, a Realizarse En Los Ejercicios Fiscales 2021, 2022, 2023 y 2024\u0094 Segunda Vuelta Para la Partida 2",
+        "mad_score_log_monto": 6.760373154951105
+      }
+    ]
+  },
+  "isoforest": {
+    "n_anomalias": 23498,
+    "top_5": [
+      {
+        "contrato_id": "2685840",
+        "monto": 98873709.0,
+        "ano": 2022,
+        "proveedor": "Ultra Laboratorios Sa de Cv",
+        "if_score": 0.6933908362593275
+      },
+      {
+        "contrato_id": "4028",
+        "monto": 730170000.0,
+        "ano": 2010,
+        "proveedor": "Fonterra Mexico Sa de Cv",
+        "if_score": 0.691920501152865
+      },
+      {
+        "contrato_id": "262019",
+        "monto": 9713722.24,
+        "ano": 2012,
+        "proveedor": "Siselectron",
+        "if_score": 0.6910265944956948
+      },
+      {
+        "contrato_id": "2940580",
+        "monto": 76140923.16,
+        "ano": 2023,
+        "proveedor": "A2Daht Health Mexico Sa de Cv",
+        "if_score": 0.6894458505791687
+      },
+      {
+        "contrato_id": "2941180",
+        "monto": 74593643.8,
+        "ano": 2023,
+        "proveedor": "Uninet Sa de Cv",
+        "if_score": 0.686853902224662
+      }
+    ]
+  },
+  "lof": {
+    "n_confirmados": 2000
+  },
+  "proveedor": {
+    "n_total": 295409,
+    "top_5": [
+      {
+        "proveedor": "Farmaceuticos Maypo, S.A. de C.V.",
+        "n_contratos": 13890,
+        "monto_total": 75611168283.476,
+        "pct_AD": 0.8790496760259179,
+        "score_proveedor": 8.438074180593786
+      },
+      {
+        "proveedor": "Grupo Alcamera, S.A. de C.V.",
+        "n_contratos": 121,
+        "monto_total": 471001374.76,
+        "pct_AD": 1.0,
+        "score_proveedor": 8.38576594396352
+      },
+      {
+        "proveedor": "Grupo Farmacos Especializados Sa de Cv",
+        "n_contratos": 5672,
+        "monto_total": 126763564538.321,
+        "pct_AD": 0.8242242595204513,
+        "score_proveedor": 8.340393540623436
+      },
+      {
+        "proveedor": "Multicorporacion Brexot Sa de Cv",
+        "n_contratos": 11,
+        "monto_total": 604786000.0,
+        "pct_AD": 1.0,
+        "score_proveedor": 8.22091922873716
+      },
+      {
+        "proveedor": "Marcas Nestle, S.A. de C.V.",
+        "n_contratos": 10719,
+        "monto_total": 4522668109.907471,
+        "pct_AD": 0.9987872002985353,
+        "score_proveedor": 8.165763142294242
+      }
+    ]
+  }
+}

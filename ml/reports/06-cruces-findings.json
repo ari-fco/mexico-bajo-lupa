@@ -1,0 +1,289 @@
+{
+  "efos_x_contratos": {
+    "n_reciente": 22,
+    "monto_reciente": 128495757.87,
+    "n_historico": 343,
+    "monto_historico": 693100148.8244,
+    "top_5": [
+      {
+        "contrato_id": "C-2025-00062640",
+        "ramo": "MARINA",
+        "modalidad": "LP",
+        "monto": 80773240.92,
+        "fecha_firma": "NaT",
+        "proveedor": "GEOTECNIA Y DESARROLLO DE INFRAESTRUCTURA SA DE CV",
+        "rfc_proveedor": "GDI010116TK8",
+        "ano": 0,
+        "fuente": "reciente"
+      },
+      {
+        "contrato_id": "1149490",
+        "ramo": "4.Obra P\u00fablica 09012017",
+        "modalidad": "LP",
+        "monto": 34894264.77,
+        "fecha_firma": "2016-08-03 00:00:00",
+        "proveedor": "Grupo Constructor-Arrendador y de Servicios Profesionales Alex, S.A. de C.V.",
+        "rfc_proveedor": null,
+        "ano": 2016,
+        "fuente": "historico"
+      },
+      {
+        "contrato_id": "201768",
+        "ramo": "1.Adquisiciones",
+        "modalidad": "LP",
+        "monto": 33438986.0,
+        "fecha_firma": "2012-09-22 00:00:00",
+        "proveedor": "Comercializadora Integral de Productos de Calidad, S.A. de C.V.",
+        "rfc_proveedor": null,
+        "ano": 2012,
+        "fuente": "historico"
+      },
+      {
+        "contrato_id": "757291",
+        "ramo": "1.Adquisiciones",
+        "modalidad": "AD",
+        "monto": 26465517.24,
+        "fecha_firma": "2014-08-08 00:00:00",
+        "proveedor": "Credimosa, S.A. de C.V.",
+        "rfc_proveedor": null,
+        "ano": 2014,
+        "fuente": "historico"
+      },
+      {
+        "contrato_id": "701836",
+        "ramo": "4.Obra P\u00fablica 09012017",
+        "modalidad": "LP",
+        "monto": 24160610.67,
+        "fecha_firma": "2013-12-23 00:00:00",
+        "proveedor": "Veco Concretos, S.A. de C.V.",
+        "rfc_proveedor": null,
+        "ano": 2013,
+        "fuente": "historico"
+      }
+    ]
+  },
+  "efos_post_presuncion": {
+    "n": 3,
+    "monto_total": 188303.45,
+    "top_5": [
+      {
+        "proveedor": "ENTERPRISE SOURCE CAPITAL DE MEXICO SA DE CV",
+        "rfc_proveedor": "ESC110914563",
+        "monto": 95200.0,
+        "fecha_firma": "2025-03-12 17:50:06",
+        "fecha_presuncion": "2018-06-01 00:00:00",
+        "estatus": "DESVIRTUADO"
+      },
+      {
+        "proveedor": "GRUPO CIDAR BUSINESS BROKERS, AGENTE DE SEGUROS Y DE FIANZAS SA",
+        "rfc_proveedor": "GCB1012159G7",
+        "monto": 47413.79,
+        "fecha_firma": "2024-02-28 13:50:28",
+        "fecha_presuncion": "2019-03-01 00:00:00",
+        "estatus": "SENTENCIA_FAVORABLE"
+      },
+      {
+        "proveedor": "GRUPO CIDAR BUSINESS BROKERS, AGENTE DE SEGUROS Y DE FIANZAS SA",
+        "rfc_proveedor": "GCB1012159G7",
+        "monto": 45689.66,
+        "fecha_firma": "2025-04-11 14:52:09",
+        "fecha_presuncion": "2019-03-01 00:00:00",
+        "estatus": "SENTENCIA_FAVORABLE"
+      }
+    ]
+  },
+  "estados_gasto_delitos": {
+    "n_estados_con_gasto": 32,
+    "n_estados_con_delitos": 32
+  },
+  "dependencias_riesgo": {
+    "n_total": 906,
+    "top_10": [
+      {
+        "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+        "n_contratos": 57829,
+        "monto_total": 389033098711.537,
+        "pct_AD": 0.714036210205952,
+        "concentracion": 0.015960850092514137,
+        "n_anomalias_if": 191.0,
+        "score_riesgo": 7.220291315026937
+      },
+      {
+        "institucion": "SOCONUSCO",
+        "n_contratos": 1,
+        "monto_total": 13473776.01,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 6.138846796990728
+      },
+      {
+        "institucion": "TENEJAPA",
+        "n_contratos": 1,
+        "monto_total": 11554637.93,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 6.118826902362105
+      },
+      {
+        "institucion": "INSTITUTO PARA LA GESTI\u00d3N INTEGRAL DE RIESGOS DE DESASTRES DEL ESTADO DE CHIAPAS",
+        "n_contratos": 1,
+        "monto_total": 10467221.38,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 6.1059494228563995
+      },
+      {
+        "institucion": "LA PAZ",
+        "n_contratos": 1,
+        "monto_total": 7977000.0,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 6.070551877615369
+      },
+      {
+        "institucion": "COMPOSTELA",
+        "n_contratos": 1,
+        "monto_total": 4854801.72,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 6.005851449140251
+      },
+      {
+        "institucion": "ORGANISMO OPERADOR MUNICIPAL DEL SISTEMA DE AGUA POTABLE, ALCANTARILLADO Y SANEAMIENTO DE LOS CABOS",
+        "n_contratos": 1,
+        "monto_total": 4727712.33,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 6.002395312868655
+      },
+      {
+        "institucion": "HEROICA CIUDAD DE TLAXIACO",
+        "n_contratos": 2,
+        "monto_total": 4311913.359999999,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 5.990401007774295
+      },
+      {
+        "institucion": "CUAUTEPEC DE HINOJOSA",
+        "n_contratos": 1,
+        "monto_total": 1937500.0,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 5.886172513353504
+      },
+      {
+        "institucion": "CIUDAD VALLES",
+        "n_contratos": 1,
+        "monto_total": 1932170.97,
+        "pct_AD": 1.0,
+        "concentracion": 1.0,
+        "n_anomalias_if": 0.0,
+        "score_riesgo": 5.885813665822969
+      }
+    ]
+  },
+  "multi_senal": {
+    "n_total": 48,
+    "top_10": [
+      {
+        "rfc": "CHO0107317DA",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "CHO0107317DA",
+        "nombre": "CONSORCIO HOSPITALARIO SA DE CV",
+        "n_contratos": 397,
+        "monto_total": 35680413.74
+      },
+      {
+        "rfc": "BIM0711148Q0",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "BIM0711148Q0",
+        "nombre": "BOEHRINGER INGELHEIM MEXICO SA DE CV",
+        "n_contratos": 144,
+        "monto_total": 10592842081.58
+      },
+      {
+        "rfc": "ASO061124JP9",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "ASO061124JP9",
+        "nombre": "ASOKAM SA DE CV",
+        "n_contratos": 40,
+        "monto_total": 2291984521.4399996
+      },
+      {
+        "rfc": "SPA960328P62",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "SPA960328P62",
+        "nombre": "SANOFI PASTEUR SA DE CV",
+        "n_contratos": 242,
+        "monto_total": 7856528592.04
+      },
+      {
+        "rfc": "PFE190926IK3",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "PFE190926IK3",
+        "nombre": "PRODUCTOS FARMACEUTICOS EKA SA DE CV",
+        "n_contratos": 301,
+        "monto_total": 119597830.26
+      },
+      {
+        "rfc": "MED880902U27",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "MED880902U27",
+        "nombre": "MEDICAMEX SA DE CV",
+        "n_contratos": 100,
+        "monto_total": 412400557.7
+      },
+      {
+        "rfc": "ALT010926BY0",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "ALT010926BY0",
+        "nombre": "ALTERNAVIDA SA DE CV",
+        "n_contratos": 145,
+        "monto_total": 2991809116.0
+      },
+      {
+        "rfc": "GME231109E51",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "GME231109E51",
+        "nombre": "GSM MEDICAMENTOS SA DE CV",
+        "n_contratos": 95,
+        "monto_total": 16047180.58
+      },
+      {
+        "rfc": "MBI221026N76",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "MBI221026N76",
+        "nombre": "MDC BIOMEDICAL SAS DE CV",
+        "n_contratos": 161,
+        "monto_total": 79472204.63
+      },
+      {
+        "rfc": "TEM061006TC0",
+        "n_se\u00f1ales": 2,
+        "se\u00f1ales": "isoforest|top_proveedor",
+        "rfc_proveedor": "TEM061006TC0",
+        "nombre": "TCA EMPRESARIAL SA DE CV",
+        "n_contratos": 11,
+        "monto_total": 100364768.0
+      }
+    ]
+  }
+}

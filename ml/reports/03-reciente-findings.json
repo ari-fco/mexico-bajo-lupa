@@ -1,0 +1,185 @@
+{
+  "benford": {
+    "n_cortes": 35,
+    "n_sospechosos": 29,
+    "top_5": [
+      {
+        "corte": "institucion_INSTITUTO DE ADMINISTRACION Y AVALUOS DE",
+        "n": 4474,
+        "chi2": 2826.871084303717,
+        "p_value": 0.0
+      },
+      {
+        "corte": "institucion_XE-IPN CANAL 11",
+        "n": 5265,
+        "chi2": 1048.3180531382388,
+        "p_value": 0.0
+      },
+      {
+        "corte": "institucion_INSTITUTO POLITECNICO NACIONAL",
+        "n": 8396,
+        "chi2": 637.0402311642227,
+        "p_value": 0.0
+      },
+      {
+        "corte": "institucion_INSTITUTO NACIONAL DE BELLAS ARTES Y LIT",
+        "n": 2342,
+        "chi2": 548.305071888687,
+        "p_value": 0.0
+      },
+      {
+        "corte": "institucion_SECRETAR\u00cdA ANTICORRUPCI\u00d3N Y BUEN GOBIERN",
+        "n": 2760,
+        "chi2": 527.2797386676498,
+        "p_value": 0.0
+      }
+    ]
+  },
+  "outliers_monto": {
+    "top_5": [
+      {
+        "contrato_id": "C-2025-00100475",
+        "institucion": "AGENCIA REGULADORA DEL TRANSPORTE FERROVIARIO",
+        "ramo": "INFRAESTRUCTURA, COMUNICACIONES Y TRANSPORTES",
+        "modalidad": "LP",
+        "monto": 27451532410.19,
+        "proveedor": "OPERADORA CICSA SA DE CV",
+        "rfc_proveedor": "OCI810921EI3",
+        "descripcion": "CONSTRUCCI\u00d3N Y DISE\u00d1O DE 111 KM DEL TREN DE PASAJEROS SALTILLO  NUEVO LAREDO, SEGMENTOS 13 Y 14, SALTILLO \u00a0SANTA\u00a0CATARINA",
+        "mad_score_monto": 6.532724598872257
+      },
+      {
+        "contrato_id": "C-2025-00088974",
+        "institucion": "AGENCIA REGULADORA DEL TRANSPORTE FERROVIARIO",
+        "ramo": "INFRAESTRUCTURA, COMUNICACIONES Y TRANSPORTES",
+        "modalidad": "LP",
+        "monto": 12652090337.5,
+        "proveedor": "ICA CONSTRUCTORA SA DE CV",
+        "rfc_proveedor": "ICO170407UI6",
+        "descripcion": "CONSTRUCCI\u00d3N Y DISE\u00d1O DE 100.05 KM DEL TREN DE PASAJEROS SALTILLO  NUEVO LAREDO, SEGMENTOS 16 Y 17 UNI\u00d3N SAN JAVIER  ARROYO EL SAUZ",
+        "mad_score_monto": 6.107562630007484
+      },
+      {
+        "contrato_id": "C-2025-00078891",
+        "institucion": "ADMINISTRACION DEL SISTEMA PORTUARIO NACIONAL DOS BOCAS, S.A. DE C.V.",
+        "ramo": "MARINA",
+        "modalidad": "AD",
+        "monto": 7967575909.86,
+        "proveedor": "PEGSA CONSTRUCCIONES SA DE CV",
+        "rfc_proveedor": "PCO110429N78",
+        "descripcion": "CONSTRUCCI\u00d3N DE LA AMPLIACI\u00d3N DEL PUERTO DE DOS BOCAS (OBRAS DE PROTECCI\u00d3N ETAPA FINAL).",
+        "mad_score_monto": 5.853737519606469
+      },
+      {
+        "contrato_id": "C-2025-00012180",
+        "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+        "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+        "modalidad": "LP",
+        "monto": 6687894622.55,
+        "proveedor": "LABORATORIOS PISA SA DE CV",
+        "rfc_proveedor": "LPI830527KJ2",
+        "descripcion": "COMPRA CONSOLIDADA DE MEDICAMENTOS, BIENES TERAP\u00c9UTICOS, MATERIAL DE CURACI\u00d3N..",
+        "mad_score_monto": 5.75763901615254
+      },
+      {
+        "contrato_id": "C-2025-00090363",
+        "institucion": "AGENCIA REGULADORA DEL TRANSPORTE FERROVIARIO",
+        "ramo": "INFRAESTRUCTURA, COMUNICACIONES Y TRANSPORTES",
+        "modalidad": "LP",
+        "monto": 6579444251.17,
+        "proveedor": "MOTA-ENGIL MEXICO S A P I DE CV",
+        "rfc_proveedor": "MME100125RS6",
+        "descripcion": "CONSTRUCCI\u00d3N Y DISE\u00d1O DE 30.30 KM DEL TRAMO I FERROVIARIO DEL TREN DE PASAJEROS QUER\u00c9TARO-IRAPUATO, TRAMO: QUER\u00c9TARO ZONA INDUSTRIAL - APASEO EL GRANDE ZONA INDUSTRIAL, SUBTRAMO DEL KM 6+000 AL KM 36+300. INCLUYE LA CONSTRUCCI\u00d3N DE VIADUCTOS",
+        "mad_score_monto": 5.7486654708085725
+      }
+    ]
+  },
+  "isoforest": {
+    "n_anomalias": 2353,
+    "top_5": [
+      {
+        "contrato_id": "C-2025-00000393",
+        "monto": 815530111.67,
+        "proveedor": "INFRA SA DE CV",
+        "if_score": 0.6950537446989007
+      },
+      {
+        "contrato_id": "C-2025-00002592",
+        "monto": 458089804.37,
+        "proveedor": "AGROASEMEX SA",
+        "if_score": 0.6914846512741374
+      },
+      {
+        "contrato_id": "C-2025-00012042",
+        "monto": 843859973.64,
+        "proveedor": "ABBVIE FARMACEUTICOS SA DE CV",
+        "if_score": 0.6898357438494844
+      },
+      {
+        "contrato_id": "C-2024-00137621",
+        "monto": 43103448.28,
+        "proveedor": "JUAN PASTRANA BALEON",
+        "if_score": 0.6898173708949766
+      },
+      {
+        "contrato_id": "C-2024-00144830",
+        "monto": 735138721.57,
+        "proveedor": "DESARROLLOS DE TI SA DE CV",
+        "if_score": 0.6894071596993632
+      }
+    ]
+  },
+  "lof": {
+    "n_confirmados": 200
+  },
+  "proveedor": {
+    "n_total": 50010,
+    "top_5": [
+      {
+        "rfc_proveedor": "MAZ8111185X2",
+        "nombre": "MOLINOS AZTECA SA DE CV",
+        "n_contratos": 1505,
+        "monto_total": 1533025197.0,
+        "pct_AD": 1.0,
+        "score_proveedor": 8.80972701719925
+      },
+      {
+        "rfc_proveedor": "GPE050222296",
+        "nombre": "GRUPO PELMU SA DE CV",
+        "n_contratos": 134,
+        "monto_total": 329560895.65,
+        "pct_AD": 0.9850746268656716,
+        "score_proveedor": 8.302744483193294
+      },
+      {
+        "rfc_proveedor": "CAN210303657",
+        "nombre": "COMERCIALIZADORA ASUAN NORESTE SA DE CV",
+        "n_contratos": 126,
+        "monto_total": 240212116.38,
+        "pct_AD": 1.0,
+        "score_proveedor": 8.2723120728552
+      },
+      {
+        "rfc_proveedor": "SSM180620S18",
+        "nombre": "SOLUCIONES SALUDABLES MTY S DE RL DE CV",
+        "n_contratos": 44,
+        "monto_total": 358839902.41,
+        "pct_AD": 1.0,
+        "score_proveedor": 8.250650827254468
+      },
+      {
+        "rfc_proveedor": "TAX151211EI6",
+        "nombre": "TAXATION SA DE CV",
+        "n_contratos": 102,
+        "monto_total": 130252812.07,
+        "pct_AD": 1.0,
+        "score_proveedor": 8.147634877630992
+      }
+    ]
+  },
+  "dbscan": {
+    "n_clusters": 343,
+    "n_noise": 10249,
+    "pct_noise": 20.5
+  }
+}

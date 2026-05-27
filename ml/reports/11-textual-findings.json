@@ -1,0 +1,351 @@
+{
+  "descripciones_unicas": 109223,
+  "descripciones_duplicadas": 14268,
+  "top_duplicada": {
+    "texto": "COMPRA PARA ATENDER REQUERIMIENTO DEL PROGRAMA DE ABASTO RURAL",
+    "n": 21576
+  },
+  "n_corta_lt20": 3793,
+  "cluster_terms": {
+    "0": {
+      "n": 6422,
+      "monto_total": 59840769708.95622,
+      "monto_medio": 9318089.334935568,
+      "terminos": [
+        "servicio",
+        "servicio de",
+        "para",
+        "del",
+        "integral",
+        "en",
+        "la",
+        "integral de"
+      ]
+    },
+    "1": {
+      "n": 4612,
+      "monto_total": 3143950208.6200004,
+      "monto_medio": 681689.117220295,
+      "terminos": [
+        "compra para",
+        "abasto rural",
+        "atender requerimiento",
+        "requerimiento del",
+        "requerimiento",
+        "para atender",
+        "de abasto",
+        "abasto"
+      ]
+    },
+    "2": {
+      "n": 857,
+      "monto_total": 13474956503.099998,
+      "monto_medio": 15723403.154142356,
+      "terminos": [
+        "2025 2026",
+        "2026",
+        "2025",
+        "compra consolidada",
+        "consolidada",
+        "consolidada de",
+        "compra",
+        "ejercicios"
+      ]
+    },
+    "3": {
+      "n": 9649,
+      "monto_total": 41879776505.00452,
+      "monto_medio": 4340322.987356671,
+      "terminos": [
+        "la",
+        "en",
+        "el",
+        "de la",
+        "los",
+        "las",
+        "del",
+        "en la"
+      ]
+    },
+    "4": {
+      "n": 3494,
+      "monto_total": 16787397278.566355,
+      "monto_medio": 4804635.740860433,
+      "terminos": [
+        "adquisici\u00f3n de",
+        "adquisici\u00f3n",
+        "para",
+        "insumos",
+        "2024",
+        "de medicamento",
+        "medicamento",
+        "la"
+      ]
+    },
+    "5": {
+      "n": 766,
+      "monto_total": 938525103.89,
+      "monto_medio": 1225228.595156658,
+      "terminos": [
+        "vestuario",
+        "vestuario uniformes",
+        "uniformes",
+        "calzado equipo",
+        "uniformes calzado",
+        "calzado",
+        "de protecci\u00f3n",
+        "de vestuario"
+      ]
+    },
+    "6": {
+      "n": 1996,
+      "monto_total": 3758731850.908024,
+      "monto_medio": 1883132.1898336792,
+      "terminos": [
+        "material",
+        "material de",
+        "de curaci\u00f3n",
+        "curaci\u00f3n",
+        "de material",
+        "adquisici\u00f3n",
+        "adquisici\u00f3n de",
+        "laboratorio"
+      ]
+    },
+    "7": {
+      "n": 428,
+      "monto_total": 11283221590.55,
+      "monto_medio": 26362667.267640185,
+      "terminos": [
+        "de las",
+        "las",
+        "las claves",
+        "sector salud",
+        "claves necesarias",
+        "el sector",
+        "necesarias para",
+        "necesarias"
+      ]
+    },
+    "8": {
+      "n": 880,
+      "monto_total": 24057873.54693,
+      "monto_medio": 27338.49266696591,
+      "terminos": [
+        "valuatorio",
+        "justipreciaciones de",
+        "justipreciaciones",
+        "otros trabajos",
+        "renta otros",
+        "federal dem\u00e1s",
+        "consultor\u00eda que",
+        "requieren las"
+      ]
+    },
+    "9": {
+      "n": 1674,
+      "monto_total": 4279189523.1651,
+      "monto_medio": 2556266.1428704304,
+      "terminos": [
+        "adquisicion",
+        "adquisicion de",
+        "terapeuticos",
+        "bienes terapeuticos",
+        "de bienes",
+        "para",
+        "medicamento",
+        "de medicamento"
+      ]
+    },
+    "10": {
+      "n": 11968,
+      "monto_total": 59812347589.10672,
+      "monto_medio": 4997689.471014933,
+      "terminos": [
+        "para",
+        "del",
+        "con",
+        "el",
+        "medicamento",
+        "la",
+        "2024",
+        "para el"
+      ]
+    },
+    "11": {
+      "n": 392,
+      "monto_total": 1748266643.6369233,
+      "monto_medio": 4459863.886828886,
+      "terminos": [
+        "medicamentos",
+        "de medicamentos",
+        "adquisici\u00f3n de",
+        "adquisici\u00f3n",
+        "010",
+        "fase",
+        "julio",
+        "abasto"
+      ]
+    },
+    "12": {
+      "n": 449,
+      "monto_total": 1877322780.6,
+      "monto_medio": 4181119.7786191534,
+      "terminos": [
+        "emergente",
+        "emergente de",
+        "medicamentos material",
+        "compra emergente",
+        "de medicamentos",
+        "medicamentos",
+        "material de",
+        "material"
+      ]
+    },
+    "13": {
+      "n": 608,
+      "monto_total": 118221230.024483,
+      "monto_medio": 194442.8125402681,
+      "terminos": [
+        "cubrir las",
+        "para cubrir",
+        "las necesidades",
+        "cubrir",
+        "necesidades",
+        "al ejercicio",
+        "correspondiente al",
+        "profesionales para"
+      ]
+    },
+    "14": {
+      "n": 1213,
+      "monto_total": 401090949.68,
+      "monto_medio": 330660.30476504535,
+      "terminos": [
+        "profesionales",
+        "servicios profesionales",
+        "servicios",
+        "de servicios",
+        "proveedor de",
+        "prestaci\u00f3n de",
+        "proveedor",
+        "prestaci\u00f3n"
+      ]
+    },
+    "15": {
+      "n": 1917,
+      "monto_total": 7352429260.676077,
+      "monto_medio": 3835383.0259134467,
+      "terminos": [
+        "mantenimiento",
+        "de mantenimiento",
+        "preventivo",
+        "mantenimiento preventivo",
+        "correctivo",
+        "preventivo correctivo",
+        "servicio de",
+        "servicio"
+      ]
+    },
+    "16": {
+      "n": 518,
+      "monto_total": 1382753075.5166001,
+      "monto_medio": 2669407.4816922783,
+      "terminos": [
+        "auxiliares de",
+        "curaci\u00f3n auxiliares",
+        "auxiliares",
+        "fiscales 2025",
+        "ejercicios fiscales",
+        "fiscales",
+        "los ejercicios",
+        "ejercicios"
+      ]
+    },
+    "17": {
+      "n": 578,
+      "monto_total": 294542544.7900001,
+      "monto_medio": 509589.1778373704,
+      "terminos": [
+        "010",
+        "040",
+        "adquisici\u00f3n de",
+        "adquisici\u00f3n",
+        "de claves",
+        "030",
+        "24",
+        "010 030"
+      ]
+    },
+    "18": {
+      "n": 998,
+      "monto_total": 331738788.53610003,
+      "monto_medio": 332403.59572755516,
+      "terminos": [
+        "curacion",
+        "de curacion",
+        "material",
+        "material de",
+        "adquisicion",
+        "adquisicion de",
+        "de material",
+        "medicamento material"
+      ]
+    },
+    "19": {
+      "n": 581,
+      "monto_total": 23536140058.01,
+      "monto_medio": 40509707.5008778,
+      "terminos": [
+        "medicamentos bienes",
+        "bienes terap\u00e9uticos",
+        "terap\u00e9uticos",
+        "terap\u00e9uticos material",
+        "bienes",
+        "consolidada de",
+        "de medicamentos",
+        "consolidada"
+      ]
+    }
+  },
+  "cross_proveedor": {
+    "n": 2839,
+    "top_5": [
+      {
+        "descripcion": "COMPRA CONSOLIDADA DE MEDICAMENTOS, BIENES TERAP\u00c9UTICOS, MATERIAL DE CURACI\u00d3N..",
+        "n": 671,
+        "n_proveedores": 163,
+        "monto_total": 72981566491.68001,
+        "ejemplo_prov": "ANSOF COMERCIALIZADORES SA DE CV"
+      },
+      {
+        "descripcion": "COMPRA DE LAS CLAVES NECESARIAS PARA EL SECTOR SALUD",
+        "n": 152,
+        "n_proveedores": 123,
+        "monto_total": 34579591898.15,
+        "ejemplo_prov": "MEDICA POLARIS SA DE CV"
+      },
+      {
+        "descripcion": "COMPRA CONSOLIDADA DE MEDICAMENTOS (PATENTES)F4 PARA LOS EJERCICIOS 2025-2026",
+        "n": 187,
+        "n_proveedores": 21,
+        "monto_total": 23731421589.68,
+        "ejemplo_prov": "AMGEN MEXICO SA DE CV"
+      },
+      {
+        "descripcion": "COMPRA CONSOLIDADA DE MEDICAMENTOS, BIENES TERAP\u00c9UTICOS, MATERIAL DE CURACI\u00d3N",
+        "n": 375,
+        "n_proveedores": 163,
+        "monto_total": 16295129488.42,
+        "ejemplo_prov": "ACCUTRACK SA DE CV"
+      },
+      {
+        "descripcion": "COMPRA PARA ATENDER REQUERIMIENTO DEL PROGRAMA DE ABASTO RURAL",
+        "n": 21576,
+        "n_proveedores": 133,
+        "monto_total": 15716262825.5,
+        "ejemplo_prov": "AGROINDUSTRIA BROCA Y ABREU SA DE CV"
+      }
+    ]
+  }
+}

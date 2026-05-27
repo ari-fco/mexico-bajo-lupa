@@ -1,0 +1,331 @@
+{
+  "distribucion_flags": {
+    "monto_extremo": 100,
+    "isoforest": 200,
+    "lof": 200,
+    "dbscan_noise": 10249,
+    "efos": 22,
+    "al_menos_1_flag": 10666,
+    "al_menos_2_flags": 123,
+    "al_menos_3_flags": 4
+  },
+  "top_robustos": [
+    {
+      "contrato_id": "C-2024-00098133",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 83697.67,
+      "proveedor": "QUIMICA INDUSTRIAL DEL AGUA SA DE CV",
+      "rfc_proveedor": "QIA060901UL9",
+      "n_flags": 3,
+      "score_combinado": 4.691096101784877
+    },
+    {
+      "contrato_id": "C-2025-00012153",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 1378922755.44,
+      "proveedor": "BECTON DICKINSON DE MEXICO SA DE CV",
+      "rfc_proveedor": "BDM571004IZ6",
+      "n_flags": 3,
+      "score_combinado": 4.642226757286151
+    },
+    {
+      "contrato_id": "C-2025-00011452",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 1109402928.8,
+      "proveedor": "NOVAG INFANCIA SA DE CV",
+      "rfc_proveedor": "NIN780801IH0",
+      "n_flags": 3,
+      "score_combinado": 4.618352618356972
+    },
+    {
+      "contrato_id": "C-2024-00111241",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 10688.06,
+      "proveedor": "CONSORCIO HOSPITALARIO SA DE CV",
+      "rfc_proveedor": "CHO0107317DA",
+      "n_flags": 3,
+      "score_combinado": 4.406121378872362
+    },
+    {
+      "contrato_id": "C-2024-00098185",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 88263.2,
+      "proveedor": "JOSE MANUEL CORONA JIMENEZ",
+      "rfc_proveedor": "COJM6206176Z8",
+      "n_flags": 2,
+      "score_combinado": 4.193396214052631
+    },
+    {
+      "contrato_id": "C-2025-00011559",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 1677175763.14,
+      "proveedor": "ALTERNAVIDA SA DE CV",
+      "rfc_proveedor": "ALT010926BY0",
+      "n_flags": 2,
+      "score_combinado": 4.1637218418425626
+    },
+    {
+      "contrato_id": "C-2025-00011633",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 1308855494.88,
+      "proveedor": "SANOFI PASTEUR SA DE CV",
+      "rfc_proveedor": "SPA960328P62",
+      "n_flags": 2,
+      "score_combinado": 4.136501997419227
+    },
+    {
+      "contrato_id": "C-2024-00106260",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 793.56,
+      "proveedor": "GOMEN HEALTH CARE SA DE CV",
+      "rfc_proveedor": "GHC130924B82",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2024-00111354",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 66.0,
+      "proveedor": "INSUMOS CORAL S DE RL DE CV",
+      "rfc_proveedor": "ICO210413DF6",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2024-00118251",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 711.96,
+      "proveedor": "GRUPO ACTIPRO SA DE CV",
+      "rfc_proveedor": "GAC1705243R0",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2024-00109326",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 760.0,
+      "proveedor": "COMERCIALIZADORA LINI SA DE CV",
+      "rfc_proveedor": "CLI1504291N6",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2025-00030919",
+      "institucion": "SERVICIOS DE SALUD DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL PARA EL BIENESTAR",
+      "monto": 96571200.0,
+      "proveedor": "SECRETARIA DE SEGURIDAD Y PROTECCION CIUDADANA SERVICIO DE PROTE",
+      "rfc_proveedor": "SPF130103BF7",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2025-00037030",
+      "institucion": "ALIMENTACI\u00d3N PARA EL BIENESTAR, S.A. DE C.V.",
+      "monto": 94500.0,
+      "proveedor": "SEGURIDAD ALIMENTARIA MEXICANA",
+      "rfc_proveedor": "SAM190119LT9",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2025-00066738",
+      "institucion": "SERVICIOS DE SALUD DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL PARA EL BIENESTAR",
+      "monto": 915152800.0,
+      "proveedor": "PIGUDI GASTRONOMICO SA DE CV",
+      "rfc_proveedor": "PGA130909MQ8",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2025-00092314",
+      "institucion": "SERVICIOS DE SALUD DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL PARA EL BIENESTAR",
+      "monto": 937.51,
+      "proveedor": "INDUSTRIAS QUIMICO FARMACEUTICAS AMERICANAS SA DE CV",
+      "rfc_proveedor": "IQF390915327",
+      "n_flags": 2,
+      "score_combinado": 3.384536155052378
+    },
+    {
+      "contrato_id": "C-2025-00055748",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 85389064.56,
+      "proveedor": "SCHWABE MEXICO SA DE CV",
+      "rfc_proveedor": "SME971014PD5",
+      "n_flags": 2,
+      "score_combinado": 3.212985276935887
+    },
+    {
+      "contrato_id": "C-2025-00082068",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 777491996.04,
+      "proveedor": "CREATIVIDAD E INTEGRACION EN SERVICIOS MEDICOS SA DE CV",
+      "rfc_proveedor": "MTE9909144K1",
+      "n_flags": 2,
+      "score_combinado": 3.187414486835835
+    },
+    {
+      "contrato_id": "C-2025-00078891",
+      "institucion": "ADMINISTRACION DEL SISTEMA PORTUARIO NACIONAL DOS BOCAS, S.A. DE C.V.",
+      "monto": 7967575909.86,
+      "proveedor": "PEGSA CONSTRUCCIONES SA DE CV",
+      "rfc_proveedor": "PCO110429N78",
+      "n_flags": 2,
+      "score_combinado": 3.1707475039212936
+    },
+    {
+      "contrato_id": "C-2025-00090363",
+      "institucion": "AGENCIA REGULADORA DEL TRANSPORTE FERROVIARIO",
+      "monto": 6579444251.17,
+      "proveedor": "MOTA-ENGIL MEXICO S A P I DE CV",
+      "rfc_proveedor": "MME100125RS6",
+      "n_flags": 2,
+      "score_combinado": 3.1497330941617143
+    },
+    {
+      "contrato_id": "C-2025-00051213",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "monto": 5651319147.84,
+      "proveedor": "ASTRAZENECA SA DE CV",
+      "rfc_proveedor": "AST961231B69",
+      "n_flags": 2,
+      "score_combinado": 3.133040423457807
+    }
+  ],
+  "top_proveedores_robustos": [
+    {
+      "rfc_proveedor": "NIT1411243C7",
+      "nombre": "NITICOLOR SA DE CV",
+      "n_contratos_total": 3,
+      "n_contratos_robustos": 3,
+      "monto_total": 821615.17,
+      "monto_con_flag": 821615.17,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "PGA130909MQ8",
+      "nombre": "PIGUDI GASTRONOMICO SA DE CV",
+      "n_contratos_total": 13,
+      "n_contratos_robustos": 2,
+      "monto_total": 3303616405.04,
+      "monto_con_flag": 1988236756.37,
+      "flag_efos": false
+    },
+    {
+      "rfc_proveedor": "PSK190708KG3",
+      "nombre": "PREVENCION Y SOLUCIONES K-B SA DE CV",
+      "n_contratos_total": 105,
+      "n_contratos_robustos": 2,
+      "monto_total": 2551510800.473,
+      "monto_con_flag": 1873956809.4399998,
+      "flag_efos": false
+    },
+    {
+      "rfc_proveedor": "NCO1012101Z7",
+      "nombre": "NEOMEGA CONSTRUCCIONES SA DE CV",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 2,
+      "monto_total": 18898182.64,
+      "monto_con_flag": 18898182.64,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "CBA220225AL7",
+      "nombre": "CONSTRUCTORA BARLE SA DE CV",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 2,
+      "monto_total": 9972892.31,
+      "monto_con_flag": 9972892.31,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "CLI1504291N6",
+      "nombre": "COMERCIALIZADORA LINI SA DE CV",
+      "n_contratos_total": 728,
+      "n_contratos_robustos": 2,
+      "monto_total": 179138994.32,
+      "monto_con_flag": 5815214.209999999,
+      "flag_efos": false
+    },
+    {
+      "rfc_proveedor": "CTE210319SQA",
+      "nombre": "CONSTRUCCIONES TEKSARE SA DE CV",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 2,
+      "monto_total": 2305086.21,
+      "monto_con_flag": 2305086.21,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "IHP2311286J1",
+      "nombre": "INFRAESTRUCTURA HOSPITALARIA PROEMSA SA DE CV",
+      "n_contratos_total": 89,
+      "n_contratos_robustos": 2,
+      "monto_total": 13338044.0,
+      "monto_con_flag": 704405.76,
+      "flag_efos": false
+    },
+    {
+      "rfc_proveedor": "ESC110914563",
+      "nombre": "ENTERPRISE SOURCE CAPITAL DE MEXICO SA DE CV",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 2,
+      "monto_total": 471211.2,
+      "monto_con_flag": 471211.2,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "APT040201KA5",
+      "nombre": "ACTITUD POSITIVA EN TONER S DE RL MI",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 2,
+      "monto_total": 344000.8,
+      "monto_con_flag": 344000.8,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "CATC750503PK1",
+      "nombre": "CRUZ CAMARGO TRINIDAD",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 2,
+      "monto_total": 242947.52000000002,
+      "monto_con_flag": 242947.52000000002,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "GCB1012159G7",
+      "nombre": "GRUPO CIDAR BUSINESS BROKERS, AGENTE DE SEGUROS Y DE FIANZAS SA",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 2,
+      "monto_total": 93103.45000000001,
+      "monto_con_flag": 93103.45000000001,
+      "flag_efos": true
+    },
+    {
+      "rfc_proveedor": "CHO011105F23",
+      "nombre": "COMERCIAL HOSPITALARIA SA DE CV",
+      "n_contratos_total": 203,
+      "n_contratos_robustos": 2,
+      "monto_total": 3053483.56,
+      "monto_con_flag": 72336.4,
+      "flag_efos": false
+    },
+    {
+      "rfc_proveedor": "OCI810921EI3",
+      "nombre": "OPERADORA CICSA SA DE CV",
+      "n_contratos_total": 2,
+      "n_contratos_robustos": 1,
+      "monto_total": 30803857823.719997,
+      "monto_con_flag": 30803857823.719997,
+      "flag_efos": false
+    },
+    {
+      "rfc_proveedor": "LPI830527KJ2",
+      "nombre": "LABORATORIOS PISA SA DE CV",
+      "n_contratos_total": 595,
+      "n_contratos_robustos": 1,
+      "monto_total": 20134161221.834,
+      "monto_con_flag": 16427531408.18,
+      "flag_efos": false
+    }
+  ]
+}

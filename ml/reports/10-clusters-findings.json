@@ -1,0 +1,192 @@
+{
+  "best_k": 8,
+  "silhouette": 0.3258603788346955,
+  "clusters": [
+    {
+      "cluster_km": 0,
+      "n": 1380,
+      "n_contratos_medio": 12.944202898550724,
+      "monto_total_medio": 109584629.88556193,
+      "n_inst_medio": 4.540579710144928,
+      "pct_AD_medio": 0.3404890971605402,
+      "jump_ratio_medio": 4.869148246027138,
+      "etiqueta": "estandar"
+    },
+    {
+      "cluster_km": 1,
+      "n": 1815,
+      "n_contratos_medio": 7.190633608815427,
+      "monto_total_medio": 2587457.326231909,
+      "n_inst_medio": 1.0038567493112949,
+      "pct_AD_medio": 0.9718232665731967,
+      "jump_ratio_medio": 2.247640612617095,
+      "etiqueta": "captura"
+    },
+    {
+      "cluster_km": 2,
+      "n": 229,
+      "n_contratos_medio": 50.66812227074236,
+      "monto_total_medio": 345825270.96149904,
+      "n_inst_medio": 25.12227074235808,
+      "pct_AD_medio": 0.6062962371073375,
+      "jump_ratio_medio": 13.138212632031824,
+      "etiqueta": "anomalia_jumps"
+    },
+    {
+      "cluster_km": 3,
+      "n": 45,
+      "n_contratos_medio": 162.4,
+      "monto_total_medio": 1521442884.4977014,
+      "n_inst_medio": 95.64444444444445,
+      "pct_AD_medio": 0.2224633494854523,
+      "jump_ratio_medio": 55.268742423473476,
+      "etiqueta": "anomalia_jumps"
+    },
+    {
+      "cluster_km": 4,
+      "n": 1422,
+      "n_contratos_medio": 9.10056258790436,
+      "monto_total_medio": 6875097.729098906,
+      "n_inst_medio": 3.8277074542897327,
+      "pct_AD_medio": 0.8464248528346346,
+      "jump_ratio_medio": 3.274558498292439,
+      "etiqueta": "estandar"
+    },
+    {
+      "cluster_km": 5,
+      "n": 566,
+      "n_contratos_medio": 93.23144876325088,
+      "monto_total_medio": 779315605.945173,
+      "n_inst_medio": 12.20494699646643,
+      "pct_AD_medio": 0.6432614263338408,
+      "jump_ratio_medio": 29.05167719289147,
+      "etiqueta": "anomalia_jumps"
+    },
+    {
+      "cluster_km": 6,
+      "n": 540,
+      "n_contratos_medio": 74.41111111111111,
+      "monto_total_medio": 59060820.42337259,
+      "n_inst_medio": 1.3462962962962963,
+      "pct_AD_medio": 0.9089393886594991,
+      "jump_ratio_medio": 8.7612301497716,
+      "etiqueta": "captura"
+    },
+    {
+      "cluster_km": 7,
+      "n": 1089,
+      "n_contratos_medio": 8.438934802571167,
+      "monto_total_medio": 40363276.89826287,
+      "n_inst_medio": 1.2038567493112948,
+      "pct_AD_medio": 0.2292281613746392,
+      "jump_ratio_medio": 2.9740998589065124,
+      "etiqueta": "marginal"
+    }
+  ],
+  "ejemplos_por_etiqueta": {
+    "captura": [
+      {
+        "rfc_proveedor": "SAM190119LT9",
+        "nombre": "SEGURIDAD ALIMENTARIA MEXICANA",
+        "n_contratos": 859,
+        "monto_total": 4406795049.5,
+        "pct_AD": 0.002328288707799767,
+        "n_instituciones": 1
+      },
+      {
+        "rfc_proveedor": "MAZ8111185X2",
+        "nombre": "MOLINOS AZTECA SA DE CV",
+        "n_contratos": 1505,
+        "monto_total": 1533025197.0,
+        "pct_AD": 1.0,
+        "n_instituciones": 1
+      },
+      {
+        "rfc_proveedor": "CIC9409053C3",
+        "nombre": "COMERCIALIZADORA INTERNACIONAL DE COMPRESORES SA DE CV",
+        "n_contratos": 15,
+        "monto_total": 1130249472.12,
+        "pct_AD": 0.4666666666666667,
+        "n_instituciones": 1
+      }
+    ],
+    "marginal": [
+      {
+        "rfc_proveedor": "GIP1105317DA",
+        "nombre": "GRUPO IMPULSOR PAJEME SA DE CV",
+        "n_contratos": 6,
+        "monto_total": 1601420694.6200001,
+        "pct_AD": 0.0,
+        "n_instituciones": 1
+      },
+      {
+        "rfc_proveedor": "DUS8406062B3",
+        "nombre": "DRAGADOS Y URBANIZACIONES SIGLO 21 SA DE CV",
+        "n_contratos": 11,
+        "monto_total": 1340022230.83,
+        "pct_AD": 0.2727272727272727,
+        "n_instituciones": 1
+      },
+      {
+        "rfc_proveedor": "ICS001020SN7",
+        "nombre": "INGENIEROS CIVILES DE SONORA SA DE CV",
+        "n_contratos": 6,
+        "monto_total": 1236903186.99,
+        "pct_AD": 0.0,
+        "n_instituciones": 1
+      }
+    ],
+    "estandar": [
+      {
+        "rfc_proveedor": "PCO110429N78",
+        "nombre": "PEGSA CONSTRUCCIONES SA DE CV",
+        "n_contratos": 5,
+        "monto_total": 8994543211.56,
+        "pct_AD": 0.6,
+        "n_instituciones": 3
+      },
+      {
+        "rfc_proveedor": "PGA130909MQ8",
+        "nombre": "PIGUDI GASTRONOMICO SA DE CV",
+        "n_contratos": 13,
+        "monto_total": 3303616405.04,
+        "pct_AD": 0.23076923076923078,
+        "n_instituciones": 7
+      },
+      {
+        "rfc_proveedor": "IDI9802234X8",
+        "nombre": "INGENIERIA Y DESARROLLO INMOBILIARIO DE MEXICO SA DE CV",
+        "n_contratos": 6,
+        "monto_total": 3213019356.1800003,
+        "pct_AD": 0.3333333333333333,
+        "n_instituciones": 2
+      }
+    ],
+    "anomalia_jumps": [
+      {
+        "rfc_proveedor": "LPI830527KJ2",
+        "nombre": "LABORATORIOS PISA SA DE CV",
+        "n_contratos": 595,
+        "monto_total": 20134161221.834,
+        "pct_AD": 0.7142857142857143,
+        "n_instituciones": 22
+      },
+      {
+        "rfc_proveedor": "AGR900605VC6",
+        "nombre": "AGROASEMEX SA",
+        "n_contratos": 302,
+        "monto_total": 15622931704.240585,
+        "pct_AD": 0.006622516556291391,
+        "n_instituciones": 198
+      },
+      {
+        "rfc_proveedor": "TIN090211JC9",
+        "nombre": "TOKA INTERNACIONAL S A P I DE CV",
+        "n_contratos": 408,
+        "monto_total": 14603219187.599403,
+        "pct_AD": 0.15441176470588236,
+        "n_instituciones": 208
+      }
+    ]
+  }
+}

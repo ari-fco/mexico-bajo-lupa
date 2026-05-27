@@ -1,0 +1,685 @@
+{
+  "comprasmx_historico": {
+    "name": "comprasmx_historico",
+    "n_rows": 2356609,
+    "n_cols": 16,
+    "memory_mb": 1036.09,
+    "columns": [
+      {
+        "name": "contrato_id",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 2356609,
+        "top_values": {
+          "2376191": 1,
+          "89": 1,
+          "1756": 1,
+          "1761": 1,
+          "1759": 1
+        }
+      },
+      {
+        "name": "expediente_id",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 1768189,
+        "top_values": {
+          "553734": 2167,
+          "1786843": 2023,
+          "193814": 940,
+          "1954349": 855,
+          "203285": 782
+        }
+      },
+      {
+        "name": "ramo",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 24,
+        "top_values": {
+          "1.Adquisiciones": 1312329,
+          "3.Servicios": 746412,
+          "4.Obra P\u00fablica 09012017": 129357,
+          "4.Obra P\u00fablica": 80081,
+          "5.Servicios relacionados con la obra p\u00fablica 09012017": 25685
+        }
+      },
+      {
+        "name": "institucion",
+        "dtype": "object",
+        "n_null": 2356609,
+        "pct_null": 100.0,
+        "n_unique": 0,
+        "top_values": {}
+      },
+      {
+        "name": "modalidad_raw",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 56,
+        "top_values": {
+          "05. Adjudicaci\u00f3n Directa LAASSP": 1234750,
+          "V20151220 12. Adjudicaci\u00f3n Directa Nacional Simplificada LAASSP": 204726,
+          "V20151220 07. Adjudicaci\u00f3n Directa Nacional Art. 42 LAASSP": 185619,
+          "01. Licitaci\u00f3n P\u00fablica LAASSP": 131983,
+          "03. Invitaci\u00f3n a Cuando Menos Tres Personas LAASSP": 74079
+        }
+      },
+      {
+        "name": "modalidad",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 4,
+        "top_values": {
+          "AD": 1745065,
+          "LP": 322988,
+          "I3P": 233949,
+          "OTRA": 54607
+        }
+      },
+      {
+        "name": "monto",
+        "dtype": "Float64",
+        "n_null": 5182,
+        "pct_null": 0.22,
+        "n_unique": 1253290,
+        "min": 0.0,
+        "p01": 893.8652000000001,
+        "p25": 39860.09,
+        "median": 123715.8,
+        "mean": 2465575.8803174444,
+        "p75": 476964.7,
+        "p99": 30634646.570599888,
+        "max": 84828377320.13,
+        "std": 92865366.44790146,
+        "n_zero": 1473,
+        "n_negative": 0
+      },
+      {
+        "name": "moneda",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 7,
+        "top_values": {
+          "MXN": 2331995,
+          "USD": 22955,
+          "EUR": 1122,
+          "Sin dato": 346,
+          "GBP": 87
+        }
+      },
+      {
+        "name": "fecha_firma",
+        "dtype": "datetime64[us]",
+        "n_null": 5307,
+        "pct_null": 0.23,
+        "n_unique": 4993,
+        "min": "1900-01-11 00:00:00",
+        "max": "2024-12-01 00:00:00"
+      },
+      {
+        "name": "proveedor",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 295702,
+        "top_values": {
+          "Summa Company, S.A. de C.V.": 16271,
+          "Farmaceuticos Maypo, S.A. de C.V.": 13904,
+          "Marcas Nestle, S.A. de C.V.": 10719,
+          "Cia. Procter & Gamble Mexico, S. de R.L. de C.V.": 8689,
+          "Comercializadora Pepsico Mexico, S. de R.L. de C.V.": 7398
+        }
+      },
+      {
+        "name": "rfc_proveedor",
+        "dtype": "object",
+        "n_null": 2356609,
+        "pct_null": 100.0,
+        "n_unique": 0,
+        "top_values": {}
+      },
+      {
+        "name": "descripcion",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 1347171,
+        "top_values": {
+          "Servicios Profesionales \u2014 Servicios Profesionales": 17189,
+          "Harina de Maiz \u2014 Compra Para Atender Requerimientos delPrograma de Abasto Rural": 9051,
+          "Harina de Trigo \u2014 Compra Para Atender Requerimientos delPrograma de Abasto Rural": 6242,
+          "Aceite Vegetal Comestible \u2014 Compra Para Atender Requerimientos delPrograma de Abasto Rural": 5842,
+          "Prestador de Servicios Profesionales \u2014 Sin Dato": 5693
+        }
+      },
+      {
+        "name": "cve_ent",
+        "dtype": "object",
+        "n_null": 2356609,
+        "pct_null": 100.0,
+        "n_unique": 0,
+        "top_values": {}
+      },
+      {
+        "name": "orden_gobierno",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 1,
+        "top_values": {
+          "FEDERAL_HIST": 2356609
+        }
+      },
+      {
+        "name": "ano",
+        "dtype": "Int64",
+        "n_null": 5307,
+        "pct_null": 0.23,
+        "n_unique": 19,
+        "min": 1900.0,
+        "p01": 2011.0,
+        "p25": 2014.0,
+        "median": 2017.0,
+        "mean": 2016.7169087594873,
+        "p75": 2019.0,
+        "p99": 2022.0,
+        "max": 2024.0,
+        "std": 3.33511447506391,
+        "n_zero": 0,
+        "n_negative": 0
+      },
+      {
+        "name": "primer_digito",
+        "dtype": "Int64",
+        "n_null": 6687,
+        "pct_null": 0.28,
+        "n_unique": 9,
+        "min": 1.0,
+        "p01": 1.0,
+        "p25": 1.0,
+        "median": 3.0,
+        "mean": 3.469598565399192,
+        "p75": 5.0,
+        "p99": 9.0,
+        "max": 9.0,
+        "std": 2.420111593117268,
+        "n_zero": 0,
+        "n_negative": 0
+      }
+    ]
+  },
+  "comprasmx_contratos": {
+    "name": "comprasmx_contratos",
+    "n_rows": 235392,
+    "n_cols": 16,
+    "memory_mb": 111.01,
+    "columns": [
+      {
+        "name": "contrato_id",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 235392,
+        "top_values": {
+          "C-2024-00118295": 1,
+          "C-2024-00103558": 1,
+          "C-2024-00106413": 1,
+          "C-2025-00043660": 1,
+          "C-2025-00043683": 1
+        }
+      },
+      {
+        "name": "expediente_id",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 150441,
+        "top_values": {
+          "E-2024-00113264": 3151,
+          "E-2025-00038653": 2537,
+          "E-2025-00040281": 2268,
+          "E-2025-00060561": 1996,
+          "E-2024-00117209": 1333
+        }
+      },
+      {
+        "name": "ramo",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 69,
+        "top_values": {
+          "INSTITUTO MEXICANO DEL SEGURO SOCIAL": 57829,
+          "AGRICULTURA Y DESARROLLO RURAL": 28731,
+          "SALUD": 24869,
+          "EDUCACI\u00d3N P\u00daBLICA": 22316,
+          "ENTIDADES NO SECTORIZADAS": 11810
+        }
+      },
+      {
+        "name": "institucion",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 906,
+        "top_values": {
+          "INSTITUTO MEXICANO DEL SEGURO SOCIAL": 57829,
+          "ALIMENTACI\u00d3N PARA EL BIENESTAR, S.A. DE C.V.": 22869,
+          "INSTITUTO DE SEGURIDAD Y SERVICIOS SOCIALES DE LOS TRABAJADORES DEL ESTADO": 10841,
+          "SERVICIOS DE SALUD DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL PARA EL BIENESTAR": 9683,
+          "INSTITUTO POLITECNICO NACIONAL": 8396
+        }
+      },
+      {
+        "name": "modalidad_raw",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 57,
+        "top_values": {
+          "ADJUDICACI\u00d3N DIRECTA POR MONTOS M\u00c1XIMOS POR EXCEPCI\u00d3N": 55484,
+          "LICITACI\u00d3N P\u00daBLICA": 41495,
+          "ADJUDICACI\u00d3N DIRECTA POR URGENCIA Y EVENTUALIDAD": 25767,
+          "ADJUDICACI\u00d3N DIRECTA POR SERVICIOS PRESTADOS POR PERSONA F\u00cdSICA, QUE NO REQUIERA DE OTRO ESPECIALISTA O T\u00c9CNICO": 23724,
+          "ADJUDICACI\u00d3N DIRECTA POR COMERCIALIZACI\u00d3N DIRECTA": 22203
+        }
+      },
+      {
+        "name": "modalidad",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 4,
+        "top_values": {
+          "AD": 170199,
+          "LP": 47513,
+          "I3P": 14569,
+          "OTRA": 3111
+        }
+      },
+      {
+        "name": "cve_ent",
+        "dtype": "str",
+        "n_null": 223015,
+        "pct_null": 94.74,
+        "n_unique": 32,
+        "top_values": {
+          "27": 1663,
+          "26": 1084,
+          "13": 1040,
+          "30": 841,
+          "28": 626
+        }
+      },
+      {
+        "name": "orden_gobierno",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 2,
+        "top_values": {
+          "FEDERAL": 223015,
+          "ESTATAL": 12377
+        }
+      },
+      {
+        "name": "monto",
+        "dtype": "Float64",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 159654,
+        "min": 0.001,
+        "p01": 636.9207999999999,
+        "p25": 60000.0,
+        "median": 186048.685,
+        "mean": 4717369.583365973,
+        "p75": 723570.575,
+        "p99": 69270656.21579987,
+        "max": 27451532410.19,
+        "std": 85340630.30126879,
+        "n_zero": 0,
+        "n_negative": 0
+      },
+      {
+        "name": "moneda",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 6,
+        "top_values": {
+          "MXN": 233913,
+          "USD": 1377,
+          "EUR": 93,
+          "JPY": 3,
+          "CAD": 3
+        }
+      },
+      {
+        "name": "fecha_firma",
+        "dtype": "datetime64[us]",
+        "n_null": 135427,
+        "pct_null": 57.53,
+        "n_unique": 80428,
+        "min": "1981-04-10 00:00:00",
+        "max": "2025-06-25 19:03:48"
+      },
+      {
+        "name": "proveedor",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 49983,
+        "top_values": {
+          "MOLINOS AZTECA SA DE CV": 1505,
+          "ALEN DEL NORTE SA DE CV": 1205,
+          "LICONSA SA DE CV": 1120,
+          "GADMAR SA DE CV": 1030,
+          "BRAND AND PUSH SA DE CV": 1027
+        }
+      },
+      {
+        "name": "rfc_proveedor",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 50010,
+        "top_values": {
+          "MAZ8111185X2": 1505,
+          "ANX940223JQ0": 1205,
+          "LIC950821M84": 1120,
+          "GAD160607P50": 1030,
+          "BPU170426RDA": 1027
+        }
+      },
+      {
+        "name": "descripcion",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 109227,
+        "top_values": {
+          "COMPRA PARA ATENDER REQUERIMIENTO DEL PROGRAMA DE ABASTO RURAL": 21576,
+          "ATENDER LA SOLICITUD DE SERVICIOS VALUATORIO, JUSTIPRECIACIONES DE RENTA Y OTROS TRABAJOS VALUATORIO A NIVEL DE CONSULTOR\u00cdA QUE REQUIEREN LAS DEPENDENCIAS Y ENTIDADES DE LA ADMINISTRACI\u00d3N P\u00daBLICA FEDERAL Y DEM\u00c1S INSTITUCIONES P\u00daBLICAS.": 3716,
+          "ADQUISICI\u00d3N CONSOLIDADA DE VESTUARIO, UNIFORMES, CALZADO Y EQUIPO DE PROTECCI\u00d3N": 1070,
+          "COMPRA CONSOLIDADA DE MEDICAMENTOS, BIENES TERAP\u00c9UTICOS, MATERIAL DE CURACI\u00d3N Y AUXILIARES DE DIAGNOSTICO, PARA LOS EJERCICIOS FISCALES 2025-2026": 1048,
+          "TENIENDO EN CUENTA QUE EL IMSS  TIENE UN MANDATO LEGAL DERIVADO DEL ART\u00cdCULO 123 DE LA CONSTITUCI\u00d3N POL\u00cdTICA DE LOS ESTADOS UNIDOS MEXICANOS, SIENDO SU MISI\u00d3N LA DE SER EL INSTRUMENTO B\u00c1SICO DE LA SEGURIDAD SOCIAL, ESTABLECIDO COMO UN SERVICIO P\u00daBLICO DE CAR\u00c1CTER NACIONAL, PARA TODOS LOS TRABAJADORES Y SUS FAMILIAS. \nPOR SU PARTE, EL ART\u00cdCULO 2 DE LA LEY DEL SEGURO SOCIAL (LSS) ESTABLECE QUE LA SEGURIDAD SOCIAL TIENE POR FINALIDAD GARANTIZAR EL DERECHO A LA SALUD, LA ASISTENCIA M\u00c9DICA, LA PROTECCI\u00d3N DE LOS MEDIOS DE SUBSISTENCIA Y LOS SERVICIOS SOCIALES NECESARIOS PARA EL BIENESTAR INDIVIDUAL Y COLECTIVO": 966
+        }
+      },
+      {
+        "name": "ano",
+        "dtype": "Int64",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 6,
+        "min": 0.0,
+        "p01": 0.0,
+        "p25": 0.0,
+        "median": 0.0,
+        "mean": 859.6763398926047,
+        "p75": 2024.0,
+        "p99": 2025.0,
+        "max": 2025.0,
+        "std": 1000.6093701375688,
+        "n_zero": 135427,
+        "n_negative": 0
+      },
+      {
+        "name": "primer_digito",
+        "dtype": "Int64",
+        "n_null": 33,
+        "pct_null": 0.01,
+        "n_unique": 9,
+        "min": 1.0,
+        "p01": 1.0,
+        "p25": 1.0,
+        "median": 3.0,
+        "mean": 3.4641165198696457,
+        "p75": 5.0,
+        "p99": 9.0,
+        "max": 9.0,
+        "std": 2.4731640296581925,
+        "n_zero": 0,
+        "n_negative": 0
+      }
+    ]
+  },
+  "sesnsp_estatal": {
+    "name": "sesnsp_estatal",
+    "n_rows": 413952,
+    "n_cols": 9,
+    "memory_mb": 65.48,
+    "columns": [
+      {
+        "name": "cve_ent",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 32,
+        "top_values": {
+          "01": 12936,
+          "02": 12936,
+          "03": 12936,
+          "04": 12936,
+          "05": 12936
+        }
+      },
+      {
+        "name": "estado",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 32,
+        "top_values": {
+          "Aguascalientes": 12936,
+          "Baja California": 12936,
+          "Baja California Sur": 12936,
+          "Campeche": 12936,
+          "Coahuila de Zaragoza": 12936
+        }
+      },
+      {
+        "name": "ano",
+        "dtype": "Int64",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 11,
+        "min": 2015.0,
+        "p01": 2015.0,
+        "p25": 2017.0,
+        "median": 2020.0,
+        "mean": 2020.0,
+        "p75": 2023.0,
+        "p99": 2025.0,
+        "max": 2025.0,
+        "std": 3.162281479794072,
+        "n_zero": 0,
+        "n_negative": 0
+      },
+      {
+        "name": "mes",
+        "dtype": "int64",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 12,
+        "min": 1.0,
+        "p01": 1.0,
+        "p25": 3.75,
+        "median": 6.5,
+        "mean": 6.5,
+        "p75": 9.25,
+        "p99": 12.0,
+        "max": 12.0,
+        "std": 3.45205669917122,
+        "n_zero": 0,
+        "n_negative": 0
+      },
+      {
+        "name": "bien_juridico",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 7,
+        "top_values": {
+          "El patrimonio": 177408,
+          "La vida y la Integridad corporal": 101376,
+          "Otros bienes jur\u00eddicos afectados (del fuero com\u00fan)": 42240,
+          "Libertad personal": 33792,
+          "La libertad y la seguridad sexual": 29568
+        }
+      },
+      {
+        "name": "tipo_delito",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 40,
+        "top_values": {
+          "Robo": 152064,
+          "Homicidio": 38016,
+          "Lesiones": 38016,
+          "Secuestro": 21120,
+          "Feminicidio": 16896
+        }
+      },
+      {
+        "name": "subtipo",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 55,
+        "top_values": {
+          "Robo de veh\u00edculo automotor": 25344,
+          "Robo de maquinaria": 25344,
+          "Homicidio culposo": 21120,
+          "Lesiones culposas": 21120,
+          "Secuestro": 21120
+        }
+      },
+      {
+        "name": "modalidad",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 59,
+        "top_values": {
+          "Con violencia": 50688,
+          "Sin violencia": 50688,
+          "Con arma de fuego": 21120,
+          "Con arma blanca": 21120,
+          "Con otro elemento": 21120
+        }
+      },
+      {
+        "name": "total",
+        "dtype": "int64",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 2362,
+        "min": 0.0,
+        "p01": 0.0,
+        "p25": 0.0,
+        "median": 2.0,
+        "mean": 52.49992269635127,
+        "p75": 26.0,
+        "p99": 834.0,
+        "max": 9968.0,
+        "std": 204.51865350889315,
+        "n_zero": 178737,
+        "n_negative": 0
+      }
+    ]
+  },
+  "sat_efos": {
+    "name": "sat_efos",
+    "n_rows": 14234,
+    "n_cols": 7,
+    "memory_mb": 2.56,
+    "columns": [
+      {
+        "name": "rfc",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 14055,
+        "top_values": {
+          "XXXXXXXXXXXX": 91,
+          "CPE1212146D6": 3,
+          "GEM1212044H2": 3,
+          "MGS140520TH3": 3,
+          "MMP160705P75": 3
+        }
+      },
+      {
+        "name": "contribuyente",
+        "dtype": "string",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 14170,
+        "top_values": {
+          "Informaci\u00f3n suprimida en cumplimiento a la declaratoria de nulidad emitida por la Segunda Sala Regional Norte-Este del Estado de M\u00e9xico del Tribunal Federal de Justicia Administrativa, en el expediente 5618/14-11-02-3-OT.": 17,
+          "Informaci\u00f3n suprimida en cumplimiento a la ejecutoria dictada por el Primer Tribunal Colegiado de Circuito del Centro Auxiliar de la Primera Regi\u00f3n, con residencia en la Ciudad de M\u00e9xico en el Recurso de Revisi\u00f3n 488/2015, dentro del Juicio de Amparo 238/2014": 11,
+          "Informaci\u00f3n suprimida en cumplimiento a la declaratoria de nulidad emitida por la Segunda Sala Regional Hidalgo M\u00e9xico.": 8,
+          "GEMPSE, S.A. DE C.V.": 3,
+          "MAR DEL GOLFO SUMINISTRO DE CONSTRUCCION, S.A. DE C.V.": 3
+        }
+      },
+      {
+        "name": "estatus",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 4,
+        "top_values": {
+          "DEFINITIVO": 11270,
+          "SENTENCIA_FAVORABLE": 1638,
+          "PRESUNTO": 986,
+          "DESVIRTUADO": 340
+        }
+      },
+      {
+        "name": "fecha_presuncion",
+        "dtype": "datetime64[ms]",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 143,
+        "min": "2014-01-10 00:00:00",
+        "max": "2025-12-16 00:00:00"
+      },
+      {
+        "name": "fecha_publicacion",
+        "dtype": "datetime64[ms]",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 327,
+        "min": "2014-01-10 00:00:00",
+        "max": "2025-12-16 00:00:00"
+      },
+      {
+        "name": "fuente_url",
+        "dtype": "str",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 1,
+        "top_values": {
+          "http://omawww.sat.gob.mx/cifras_sat/Documents/Listado_Completo_69-B.csv": 14234
+        }
+      },
+      {
+        "name": "snapshot_fecha",
+        "dtype": "datetime64[ms]",
+        "n_null": 0,
+        "pct_null": 0.0,
+        "n_unique": 1,
+        "min": "2026-05-08 00:00:00",
+        "max": "2026-05-08 00:00:00"
+      }
+    ]
+  }
+}

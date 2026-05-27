@@ -1,0 +1,416 @@
+{
+  "grafo": {
+    "n_nodos": 50916,
+    "n_edges": 79262
+  },
+  "grado_proveedores": {
+    "media": 1.5849230153969207,
+    "mediana": 1.0,
+    "max": 228,
+    "n_con_1_inst": 42840,
+    "n_con_20_plus": 249
+  },
+  "top_diversificados": [
+    {
+      "rfc": "ASE930924SS7",
+      "nombre": "EDENRED MEXICO SA DE CV",
+      "n_instituciones": 228
+    },
+    {
+      "rfc": "PTI151101TE5",
+      "nombre": "PEMEX TRANSFORMACION INDUSTRIAL EPS",
+      "n_instituciones": 217
+    },
+    {
+      "rfc": "TIN090211JC9",
+      "nombre": "TOKA INTERNACIONAL S A P I DE CV",
+      "n_instituciones": 208
+    },
+    {
+      "rfc": "AGR900605VC6",
+      "nombre": "AGROASEMEX SA",
+      "n_instituciones": 198
+    },
+    {
+      "rfc": "QCS931209G49",
+      "nombre": "QUALITAS COMPA\u00d1IA DE SEGUROS SA DE CV",
+      "n_instituciones": 193
+    },
+    {
+      "rfc": "MSC170215V20",
+      "nombre": "MANUFACTURAS SERKA CONTINENTALES SA DE CV",
+      "n_instituciones": 123
+    },
+    {
+      "rfc": "BEC080926HU3",
+      "nombre": "BECESA SA DE CV",
+      "n_instituciones": 122
+    },
+    {
+      "rfc": "UIC890719V7A",
+      "nombre": "UNIFORMES EL TREN SA DE CV",
+      "n_instituciones": 113
+    },
+    {
+      "rfc": "UNI951013RC1",
+      "nombre": "UNINET SA DE CV",
+      "n_instituciones": 110
+    },
+    {
+      "rfc": "BEL200323CS4",
+      "nombre": "BELL-KROM SA DE CV",
+      "n_instituciones": 109
+    }
+  ],
+  "concentracion_top": [
+    {
+      "institucion": "NAZAS",
+      "monto_total": 1016224.14,
+      "n_contratos": 5,
+      "n_proveedores": 1,
+      "hhi": 1.0,
+      "top_proveedor": "FAFH890430EM5",
+      "top_share": 1.0,
+      "nombre_top_proveedor": "HERNAN FRAIRE FAVILA"
+    },
+    {
+      "institucion": "SISTEMA DE AGUA POTABLE Y SANEAMIENTO DE YAUTEPEC, MORELOS",
+      "monto_total": 5369730.11,
+      "n_contratos": 6,
+      "n_proveedores": 1,
+      "hhi": 0.9999999999999996,
+      "top_proveedor": "DCE9703139W3",
+      "top_share": 0.9999999999999998,
+      "nombre_top_proveedor": "DISTRIBUIDORA DE CLORO ESMAH SA DE CV"
+    },
+    {
+      "institucion": "SEGUROS DE CREDITO A LA VIVIENDA SHF, S.A. DE C.V.",
+      "monto_total": 481703188.32,
+      "n_contratos": 12,
+      "n_proveedores": 7,
+      "hhi": 0.9903866267745688,
+      "top_proveedor": "HFE011011HH1",
+      "top_share": 0.9951789814634624,
+      "nombre_top_proveedor": "SOCIEDAD HIPOTECARIA FEDERAL SNC"
+    },
+    {
+      "institucion": "UNIDAD DEL SISTEMA PARA LA CARRERA DE LAS MAESTRAS Y MAESTROS",
+      "monto_total": 453113617.755,
+      "n_contratos": 26,
+      "n_proveedores": 21,
+      "hhi": 0.9310712944039405,
+      "top_proveedor": "CNE940509K59",
+      "top_share": 0.9646343496926977,
+      "nombre_top_proveedor": "CENTRO NACIONAL DE EVALUACION PARA LA EDUCACION SUPERIOR AC"
+    },
+    {
+      "institucion": "SAN JUAN QUIAHIJE",
+      "monto_total": 7898342.46,
+      "n_contratos": 5,
+      "n_proveedores": 3,
+      "hhi": 0.925878170597998,
+      "top_proveedor": "GCF150814CZ7",
+      "top_share": 0.9618212160934839,
+      "nombre_top_proveedor": "GRUPO CONSTRUCTOR FRYAV S DE RL DE CV"
+    },
+    {
+      "institucion": "ORGANISMO PROMOTOR DE INVERSIONES EN TELECOMUNICACIONES",
+      "monto_total": 768869741.55,
+      "n_contratos": 39,
+      "n_proveedores": 31,
+      "hhi": 0.8679579593141915,
+      "top_proveedor": "CTI190803UC4",
+      "top_share": 0.9305282303835775,
+      "nombre_top_proveedor": "CFE TELECOMUNICACIONES E INTERNET PARA TODOS EPS"
+    },
+    {
+      "institucion": "DZITBALCH\u00c9",
+      "monto_total": 20856663.13,
+      "n_contratos": 6,
+      "n_proveedores": 5,
+      "hhi": 0.8550179042395479,
+      "top_proveedor": "GAN211201E74",
+      "top_share": 0.9237930818514399,
+      "nombre_top_proveedor": "GRUPO ANTBER SA DE CV"
+    },
+    {
+      "institucion": "UNIVERSIDAD ABIERTA Y A DISTANCIA DE MEXICO",
+      "monto_total": 171590914.09,
+      "n_contratos": 37,
+      "n_proveedores": 31,
+      "hhi": 0.8530420706351488,
+      "top_proveedor": "IPI001124PX5",
+      "top_share": 0.9231679225562892,
+      "nombre_top_proveedor": "INSTITUTO POTOSINO DE INVESTIGACION CIENTIFICA Y TECNOLOGICA AC"
+    },
+    {
+      "institucion": "SERVICIOS ESTATALES DE SALUD",
+      "monto_total": 16766182.73,
+      "n_contratos": 6,
+      "n_proveedores": 6,
+      "hhi": 0.8524765024449832,
+      "top_proveedor": "FSA150810MP9",
+      "top_share": 0.9215500104477269,
+      "nombre_top_proveedor": "FRAMIGAN SANE S DE RL DE CV"
+    },
+    {
+      "institucion": "SECRETARIADO EJECUTIVO DEL SISTEMA NACIONAL DE SEGURIDAD PUBLICA",
+      "monto_total": 147962663.53158498,
+      "n_contratos": 41,
+      "n_proveedores": 30,
+      "hhi": 0.8374181525487346,
+      "top_proveedor": "TGM990109718",
+      "top_share": 0.9146293872380274,
+      "nombre_top_proveedor": "TALLERES GRAFICOS DE MEXICO"
+    },
+    {
+      "institucion": "FONDO ESPECIAL PARA FINANCIAMIENTOS AGROPECUARIOS",
+      "monto_total": 66067457.63899999,
+      "n_contratos": 22,
+      "n_proveedores": 14,
+      "hhi": 0.8254180996999507,
+      "top_proveedor": "IAM150128C14",
+      "top_share": 0.9072493071780817,
+      "nombre_top_proveedor": "INGENIERIA DEL AGUA Y MEDIO AMBIENTE SC"
+    },
+    {
+      "institucion": "ADMINISTRACION DEL SISTEMA PORTUARIO NACIONAL DOS BOCAS, S.A. DE C.V.",
+      "monto_total": 9839823899.4852,
+      "n_contratos": 41,
+      "n_proveedores": 30,
+      "hhi": 0.8212920609589919,
+      "top_proveedor": "PCO110429N78",
+      "top_share": 0.9047901661121989,
+      "nombre_top_proveedor": "PEGSA CONSTRUCCIONES SA DE CV"
+    },
+    {
+      "institucion": "SECRETARIA DE HACIENDA Y CREDITO PUBLICO",
+      "monto_total": 9248743510.91,
+      "n_contratos": 411,
+      "n_proveedores": 300,
+      "hhi": 0.7828513498333423,
+      "top_proveedor": "AGR900605VC6",
+      "top_share": 0.8844875272614319,
+      "nombre_top_proveedor": "AGROASEMEX SA"
+    },
+    {
+      "institucion": "SUBSISTEMA DE PREPARATORIA ABIERTA Y TELEBACHILLERATO",
+      "monto_total": 1279673.42884,
+      "n_contratos": 5,
+      "n_proveedores": 3,
+      "hhi": 0.7739614024556314,
+      "top_proveedor": "FER1010182B1",
+      "top_share": 0.8742784288755319,
+      "nombre_top_proveedor": "FERRETISA SA DE CV"
+    },
+    {
+      "institucion": "UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO",
+      "monto_total": 61348804.95000001,
+      "n_contratos": 6,
+      "n_proveedores": 3,
+      "hhi": 0.7657482685825643,
+      "top_proveedor": "ROCA701122L2A",
+      "top_share": 0.868415555012372,
+      "nombre_top_proveedor": "JOSE ANTONIO RODRIGUEZ CHAVEZ"
+    }
+  ],
+  "intermediarios_top": [
+    {
+      "rfc": "ASE930924SS7",
+      "nombre": "EDENRED MEXICO SA DE CV",
+      "betweenness": 0.033139043632352934
+    },
+    {
+      "rfc": "AGR900605VC6",
+      "nombre": "AGROASEMEX SA",
+      "betweenness": 0.03292915721815227
+    },
+    {
+      "rfc": "PTI151101TE5",
+      "nombre": "PEMEX TRANSFORMACION INDUSTRIAL EPS",
+      "betweenness": 0.03025246382206703
+    },
+    {
+      "rfc": "QCS931209G49",
+      "nombre": "QUALITAS COMPA\u00d1IA DE SEGUROS SA DE CV",
+      "betweenness": 0.028061729075629482
+    },
+    {
+      "rfc": "TIN090211JC9",
+      "nombre": "TOKA INTERNACIONAL S A P I DE CV",
+      "betweenness": 0.025851249171618487
+    },
+    {
+      "rfc": "PEU970902IQ9",
+      "nombre": "PUNTO EUROPEO SA DE CV",
+      "betweenness": 0.01658213175011534
+    },
+    {
+      "rfc": "MME920427EM3",
+      "nombre": "METLIFE MEXICO SA DE CV",
+      "betweenness": 0.014956132826203098
+    },
+    {
+      "rfc": "GNP9211244P0",
+      "nombre": "GRUPO NACIONAL PROVINCIAL S A B",
+      "betweenness": 0.014431594334232406
+    },
+    {
+      "rfc": "MME910620Q85",
+      "nombre": "MICROSOFT MEXICO S DE RL DE CV",
+      "betweenness": 0.01179599006785036
+    },
+    {
+      "rfc": "SPM860820CF5",
+      "nombre": "SERVICIO POSTAL MEXICANO",
+      "betweenness": 0.011604548139698172
+    },
+    {
+      "rfc": "JDM850910UD2",
+      "nombre": "JARDINERIA 2000 SA",
+      "betweenness": 0.011516027854518782
+    },
+    {
+      "rfc": "CEL211019JT8",
+      "nombre": "COMERCIALIZADORA ELECTROPURA S DE RL DE CV",
+      "betweenness": 0.011199770511535874
+    },
+    {
+      "rfc": "SCT8411179Q4",
+      "nombre": "SOCIEDAD COOPERATIVA TRABAJADORES DE PASCUAL SCL",
+      "betweenness": 0.009349851802170028
+    },
+    {
+      "rfc": "TME840315KT6",
+      "nombre": "TELEFONOS DE MEXICO S A B DE C V",
+      "betweenness": 0.008436822304465866
+    },
+    {
+      "rfc": "TPT890516JP5",
+      "nombre": "TOTAL PLAY TELECOMUNICACIONES S A P I DE CV",
+      "betweenness": 0.007923298895201974
+    }
+  ],
+  "monopolistas_top": [
+    {
+      "rfc": "SAM190119LT9",
+      "nombre": "SEGURIDAD ALIMENTARIA MEXICANA",
+      "n_contratos": 859,
+      "monto_total": 4406795049.5,
+      "institucion_unica": "ALIMENTACI\u00d3N PARA EL BIENESTAR, S.A. DE C.V.",
+      "pct_AD": 0.002328288707799767
+    },
+    {
+      "rfc": "ADA000803GM5",
+      "nombre": "ALMACENAJE Y DISTRIBUCION AVIOR SA DE CV",
+      "n_contratos": 4,
+      "monto_total": 2769926110.49,
+      "institucion_unica": "LABORATORIOS DE BIOL\u00d3GICOS Y REACTIVOS DE M\u00c9XICO, S.A. DE C.V.",
+      "pct_AD": 0.5
+    },
+    {
+      "rfc": "TCC160907TD5",
+      "nombre": "TRANS CE CARGO S DE RL DE CV",
+      "n_contratos": 3,
+      "monto_total": 2339990000.0,
+      "institucion_unica": "SECRETARIA DE LA DEFENSA NACIONAL",
+      "pct_AD": 1.0
+    },
+    {
+      "rfc": "GSM131210B4A",
+      "nombre": "IGT MEXICO LOTTERY S DE RL DE CV",
+      "n_contratos": 2,
+      "monto_total": 1957041255.56,
+      "institucion_unica": "LOTER\u00cdA NACIONAL",
+      "pct_AD": 0.5
+    },
+    {
+      "rfc": "OXI091013FM9",
+      "nombre": "OXIDROGENO SA DE CV",
+      "n_contratos": 2,
+      "monto_total": 1640372279.62,
+      "institucion_unica": "SERVICIOS DE SALUD DEL INSTITUTO MEXICANO DEL SEGURO SOCIAL PARA EL BIENESTAR",
+      "pct_AD": 0.0
+    },
+    {
+      "rfc": "GIP1105317DA",
+      "nombre": "GRUPO IMPULSOR PAJEME SA DE CV",
+      "n_contratos": 6,
+      "monto_total": 1601420694.6200001,
+      "institucion_unica": "COMISION NACIONAL DEL AGUA",
+      "pct_AD": 0.0
+    },
+    {
+      "rfc": "RCS9412026T6",
+      "nombre": "REGIOMONTANA DE CONSTRUCCION Y SERVICIOS S A P I DE CV",
+      "n_contratos": 1,
+      "monto_total": 1573537027.81,
+      "institucion_unica": "ADMINISTRACION DEL SISTEMA PORTUARIO NACIONAL PUERTO CHIAPAS, S.A. DE C.V.",
+      "pct_AD": 0.0
+    },
+    {
+      "rfc": "MAZ8111185X2",
+      "nombre": "MOLINOS AZTECA SA DE CV",
+      "n_contratos": 1505,
+      "monto_total": 1533025197.0,
+      "institucion_unica": "ALIMENTACI\u00d3N PARA EL BIENESTAR, S.A. DE C.V.",
+      "pct_AD": 1.0
+    },
+    {
+      "rfc": "DIN000707U71",
+      "nombre": "DLG INDUSTRIAS SA DE CV",
+      "n_contratos": 4,
+      "monto_total": 1394047778.0,
+      "institucion_unica": "FERROCARRIL DEL ISTMO DE TEHUANTEPEC, S.A. DE C.V.",
+      "pct_AD": 1.0
+    },
+    {
+      "rfc": "DUS8406062B3",
+      "nombre": "DRAGADOS Y URBANIZACIONES SIGLO 21 SA DE CV",
+      "n_contratos": 11,
+      "monto_total": 1340022230.8300002,
+      "institucion_unica": "COMISION NACIONAL DEL AGUA",
+      "pct_AD": 0.2727272727272727
+    },
+    {
+      "rfc": "CCS071201UT8",
+      "nombre": "COSUIS CONSTRUCTORA Y SUPERVISORA SA DE CV",
+      "n_contratos": 2,
+      "monto_total": 1304305323.84,
+      "institucion_unica": "BANCO NACIONAL DE OBRAS Y SERVICIOS PUBLICOS, S.N.C.",
+      "pct_AD": 0.0
+    },
+    {
+      "rfc": "ICS001020SN7",
+      "nombre": "INGENIEROS CIVILES DE SONORA SA DE CV",
+      "n_contratos": 6,
+      "monto_total": 1236903186.99,
+      "institucion_unica": "COMISION NACIONAL DEL AGUA",
+      "pct_AD": 0.0
+    },
+    {
+      "rfc": "CIC9409053C3",
+      "nombre": "COMERCIALIZADORA INTERNACIONAL DE COMPRESORES SA DE CV",
+      "n_contratos": 15,
+      "monto_total": 1130249472.1200001,
+      "institucion_unica": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "pct_AD": 0.4666666666666667
+    },
+    {
+      "rfc": "QDL790104TX1",
+      "nombre": "QUESERIA DOS LAGUNAS SA DE CV",
+      "n_contratos": 10,
+      "monto_total": 1124871713.32,
+      "institucion_unica": "LICONSA, S.A. DE C.V.",
+      "pct_AD": 0.7
+    },
+    {
+      "rfc": "CBS000515769",
+      "nombre": "COMBUSTIBLES BAJA SUR SA DE CV",
+      "n_contratos": 3,
+      "monto_total": 1049046901.41,
+      "institucion_unica": "EXPORTADORA DE SAL, S.A. DE C.V.",
+      "pct_AD": 0.0
+    }
+  ]
+}

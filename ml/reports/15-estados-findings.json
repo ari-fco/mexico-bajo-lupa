@@ -1,0 +1,286 @@
+{
+  "n_estados": 32,
+  "top_riesgo": [
+    {
+      "estado": "Tlaxcala",
+      "indice_riesgo": 1.0,
+      "pct_AD": 0.911,
+      "hhi_proveedores": 0.259,
+      "top_proveedor_share": 0.482,
+      "top_proveedor_nombre": "ARQUITECTURA Y DISEÑO R.M. SA DE CV",
+      "n_contratos": 135,
+      "monto_total_mxn": 178405262.02999997
+    },
+    {
+      "estado": "Colima",
+      "indice_riesgo": 0.5168000117764054,
+      "pct_AD": 0.64,
+      "hhi_proveedores": 0.1043,
+      "top_proveedor_share": 0.289,
+      "top_proveedor_nombre": "TOTAL PARTS AND COMPONENTS SA DE CV",
+      "n_contratos": 164,
+      "monto_total_mxn": 165002099.03592
+    },
+    {
+      "estado": "Puebla",
+      "indice_riesgo": 0.49842275043986595,
+      "pct_AD": 0.515,
+      "hhi_proveedores": 0.0779,
+      "top_proveedor_share": 0.196,
+      "top_proveedor_nombre": "CUAR CONSTRUCTORES ASOCIADOS SA DE CV",
+      "n_contratos": 270,
+      "monto_total_mxn": 3243349194.5699997
+    },
+    {
+      "estado": "Guanajuato",
+      "indice_riesgo": 0.4548328673883709,
+      "pct_AD": 0.463,
+      "hhi_proveedores": 0.1054,
+      "top_proveedor_share": 0.219,
+      "top_proveedor_nombre": "DISTRIBUIDORA INTERNACIONAL DE MEDICAMENTOS Y EQUIPO MEDICO SA D",
+      "n_contratos": 615,
+      "monto_total_mxn": 8815142473.477922
+    },
+    {
+      "estado": "México",
+      "indice_riesgo": 0.40822676956600173,
+      "pct_AD": 0.405,
+      "hhi_proveedores": 0.0662,
+      "top_proveedor_share": 0.165,
+      "top_proveedor_nombre": "OPCIONES MEDICAS DE EQUIPAMIENTO SA DE CV",
+      "n_contratos": 407,
+      "monto_total_mxn": 3514663317.241
+    },
+    {
+      "estado": "Hidalgo",
+      "indice_riesgo": 0.38172919524296595,
+      "pct_AD": 0.661,
+      "hhi_proveedores": 0.0635,
+      "top_proveedor_share": 0.179,
+      "top_proveedor_nombre": "INGENIA AG SA DE CV",
+      "n_contratos": 1040,
+      "monto_total_mxn": 1584928024.6826692
+    },
+    {
+      "estado": "Michoacán de Ocampo",
+      "indice_riesgo": 0.38015883143602247,
+      "pct_AD": 0.381,
+      "hhi_proveedores": 0.0803,
+      "top_proveedor_share": 0.175,
+      "top_proveedor_nombre": "LABORATORIO MEDICO TADEO SA DE CV",
+      "n_contratos": 176,
+      "monto_total_mxn": 2390360973.61
+    },
+    {
+      "estado": "Ciudad de México",
+      "indice_riesgo": 0.3753387035238413,
+      "pct_AD": 0.518,
+      "hhi_proveedores": 0.0655,
+      "top_proveedor_share": 0.187,
+      "top_proveedor_nombre": "BIODIST S.A. DE C.V.",
+      "n_contratos": 218,
+      "monto_total_mxn": 1395767896.351724
+    },
+    {
+      "estado": "Sonora",
+      "indice_riesgo": 0.3546290996495006,
+      "pct_AD": 0.495,
+      "hhi_proveedores": 0.0363,
+      "top_proveedor_share": 0.078,
+      "top_proveedor_nombre": "CONSTRUCCION Y PROTECCIONES INDUSTRIALES ANTICORROSIVAS SA DE CV",
+      "n_contratos": 1084,
+      "monto_total_mxn": 2240526137.45895
+    },
+    {
+      "estado": "Veracruz de Ignacio de la Llave",
+      "indice_riesgo": 0.34817446170371175,
+      "pct_AD": 0.56,
+      "hhi_proveedores": 0.0358,
+      "top_proveedor_share": 0.121,
+      "top_proveedor_nombre": "BIODIST S.A. DE C.V.",
+      "n_contratos": 841,
+      "monto_total_mxn": 6357720783.788
+    }
+  ],
+  "top_pct_AD": [
+    {
+      "estado": "Tlaxcala",
+      "pct_AD": 0.911,
+      "top_proveedor_nombre": "ARQUITECTURA Y DISEÑO R.M. SA DE CV",
+      "top_proveedor_share": 0.482
+    },
+    {
+      "estado": "San Luis Potosí",
+      "pct_AD": 0.705,
+      "top_proveedor_nombre": "COMERCIALIZADORA DE REACTIVOS PARA LABORATORIOS Y MATERIALES PAR",
+      "top_proveedor_share": 0.121
+    },
+    {
+      "estado": "Hidalgo",
+      "pct_AD": 0.661,
+      "top_proveedor_nombre": "INGENIA AG SA DE CV",
+      "top_proveedor_share": 0.179
+    },
+    {
+      "estado": "Colima",
+      "pct_AD": 0.64,
+      "top_proveedor_nombre": "TOTAL PARTS AND COMPONENTS SA DE CV",
+      "top_proveedor_share": 0.289
+    },
+    {
+      "estado": "Veracruz de Ignacio de la Llave",
+      "pct_AD": 0.56,
+      "top_proveedor_nombre": "BIODIST S.A. DE C.V.",
+      "top_proveedor_share": 0.121
+    },
+    {
+      "estado": "Oaxaca",
+      "pct_AD": 0.524,
+      "top_proveedor_nombre": "GRUPO FARMACEUTICO SIGMUN SA DE CV",
+      "top_proveedor_share": 0.055
+    },
+    {
+      "estado": "Ciudad de México",
+      "pct_AD": 0.518,
+      "top_proveedor_nombre": "BIODIST S.A. DE C.V.",
+      "top_proveedor_share": 0.187
+    },
+    {
+      "estado": "Puebla",
+      "pct_AD": 0.515,
+      "top_proveedor_nombre": "CUAR CONSTRUCTORES ASOCIADOS SA DE CV",
+      "top_proveedor_share": 0.196
+    },
+    {
+      "estado": "Tabasco",
+      "pct_AD": 0.511,
+      "top_proveedor_nombre": "PLATAFORMA CAMINERA SA DE CV",
+      "top_proveedor_share": 0.047
+    },
+    {
+      "estado": "Nayarit",
+      "pct_AD": 0.508,
+      "top_proveedor_nombre": "HECTOR MANUEL QUIÑONES NAVARRETE",
+      "top_proveedor_share": 0.089
+    }
+  ],
+  "top_HHI_prov": [
+    {
+      "estado": "Tlaxcala",
+      "hhi_proveedores": 0.259,
+      "top_proveedor_share": 0.482,
+      "n_proveedores": 71
+    },
+    {
+      "estado": "Guanajuato",
+      "hhi_proveedores": 0.1054,
+      "top_proveedor_share": 0.219,
+      "n_proveedores": 347
+    },
+    {
+      "estado": "Colima",
+      "hhi_proveedores": 0.1043,
+      "top_proveedor_share": 0.289,
+      "n_proveedores": 107
+    },
+    {
+      "estado": "Michoacán de Ocampo",
+      "hhi_proveedores": 0.0803,
+      "top_proveedor_share": 0.175,
+      "n_proveedores": 114
+    },
+    {
+      "estado": "Puebla",
+      "hhi_proveedores": 0.0779,
+      "top_proveedor_share": 0.196,
+      "n_proveedores": 197
+    },
+    {
+      "estado": "Baja California Sur",
+      "hhi_proveedores": 0.0768,
+      "top_proveedor_share": 0.154,
+      "n_proveedores": 77
+    },
+    {
+      "estado": "México",
+      "hhi_proveedores": 0.0662,
+      "top_proveedor_share": 0.165,
+      "n_proveedores": 246
+    },
+    {
+      "estado": "Ciudad de México",
+      "hhi_proveedores": 0.0655,
+      "top_proveedor_share": 0.187,
+      "n_proveedores": 172
+    },
+    {
+      "estado": "Querétaro",
+      "hhi_proveedores": 0.0638,
+      "top_proveedor_share": 0.148,
+      "n_proveedores": 237
+    },
+    {
+      "estado": "Hidalgo",
+      "hhi_proveedores": 0.0635,
+      "top_proveedor_share": 0.179,
+      "n_proveedores": 521
+    }
+  ],
+  "calidad_datos_baja": [
+    {
+      "estado": "Tlaxcala",
+      "pct_fecha_null": 1.0,
+      "n_contratos": 135
+    },
+    {
+      "estado": "Colima",
+      "pct_fecha_null": 1.0,
+      "n_contratos": 164
+    },
+    {
+      "estado": "Guerrero",
+      "pct_fecha_null": 1.0,
+      "n_contratos": 171
+    },
+    {
+      "estado": "Quintana Roo",
+      "pct_fecha_null": 1.0,
+      "n_contratos": 127
+    },
+    {
+      "estado": "Chihuahua",
+      "pct_fecha_null": 1.0,
+      "n_contratos": 292
+    },
+    {
+      "estado": "Baja California",
+      "pct_fecha_null": 1.0,
+      "n_contratos": 177
+    },
+    {
+      "estado": "Sonora",
+      "pct_fecha_null": 0.998,
+      "n_contratos": 1084
+    },
+    {
+      "estado": "Nuevo León",
+      "pct_fecha_null": 0.995,
+      "n_contratos": 182
+    },
+    {
+      "estado": "Coahuila de Zaragoza",
+      "pct_fecha_null": 0.994,
+      "n_contratos": 170
+    },
+    {
+      "estado": "Jalisco",
+      "pct_fecha_null": 0.994,
+      "n_contratos": 491
+    }
+  ],
+  "correlaciones": {
+    "monto_total_vs_delitos": 0.398,
+    "pct_AD_vs_delitos": -0.011
+  },
+  "interpretacion": "Correlación baja entre gasto público y delitos descarta hipótesis simplista. Los estados con mayor índice de riesgo concentran AD + HHI alto, no necesariamente los con más delitos."
+}

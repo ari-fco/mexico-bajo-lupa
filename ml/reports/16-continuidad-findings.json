@@ -1,0 +1,379 @@
+{
+  "n_proveedores_total": 295409,
+  "patron_solo_electorales": {
+    "n": 3411,
+    "monto_total": 19009205480.648537,
+    "top_10": [
+      {
+        "proveedor": "Pnpdmi Sa de Cv",
+        "n_contratos": 12,
+        "monto_total": 1359511889.1399999,
+        "anos_set": [
+          2021
+        ]
+      },
+      {
+        "proveedor": "Sistemas Integrales Para el Transporte, S.A. de C.V.",
+        "n_contratos": 3,
+        "monto_total": 686184915.89,
+        "anos_set": [
+          2012,
+          2015,
+          2018
+        ]
+      },
+      {
+        "proveedor": "Lore Soluciones Integrales Empresariales de Sinaloa S.C.",
+        "n_contratos": 5,
+        "monto_total": 318350130.51,
+        "anos_set": [
+          2018
+        ]
+      },
+      {
+        "proveedor": "Elementco Sapi de Cv",
+        "n_contratos": 8,
+        "monto_total": 280502365.06,
+        "anos_set": [
+          2024
+        ]
+      },
+      {
+        "proveedor": "Dhl Global Forwarding Mexico, S.A. de C.V.",
+        "n_contratos": 7,
+        "monto_total": 269541524.31,
+        "anos_set": [
+          2021
+        ]
+      },
+      {
+        "proveedor": "Ingenieria Civil Calidad Total y Servicios Agregados Sa de Cv",
+        "n_contratos": 4,
+        "monto_total": 253909471.85,
+        "anos_set": [
+          2015
+        ]
+      },
+      {
+        "proveedor": "Grupo Constructor Transportieren Sa de Cv",
+        "n_contratos": 3,
+        "monto_total": 236735457.04,
+        "anos_set": [
+          2018,
+          2021
+        ]
+      },
+      {
+        "proveedor": "Construcciones y Servicios Centromex Sa de Cv",
+        "n_contratos": 3,
+        "monto_total": 215011181.95,
+        "anos_set": [
+          2012,
+          2015
+        ]
+      },
+      {
+        "proveedor": "Transformadora Urbana Sa de Cv",
+        "n_contratos": 3,
+        "monto_total": 209854403.66,
+        "anos_set": [
+          2018
+        ]
+      },
+      {
+        "proveedor": "Secretaria de Seguridad de Protección Ciudadana",
+        "n_contratos": 3,
+        "monto_total": 196621832.0,
+        "anos_set": [
+          2018,
+          2021
+        ]
+      }
+    ]
+  },
+  "patron_transitorios": {
+    "n": 27592,
+    "monto_total": 1266041937261.6238,
+    "por_sexenio": {
+      "Calderón": 5431,
+      "EPN": 39839,
+      "AMLO": 15562,
+      "Sheinbaum": 0
+    },
+    "top_10": [
+      {
+        "proveedor": "Electromecanica de Montacargas Sa de Cv",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2012,
+        "ultimo_ano": 2023,
+        "n_contratos": 26,
+        "monto_total": 64560356511.8
+      },
+      {
+        "proveedor": "Ica Constructora Sa de Cv",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2020,
+        "ultimo_ano": 2022,
+        "n_contratos": 12,
+        "monto_total": 27851444297.41
+      },
+      {
+        "proveedor": "Agroasemex Sa",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2016,
+        "ultimo_ano": 2024,
+        "n_contratos": 276,
+        "monto_total": 16690878810.3118
+      },
+      {
+        "proveedor": "Operadora Cicsa Sa de Cv",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2011,
+        "ultimo_ano": 2020,
+        "n_contratos": 13,
+        "monto_total": 16553959636.279999
+      },
+      {
+        "proveedor": "Comercializadora Milenio Sa de Cv",
+        "sexenio_dominante": "EPN",
+        "primer_ano": 2012,
+        "ultimo_ano": 2021,
+        "n_contratos": 38,
+        "monto_total": 13966155905.05
+      },
+      {
+        "proveedor": "Gilead Sciences Mexico S de Rl de Cv",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2019,
+        "ultimo_ano": 2023,
+        "n_contratos": 23,
+        "monto_total": 13622916464.0
+      },
+      {
+        "proveedor": "Merck Sharp & Dohme Comercializadora S de Rl de Cv",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2019,
+        "ultimo_ano": 2024,
+        "n_contratos": 344,
+        "monto_total": 11954942070.15
+      },
+      {
+        "proveedor": "Proveduria y Servicios Cafha Sa de Cv",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2020,
+        "ultimo_ano": 2023,
+        "n_contratos": 12,
+        "monto_total": 11689808550.78
+      },
+      {
+        "proveedor": "Productos  Roche",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2014,
+        "ultimo_ano": 2024,
+        "n_contratos": 254,
+        "monto_total": 11454807667.768
+      },
+      {
+        "proveedor": "Novartis Farmaceutica",
+        "sexenio_dominante": "AMLO",
+        "primer_ano": 2019,
+        "ultimo_ano": 2024,
+        "n_contratos": 450,
+        "monto_total": 11071794745.41
+      }
+    ]
+  },
+  "patron_persistentes": {
+    "n": 9910,
+    "monto_total": 2600694159035.3457,
+    "top_15": [
+      {
+        "proveedor": "Grupo Farmacos Especializados Sa de Cv",
+        "n_anos": 11,
+        "n_contratos": 5672,
+        "monto_total": 126763564538.321
+      },
+      {
+        "proveedor": "Farmaceuticos Maypo, S.A. de C.V.",
+        "n_anos": 15,
+        "n_contratos": 13890,
+        "monto_total": 75611168283.476
+      },
+      {
+        "proveedor": "Electromecanica de Montacargas Sa de Cv",
+        "n_anos": 8,
+        "n_contratos": 26,
+        "monto_total": 64560356511.8
+      },
+      {
+        "proveedor": "Distribuidora Internacional de Medicamentos y Equipo Medico Sa de Cv",
+        "n_anos": 14,
+        "n_contratos": 4018,
+        "monto_total": 49255000969.03761
+      },
+      {
+        "proveedor": "Laboratorios de Biologicos y Reactivos de Mexico Sa de Cv",
+        "n_anos": 13,
+        "n_contratos": 320,
+        "monto_total": 32069917253.9697
+      },
+      {
+        "proveedor": "Sanofi Pasteur Sa de Cv",
+        "n_anos": 14,
+        "n_contratos": 306,
+        "monto_total": 30758125825.97
+      },
+      {
+        "proveedor": "Edenred Mexico Sa de Cv",
+        "n_anos": 15,
+        "n_contratos": 2284,
+        "monto_total": 30459914548.485382
+      },
+      {
+        "proveedor": "Laboratorios Pisa S.A. de C.V.",
+        "n_anos": 15,
+        "n_contratos": 6348,
+        "monto_total": 28014135203.8012
+      },
+      {
+        "proveedor": "Coconal  Sapi de Cv",
+        "n_anos": 14,
+        "n_contratos": 99,
+        "monto_total": 27502322710.68
+      },
+      {
+        "proveedor": "Sixsigma Networks Mexico",
+        "n_anos": 13,
+        "n_contratos": 135,
+        "monto_total": 26297868510.07
+      },
+      {
+        "proveedor": "Baxter Sa de Cv",
+        "n_anos": 15,
+        "n_contratos": 2935,
+        "monto_total": 25037077744.42072
+      },
+      {
+        "proveedor": "Ralca, S.A. de C.V.",
+        "n_anos": 14,
+        "n_contratos": 4042,
+        "monto_total": 22573745353.144
+      },
+      {
+        "proveedor": "Instrumentos y Equipos Falcon Sa de Cv",
+        "n_anos": 14,
+        "n_contratos": 1327,
+        "monto_total": 21153807238.338528
+      },
+      {
+        "proveedor": "Vitalmex Internacional S.A. de C.V.",
+        "n_anos": 13,
+        "n_contratos": 489,
+        "monto_total": 20624772809.2131
+      },
+      {
+        "proveedor": "La Peninsular Compañia Constructora S.A. de C.V",
+        "n_anos": 9,
+        "n_contratos": 22,
+        "monto_total": 20607208953.18
+      }
+    ]
+  },
+  "anos_electorales_vs_no": {
+    "pct_AD_electorales": 0.5943,
+    "pct_AD_no_electorales": 0.6947,
+    "diferencia_pp": -10.03
+  },
+  "movimiento_proveedores": [
+    {
+      "ano": 2010,
+      "nacimientos": 3562,
+      "muertes": 1050,
+      "neto": 2512
+    },
+    {
+      "ano": 2011,
+      "nacimientos": 35764,
+      "muertes": 10609,
+      "neto": 25155
+    },
+    {
+      "ano": 2012,
+      "nacimientos": 34567,
+      "muertes": 19702,
+      "neto": 14865
+    },
+    {
+      "ano": 2013,
+      "nacimientos": 28305,
+      "muertes": 19936,
+      "neto": 8369
+    },
+    {
+      "ano": 2014,
+      "nacimientos": 29038,
+      "muertes": 23385,
+      "neto": 5653
+    },
+    {
+      "ano": 2015,
+      "nacimientos": 28556,
+      "muertes": 26340,
+      "neto": 2216
+    },
+    {
+      "ano": 2016,
+      "nacimientos": 29030,
+      "muertes": 29513,
+      "neto": -483
+    },
+    {
+      "ano": 2017,
+      "nacimientos": 24918,
+      "muertes": 28215,
+      "neto": -3297
+    },
+    {
+      "ano": 2018,
+      "nacimientos": 22928,
+      "muertes": 30407,
+      "neto": -7479
+    },
+    {
+      "ano": 2019,
+      "nacimientos": 20140,
+      "muertes": 26378,
+      "neto": -6238
+    },
+    {
+      "ano": 2020,
+      "nacimientos": 11146,
+      "muertes": 16651,
+      "neto": -5505
+    },
+    {
+      "ano": 2021,
+      "nacimientos": 12268,
+      "muertes": 18615,
+      "neto": -6347
+    },
+    {
+      "ano": 2022,
+      "nacimientos": 14805,
+      "muertes": 40611,
+      "neto": -25806
+    },
+    {
+      "ano": 2023,
+      "nacimientos": 364,
+      "muertes": 3727,
+      "neto": -3363
+    },
+    {
+      "ano": 2024,
+      "nacimientos": 18,
+      "muertes": 270,
+      "neto": -252
+    }
+  ]
+}

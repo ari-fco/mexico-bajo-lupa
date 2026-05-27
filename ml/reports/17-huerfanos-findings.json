@@ -1,0 +1,362 @@
+{
+  "n_proveedores_total": 264759,
+  "n_one_shots": 106927,
+  "pct_one_shots": 40.39,
+  "monto_agregado_one_shots_mxn": 354941713587.1689,
+  "pct_gasto_total": 6.12,
+  "distribucion_monto": {
+    "median": 117000.0,
+    "p95": 4102540.13,
+    "p99": 30250186.46540055,
+    "max": 23738400000.0
+  },
+  "one_shots_grandes": {
+    ">100M": 246,
+    ">500M": 49,
+    ">1000M": 31
+  },
+  "top_20_oneshots": [
+    {
+      "proveedor_orig": "Cic Corporativo Industrial Coahuila Sa de Cv",
+      "ano_unico": 2013,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "LP",
+      "ramo_unico": "1.Adquisiciones",
+      "monto_unico": 23738400000.0,
+      "descripcion_unico": "Carbón Mineral Termico No Coquizable Subbituminoso de Flama Larga — Sin Dato"
+    },
+    {
+      "proveedor_orig": "Bahud Processing Mexico S de Rl de Cv",
+      "ano_unico": 2021,
+      "sexenio_unico": "AMLO",
+      "modalidad_unico": "AD",
+      "ramo_unico": "3.Servicios",
+      "monto_unico": 15787380000.0,
+      "descripcion_unico": "Servicios Integrales Administrados de Procesamiento de Operaciones y Transaccion — Servicios Integrales Administrados de Procesamiento de Operaciones y Transacciones Bancarias Mediante Tarjetas de Crédito O Débito Con el Fin de Promover la Bancarización y la Inclusión Financiera"
+    },
+    {
+      "proveedor_orig": "Desarrollo delSureste Playa delCarmen Tulum, S.A. de C.V.",
+      "ano_unico": 2021,
+      "sexenio_unico": "AMLO",
+      "modalidad_unico": "LP",
+      "ramo_unico": "4.Obra Pública",
+      "monto_unico": 15358287724.08,
+      "descripcion_unico": "Lpia Elaboración delProyecto Ejecutivo, Construcción de la Vía Férrea — Elaboración delProyecto Ejecutivo, Construcción de la Vía Férrea Electrificada delTren Maya, Incluida la Adecuación de la Plataforma Carretera Existente Correspondiente Al Tramo Playa delCarmen Norte a Tulum Norte."
+    },
+    {
+      "proveedor_orig": "Caf Mexico Sa de Cv",
+      "ano_unico": 2014,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "LP",
+      "ramo_unico": "4.Obra Pública 09012017",
+      "monto_unico": 13548838910.32,
+      "descripcion_unico": "Suministro, Inst. Puesta N Marcha Material Rodante Tren Mexico-Tol — Suministro, Instalación  y Puesta En Marchan delMaterial Rodante, Sistemas Ferroviarios, Sistemas de Comunicaciones, Boletaje, Centro de Control, Sistemas Electromecánicos delTúnel y delViaducto, Vía, Sistemas de Energía y Construcción de Dos Subestaciones de Tracción 25 Kv y Edificios Técnicos En Línea delTren Interurbano México-Toluca."
+    },
+    {
+      "proveedor_orig": "Consorcio Lamat Tramo 1, S.A.P.I de C.V.",
+      "ano_unico": 2020,
+      "sexenio_unico": "AMLO",
+      "modalidad_unico": "LP",
+      "ramo_unico": "4.Obra Pública",
+      "monto_unico": 13394942290.34,
+      "descripcion_unico": "Licitación Publica Internacional Abierta  Elaboración delProyecto Ejecutivo, Su — Elaboración delProyecto Ejecutivo, Suministro de Materiales y Construcción de Plataforma y Vía delTren Maya Correspondientes Al Tramo Palenque-Escárcega"
+    },
+    {
+      "proveedor_orig": "App Arriaga - Tapachula Sa de Cv",
+      "ano_unico": 2018,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "5.Servicios relacionados con la obra pública",
+      "monto_unico": 9639916012.79,
+      "descripcion_unico": "Prestación de Servicios delTramo Carretero Arriaga - Tapachula — Sin Dato"
+    },
+    {
+      "proveedor_orig": "Azvindi Ferroviario, S.A. de C.V.",
+      "ano_unico": 2020,
+      "sexenio_unico": "AMLO",
+      "modalidad_unico": "LP",
+      "ramo_unico": "4.Obra Pública",
+      "monto_unico": 8787016116.02,
+      "descripcion_unico": "Lictación Pública Internacional Abierta Elaboración delProyecto Ejecutivo, Sumi — Elaboración delProyecto Ejecutivo, Suministro de Materiales y Construcción de Plataforma y Vía delTren Maya Correspondientes Al Tramo Calkiní-Izamal"
+    },
+    {
+      "proveedor_orig": "Proc Mina S. de R.L. de C.V.",
+      "ano_unico": 2018,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "LP",
+      "ramo_unico": "4.Obra Pública",
+      "monto_unico": 6498409900.8,
+      "descripcion_unico": "Segunda Convocatoria Construcción delEdificio delCentro Intermodal — Segunda Convocatoria, Construcción delEdificio delCentro Intermodal de Transporte Terrestre (Citt) Para el Nuevo Aeropuerto Internacional de la Ciudad de México"
+    },
+    {
+      "proveedor_orig": "Conservacion Matehuala - San Luis Potosi Sa de Cv",
+      "ano_unico": 2018,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "5.Servicios relacionados con la obra pública",
+      "monto_unico": 5530007272.3,
+      "descripcion_unico": "Prestación de Servicios Para el Tramo Carretero San Luis Potosí - Matehuala — Sin Dato"
+    },
+    {
+      "proveedor_orig": "App la Gloria, S.A.P.I. de C.V.",
+      "ano_unico": 2017,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "1.Adquisiciones",
+      "monto_unico": 5214778124.61,
+      "descripcion_unico": "Prestación de Servicios Saltillo  - Monterrey  la Gloria — Sin Dato"
+    },
+    {
+      "proveedor_orig": "R&M Queretaro-San Luis, S.A. de C.V.",
+      "ano_unico": 2016,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "5.Servicios relacionados con la obra pública 09012017",
+      "monto_unico": 4963947786.38,
+      "descripcion_unico": "Prestación de Servicios App´S, Querétaro  San Luis Potosí — Sin Dato"
+    },
+    {
+      "proveedor_orig": "App Coatzacoalcos Villahermosa",
+      "ano_unico": 2016,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "5.Servicios relacionados con la obra pública 09012017",
+      "monto_unico": 4574697787.0,
+      "descripcion_unico": "Prestación de Servicios App´S, Coatzacoalcos - Villahermosa — Sin Dato"
+    },
+    {
+      "proveedor_orig": "App Tamaulipas S a P I de Cv",
+      "ano_unico": 2018,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "5.Servicios relacionados con la obra pública",
+      "monto_unico": 4477902538.28,
+      "descripcion_unico": "Prestación de Servicios delTramo Carretero Tampico - Ciudad Victoria — Sin Dato"
+    },
+    {
+      "proveedor_orig": "Carreteras de Coahuila y San Luis, S.A.P.I. de C.V.",
+      "ano_unico": 2017,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "1.Adquisiciones",
+      "monto_unico": 4394849287.12,
+      "descripcion_unico": "Prestación de Servicios Matehuala - Saltillo — Sin Dato"
+    },
+    {
+      "proveedor_orig": "Consorcio Carretero Campeche-Merida S a P I de Cv",
+      "ano_unico": 2018,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "5.Servicios relacionados con la obra pública",
+      "monto_unico": 4389730210.83,
+      "descripcion_unico": "Prestación de Servicios Para delTramo Carretero Campeche - Mérida — Sin Dato"
+    },
+    {
+      "proveedor_orig": "Autovia Texcoco Zacatepec, S.A.P.I. de C.V.",
+      "ano_unico": 2017,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "1.Adquisiciones",
+      "monto_unico": 4385859605.96,
+      "descripcion_unico": "Prestación de Servicios App Texcoco - Zacatepec — Sin Dato"
+    },
+    {
+      "proveedor_orig": "Mota-Engil México S.A.P.I. de C.V.",
+      "ano_unico": 2022,
+      "sexenio_unico": "AMLO",
+      "modalidad_unico": "AD",
+      "ramo_unico": "4.Obra Pública",
+      "monto_unico": 4023658804.0,
+      "descripcion_unico": "Ad Elaboración delProyecto Ejecutivo, Suministro de Materiales Construcción De — Elaboración delProyecto Ejecutivo, Suministro de Materiales Construcción de la Plataforma y Vía delTren Maya y Las Adecuaciones Carreteras, Correspondiente Al Tramo Comprendido Entre la Localidad de Chiná, Al Sur de la Ciudad de Campeche, y la Localidad de Campo de Tiro, Al Norte de la Ciudad de Campeche"
+    },
+    {
+      "proveedor_orig": "Autovia Piramides Tulancingo Pachuca Sa de Cv",
+      "ano_unico": 2017,
+      "sexenio_unico": "EPN",
+      "modalidad_unico": "OTRA",
+      "ramo_unico": "5.Servicios relacionados con la obra pública",
+      "monto_unico": 3929850526.89,
+      "descripcion_unico": "Prestación de Servicios App Pirámides - Tulancingo - Pachuca — Sin Dato"
+    },
+    {
+      "proveedor_orig": "Integradora Latinoamericana de Infraestructura Constructiva S a P I de Cv",
+      "ano_unico": 2012,
+      "sexenio_unico": "Calderón",
+      "modalidad_unico": "LP",
+      "ramo_unico": "4.Obra Pública 09012017",
+      "monto_unico": 3597924364.6,
+      "descripcion_unico": "Contrato Plurianual de Conservación de Carreteras (Cpcc — Contrato Plurianual de Conservación de Carreteras (Cpcc), Para la Realización de Los Trabajos delPaquete Carretero ¿Michoacán¿ En el Estado  Michoacán"
+    },
+    {
+      "proveedor_orig": "Consorcio Constructivo Dycher Sa de Cv",
+      "ano_unico": 2020,
+      "sexenio_unico": "AMLO",
+      "modalidad_unico": "LP",
+      "ramo_unico": "4.Obra Pública",
+      "monto_unico": 3429258145.45,
+      "descripcion_unico": "Lo-E12-20 Construcción de Cortina Presa la Libertad  de 1, 950 M de Longitud — Construcción de Cortina Presa la Libertad de 1, 950 M de Longitud y 47 M de Altura Máxima, Vertedor de Excedencias, Obras de Toma Para Agua Potable, Riego y Caudal Ecológico; Construidas Las Estructuras Especiales En Concreto Reforzado y la Cortina En Concreto Compactado Con Rodillo (Ccr), En Los Municipios de Montemorelos y Linares, N. L."
+    }
+  ],
+  "por_sexenio": [
+    {
+      "sexenio_unico": "AMLO",
+      "n": 31212,
+      "monto": 138404793734.8005,
+      "monto_medio": 4434345.563719098
+    },
+    {
+      "sexenio_unico": "Calderón",
+      "n": 17765,
+      "monto": 39761326855.96873,
+      "monto_medio": 2238183.3299166183
+    },
+    {
+      "sexenio_unico": "EPN",
+      "n": 57950,
+      "monto": 176775592996.39966,
+      "monto_medio": 3050484.7799206153
+    }
+  ],
+  "por_modalidad": [
+    {
+      "modalidad_unico": "AD",
+      "n": 85440,
+      "monto": 83713481190.59874
+    },
+    {
+      "modalidad_unico": "I3P",
+      "n": 12280,
+      "monto": 23581222462.35427
+    },
+    {
+      "modalidad_unico": "LP",
+      "n": 8318,
+      "monto": 190198865216.40228
+    },
+    {
+      "modalidad_unico": "OTRA",
+      "n": 889,
+      "monto": 57448144717.8136
+    }
+  ],
+  "por_ramo_top": [
+    {
+      "ramo_unico": "3.Servicios",
+      "n": 67258,
+      "monto": 88200166046.82535,
+      "monto_medio": 1311370.6331860202
+    },
+    {
+      "ramo_unico": "1.Adquisiciones",
+      "n": 22126,
+      "monto": 79010101239.51117,
+      "monto_medio": 3570916.6247632275
+    },
+    {
+      "ramo_unico": "4.Obra Pública",
+      "n": 5142,
+      "monto": 77954159220.34398,
+      "monto_medio": 15160279.895049393
+    },
+    {
+      "ramo_unico": "4.Obra Pública 09012017",
+      "n": 7017,
+      "monto": 50796962140.68028,
+      "monto_medio": 7239128.137477594
+    },
+    {
+      "ramo_unico": "5.Servicios relacionados con la obra pública",
+      "n": 1007,
+      "monto": 30191630639.34866,
+      "monto_medio": 29981758.331031438
+    },
+    {
+      "ramo_unico": "5.Servicios relacionados con la obra pública 09012017",
+      "n": 1829,
+      "monto": 12845709804.756,
+      "monto_medio": 7023351.451479497
+    },
+    {
+      "ramo_unico": "1109233.Servicios",
+      "n": 633,
+      "monto": 6625115906.581,
+      "monto_medio": 10466217.861897314
+    },
+    {
+      "ramo_unico": "6. Programas y Proyectos de Inversión - Obra Pública",
+      "n": 251,
+      "monto": 3632121522.86,
+      "monto_medio": 14470603.67673307
+    },
+    {
+      "ramo_unico": "6. Programas y Proyectos de Inversión - Obra Pública_24042020",
+      "n": 71,
+      "monto": 2113315308.53,
+      "monto_medio": 29765004.34549296
+    },
+    {
+      "ramo_unico": "2.Arrendamientos",
+      "n": 735,
+      "monto": 1807691449.4894621,
+      "monto_medio": 2459444.1489652544
+    }
+  ],
+  "cruce_efos": {
+    "n_oneshots_que_son_efos": 379,
+    "pct_oneshots_efos": 0.354,
+    "pct_persistentes_efos": 0.232,
+    "ratio_oneshot_vs_persistente": 1.53,
+    "top_10_oneshots_efos": [
+      {
+        "proveedor_orig": "Gutierrez, Paz y Cia. Asesores Sa de Cv",
+        "ano_unico": 2018,
+        "monto_unico": 172413793.0
+      },
+      {
+        "proveedor_orig": "Grupo Constructor-Arrendador y de Servicios Profesionales Alex, S.A. de C.V.",
+        "ano_unico": 2016,
+        "monto_unico": 34894264.77
+      },
+      {
+        "proveedor_orig": "Urbanizadora Sahuaro, S.A. de C.V.",
+        "ano_unico": 2013,
+        "monto_unico": 22827762.56
+      },
+      {
+        "proveedor_orig": "Incodes Inmobiliaria, Constructores y Desarrolladores Sa de Cv",
+        "ano_unico": 2015,
+        "monto_unico": 21822523.62
+      },
+      {
+        "proveedor_orig": "Global Tourist Agency, S.A. de C.V.",
+        "ano_unico": 2016,
+        "monto_unico": 19027584.0
+      },
+      {
+        "proveedor_orig": "Comercializadora Comerprod, S.A. de C.V.",
+        "ano_unico": 2012,
+        "monto_unico": 14317762.34
+      },
+      {
+        "proveedor_orig": "Movimientos Terrestres Megsa Sa de Cv",
+        "ano_unico": 2019,
+        "monto_unico": 13581563.26
+      },
+      {
+        "proveedor_orig": "Grupo Constructor Cavi S de Rl de Cv",
+        "ano_unico": 2015,
+        "monto_unico": 13080752.22
+      },
+      {
+        "proveedor_orig": "Piscinas Dynamic Sa de Cv",
+        "ano_unico": 2016,
+        "monto_unico": 9736484.04
+      },
+      {
+        "proveedor_orig": "Sistemas Avanzados Deportivos Sa de Cv",
+        "ano_unico": 2014,
+        "monto_unico": 9520287.07
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "temporales": {
+    "n_eventos": 1624,
+    "top_5": [
+      {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "tipo_delito": "Electorales",
+        "fecha": "2021-07-01 00:00:00",
+        "total": 30,
+        "delta": -218.0,
+        "mad_delta": -294.082
+      },
+      {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "tipo_delito": "Electorales",
+        "fecha": "2021-06-01 00:00:00",
+        "total": 248,
+        "delta": 198.0,
+        "mad_delta": 267.102
+      },
+      {
+        "estado": "Hidalgo",
+        "tipo_delito": "Electorales",
+        "fecha": "2020-10-01 00:00:00",
+        "total": 212,
+        "delta": 179.0,
+        "mad_delta": 120.7355
+      },
+      {
+        "estado": "Hidalgo",
+        "tipo_delito": "Electorales",
+        "fecha": "2020-11-01 00:00:00",
+        "total": 41,
+        "delta": -171.0,
+        "mad_delta": -115.3395
+      },
+      {
+        "estado": "Ciudad de M\u00e9xico",
+        "tipo_delito": "Electorales",
+        "fecha": "2024-07-01 00:00:00",
+        "total": 15,
+        "delta": -455.0,
+        "mad_delta": -102.29916666666666
+      }
+    ]
+  },
+  "varianza": {
+    "n_series": 1280,
+    "top_5": [
+      {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "tipo_delito": "Electorales",
+        "cv": 4.875274162440327,
+        "pct_meses_cero": 0.5075757575757576,
+        "ratio_max_med": 53.49019607843137,
+        "score_anomalia": 4.770752724888691
+      },
+      {
+        "estado": "Jalisco",
+        "tipo_delito": "Electorales",
+        "cv": 4.286076432021619,
+        "pct_meses_cero": 0.7651515151515151,
+        "ratio_max_med": 39.38121546961326,
+        "score_anomalia": 4.665076275408175
+      },
+      {
+        "estado": "Quintana Roo",
+        "tipo_delito": "Violencia de g\u00e9nero en todas sus modalidades distinta a la violencia familiar",
+        "cv": 3.695773792837963,
+        "pct_meses_cero": 0.9772727272727273,
+        "ratio_max_med": 42.0,
+        "score_anomalia": 4.5466629111862655
+      },
+      {
+        "estado": "Quintana Roo",
+        "tipo_delito": "Electorales",
+        "cv": 3.3166247903554,
+        "pct_meses_cero": 0.6742424242424242,
+        "ratio_max_med": 24.5,
+        "score_anomalia": 4.462473798354412
+      },
+      {
+        "estado": "Coahuila de Zaragoza",
+        "tipo_delito": "Electorales",
+        "cv": 3.3083670102742055,
+        "pct_meses_cero": 0.6818181818181818,
+        "ratio_max_med": 27.65714285714286,
+        "score_anomalia": 4.460558948393908
+      }
+    ]
+  },
+  "isoforest": {
+    "n_anomalias": 124,
+    "top_5": [
+      {
+        "estado": "M\u00e9xico",
+        "ano": 2025,
+        "bien_juridico": "Otros bienes jur\u00eddicos afectados (del fuero com\u00fan)",
+        "total": 99082,
+        "if_score": 0.8109782101062921
+      },
+      {
+        "estado": "M\u00e9xico",
+        "ano": 2021,
+        "bien_juridico": "Otros bienes jur\u00eddicos afectados (del fuero com\u00fan)",
+        "total": 102045,
+        "if_score": 0.8107039081267597
+      },
+      {
+        "estado": "M\u00e9xico",
+        "ano": 2022,
+        "bien_juridico": "Otros bienes jur\u00eddicos afectados (del fuero com\u00fan)",
+        "total": 93239,
+        "if_score": 0.8038764303123026
+      },
+      {
+        "estado": "M\u00e9xico",
+        "ano": 2023,
+        "bien_juridico": "Otros bienes jur\u00eddicos afectados (del fuero com\u00fan)",
+        "total": 86288,
+        "if_score": 0.7976459450409848
+      },
+      {
+        "estado": "M\u00e9xico",
+        "ano": 2017,
+        "bien_juridico": "Otros bienes jur\u00eddicos afectados (del fuero com\u00fan)",
+        "total": 79047,
+        "if_score": 0.7858609922702374
+      }
+    ]
+  },
+  "cobertura": {
+    "estado_min_volumen": {
+      "estado": "Tlaxcala",
+      "total_acumulado": 55721,
+      "media_registro": 4.30743661100804,
+      "n_registros": 12936,
+      "per_capita_proxy": 4.30743661100804
+    },
+    "estado_max_volumen": {
+      "estado": "M\u00e9xico",
+      "total_acumulado": 3924507,
+      "media_registro": 303.37871057513917,
+      "n_registros": 12936,
+      "per_capita_proxy": 303.37871057513917
+    }
+  }
+}

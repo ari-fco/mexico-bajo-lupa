@@ -1,0 +1,1042 @@
+{
+  "n_casos": 20,
+  "dossiers": [
+    {
+      "rank": 1,
+      "fuente_tier": "reciente_3flags",
+      "dataset": "reciente",
+      "contrato_id": "C-2024-00098133",
+      "ano": 2024,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": true,
+      "fecha_firma": "2024-08-04",
+      "proveedor": "QUIMICA INDUSTRIAL DEL AGUA SA DE CV",
+      "rfc": "QIA060901UL9",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "modalidad": "I3P",
+      "modalidad_detalle": "INVITACIÓN A CUANDO MENOS 3 PERSONAS POR MONTOS MÁXIMOS POR EXCEPCIÓN",
+      "monto_mxn": 83697.67,
+      "descripcion": "006-2024 OTROS PRODUCTOS QUÍMICOS",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 20,
+        "monto_total_pp_mxn": 5269526.34,
+        "anos_activos": [
+          0,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 3,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 5,
+        "pct_AD_acumulado": 0.55,
+        "cluster_tipologico": "estandar"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.006910397856963006,
+        "share_top_proveedor": 0.03691896424040196
+      },
+      "flags": {
+        "flag_monto_extremo": false,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Sin patrón claro de alto riesgo aparente"
+    },
+    {
+      "rank": 2,
+      "fuente_tier": "reciente_3flags",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00012153",
+      "ano": 2025,
+      "sexenio": "Sheinbaum (2024-)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2025-02-24",
+      "proveedor": "BECTON DICKINSON DE MEXICO SA DE CV",
+      "rfc": "BDM571004IZ6",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "modalidad": "LP",
+      "modalidad_detalle": "LICITACIÓN PÚBLICA",
+      "monto_mxn": 1378922755.44,
+      "descripcion": "COMPRA CONSOLIDADA DE MEDICAMENTOS, BIENES TERAPÉUTICOS, MATERIAL DE CURACIÓN..",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 229,
+        "monto_total_pp_mxn": 4054493471.5792007,
+        "anos_activos": [
+          0,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 3,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 23,
+        "pct_AD_acumulado": 0.633,
+        "cluster_tipologico": "anomalia_jumps"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.006910397856963006,
+        "share_top_proveedor": 0.03691896424040196
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Cluster tipológico: ANOMALÍA POR JUMPS de monto"
+    },
+    {
+      "rank": 3,
+      "fuente_tier": "reciente_3flags",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00011452",
+      "ano": 2025,
+      "sexenio": "Sheinbaum (2024-)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2025-02-24",
+      "proveedor": "NOVAG INFANCIA SA DE CV",
+      "rfc": "NIN780801IH0",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "modalidad": "LP",
+      "modalidad_detalle": "LICITACIÓN PÚBLICA",
+      "monto_mxn": 1109402928.8,
+      "descripcion": "COMPRA CONSOLIDADA DE MEDICAMENTOS, BIENES TERAPÉUTICOS, MATERIAL DE CURACIÓN",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 128,
+        "monto_total_pp_mxn": 2785140510.11,
+        "anos_activos": [
+          0,
+          2025
+        ],
+        "n_anos_activos": 2,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 21,
+        "pct_AD_acumulado": 0.578,
+        "cluster_tipologico": "anomalia_jumps"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.006910397856963006,
+        "share_top_proveedor": 0.03691896424040196
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Proveedor de aparición breve con monto alto — patrón one-shot | Cluster tipológico: ANOMALÍA POR JUMPS de monto"
+    },
+    {
+      "rank": 4,
+      "fuente_tier": "reciente_3flags",
+      "dataset": "reciente",
+      "contrato_id": "C-2024-00111241",
+      "ano": 2024,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": true,
+      "fecha_firma": "2024-08-11",
+      "proveedor": "CONSORCIO HOSPITALARIO SA DE CV",
+      "rfc": "CHO0107317DA",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "modalidad": "I3P",
+      "modalidad_detalle": "INVITACIÓN A CUANDO MENOS 3 PERSONAS POR MONTOS MÁXIMOS POR EXCEPCIÓN",
+      "monto_mxn": 10688.06,
+      "descripcion": "MATERIAL DE CURACION",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 397,
+        "monto_total_pp_mxn": 35680413.739999995,
+        "anos_activos": [
+          0,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 3,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 6,
+        "pct_AD_acumulado": 0.935,
+        "cluster_tipologico": "anomalia_jumps"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.006910397856963006,
+        "share_top_proveedor": 0.03691896424040196
+      },
+      "flags": {
+        "flag_monto_extremo": false,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Proveedor con 93% AD acumulado — patrón sistemático | Cluster tipológico: ANOMALÍA POR JUMPS de monto"
+    },
+    {
+      "rank": 5,
+      "fuente_tier": "reciente_top_monto",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00078891",
+      "ano": 0,
+      "sexenio": "Calderón (2006-2012)",
+      "es_ano_electoral": false,
+      "fecha_firma": "NaT",
+      "proveedor": "PEGSA CONSTRUCCIONES SA DE CV",
+      "rfc": "PCO110429N78",
+      "institucion": "ADMINISTRACION DEL SISTEMA PORTUARIO NACIONAL DOS BOCAS, S.A. DE C.V.",
+      "ramo": "MARINA",
+      "modalidad": "AD",
+      "modalidad_detalle": "ADJUDICACIÓN DIRECTA POR PERDIDAS ADICIONALES JUSTIFICADAS",
+      "monto_mxn": 7967575909.86,
+      "descripcion": "CONSTRUCCIÓN DE LA AMPLIACIÓN DEL PUERTO DE DOS BOCAS (OBRAS DE PROTECCIÓN ETAPA FINAL).",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 5,
+        "monto_total_pp_mxn": 8994543211.56,
+        "anos_activos": [
+          0,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 3,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 3,
+        "pct_AD_acumulado": 0.6,
+        "cluster_tipologico": "estandar"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.8212920609589919,
+        "share_top_proveedor": 0.9047901661121989
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": false,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Monto extremo (8.0 mil M MXN) | Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Institución con HHI=0.82 — concentración alta"
+    },
+    {
+      "rank": 6,
+      "fuente_tier": "reciente_top_monto",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00090363",
+      "ano": 0,
+      "sexenio": "Calderón (2006-2012)",
+      "es_ano_electoral": false,
+      "fecha_firma": "NaT",
+      "proveedor": "MOTA-ENGIL MEXICO S A P I DE CV",
+      "rfc": "MME100125RS6",
+      "institucion": "AGENCIA REGULADORA DEL TRANSPORTE FERROVIARIO",
+      "ramo": "INFRAESTRUCTURA, COMUNICACIONES Y TRANSPORTES",
+      "modalidad": "LP",
+      "modalidad_detalle": "LICITACIÓN PÚBLICA",
+      "monto_mxn": 6579444251.17,
+      "descripcion": "CONSTRUCCIÓN Y DISEÑO DE 30.30 KM DEL TRAMO I FERROVIARIO DEL TREN DE PASAJEROS QUERÉTARO-IRAPUATO, TRAMO: QUERÉTARO ZONA INDUSTRIAL - APASEO EL GRANDE ZONA INDUSTRIAL, SUBTRAMO DEL KM 6+000 AL KM 36+300. INCLUYE LA CONSTRUCCIÓN DE VIADUCTOS",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 2,
+        "monto_total_pp_mxn": 6599991041.17,
+        "anos_activos": [
+          0
+        ],
+        "n_anos_activos": 1,
+        "primer_ano": 0,
+        "ultimo_ano": 0,
+        "n_instituciones_cliente_reciente": 2,
+        "pct_AD_acumulado": 0.5,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.42169540961056845,
+        "share_top_proveedor": 0.5761791269423677
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": false,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Monto extremo (6.6 mil M MXN) | Proveedor de aparición breve con monto alto — patrón one-shot"
+    },
+    {
+      "rank": 7,
+      "fuente_tier": "reciente_top_monto",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00051213",
+      "ano": 2025,
+      "sexenio": "Sheinbaum (2024-)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2025-06-23",
+      "proveedor": "ASTRAZENECA SA DE CV",
+      "rfc": "AST961231B69",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "modalidad": "AD",
+      "modalidad_detalle": "ADJUDICACIÓN DIRECTA POR CASO FORTUITO O FUERZA MAYOR",
+      "monto_mxn": 5651319147.84,
+      "descripcion": "COMPRA DE LAS CLAVES NECESARIAS PARA EL SECTOR SALUD",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 100,
+        "monto_total_pp_mxn": 12985102072.119999,
+        "anos_activos": [
+          0,
+          2023,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 4,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 20,
+        "pct_AD_acumulado": 0.72,
+        "cluster_tipologico": "anomalia_jumps"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.006910397856963006,
+        "share_top_proveedor": 0.03691896424040196
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": false,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Monto extremo (5.7 mil M MXN) | Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Cluster tipológico: ANOMALÍA POR JUMPS de monto"
+    },
+    {
+      "rank": 8,
+      "fuente_tier": "reciente_top_monto",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00040159",
+      "ano": 2025,
+      "sexenio": "Sheinbaum (2024-)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2025-01-14",
+      "proveedor": "TRIARA.COM SA DE CV",
+      "rfc": "TCO0009128J1",
+      "institucion": "BANCO DEL BIENESTAR S.N.C., I.B.D.",
+      "ramo": "HACIENDA Y CRÉDITO PÚBLICO",
+      "modalidad": "AD",
+      "modalidad_detalle": "ADJUDICACIÓN DIRECTA POR ADJUDICACIÓN A PROVEEDOR CON CONTRATO VIGENTE, BAJO LAS MISMAS CONDICIONES",
+      "monto_mxn": 4449858483.0,
+      "descripcion": "SERVICIO INTEGRAL ADMINISTRADO DE CENTRO DE DATOS PARA EL BANCO DEL BIENESTAR",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 75,
+        "monto_total_pp_mxn": 4838113708.39,
+        "anos_activos": [
+          0,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 3,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 43,
+        "pct_AD_acumulado": 0.6,
+        "cluster_tipologico": "anomalia_jumps"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.42816871442878934,
+        "share_top_proveedor": 0.6335750501898876
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": false,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Cluster tipológico: ANOMALÍA POR JUMPS de monto"
+    },
+    {
+      "rank": 9,
+      "fuente_tier": "reciente_top_monto",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00016667",
+      "ano": 2025,
+      "sexenio": "Sheinbaum (2024-)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2025-03-06",
+      "proveedor": "NOVARTIS FARMACEUTICA SA DE CV",
+      "rfc": "NFA971101EDA",
+      "institucion": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "ramo": "INSTITUTO MEXICANO DEL SEGURO SOCIAL",
+      "modalidad": "AD",
+      "modalidad_detalle": "ADJUDICACIÓN DIRECTA POR PATENTES, LICENCIAS, OFERENTE ÚNICO U OBRAS DE ARTE",
+      "monto_mxn": 3745771738.35,
+      "descripcion": "COMPRA CONSOLIDADA DE MEDICAMENTOS (PATENTES)F4 PARA LOS EJERCICIOS 2025-2026",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 138,
+        "monto_total_pp_mxn": 8975126646.592,
+        "anos_activos": [
+          0,
+          2023,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 4,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 17,
+        "pct_AD_acumulado": 0.819,
+        "cluster_tipologico": "anomalia_jumps"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.006910397856963006,
+        "share_top_proveedor": 0.03691896424040196
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": false,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Cluster tipológico: ANOMALÍA POR JUMPS de monto"
+    },
+    {
+      "rank": 10,
+      "fuente_tier": "reciente_top_monto",
+      "dataset": "reciente",
+      "contrato_id": "C-2025-00006673",
+      "ano": 2024,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": true,
+      "fecha_firma": "2024-01-01",
+      "proveedor": "INTEGRA ARRENDA SA DE CV SOFOM ENR",
+      "rfc": "AAN910409I35",
+      "institucion": "SECRETARIA DE BIENESTAR",
+      "ramo": "BIENESTAR",
+      "modalidad": "AD",
+      "modalidad_detalle": "ADJUDICACIÓN DIRECTA POR MONTOS MÁXIMOS POR EXCEPCIÓN",
+      "monto_mxn": 3641577670.08,
+      "descripcion": "SERVICIO DE ARRENDAMIENTO TRANSPORTE VEHICULAR TERRESTRE DENTRO DEL TERRITORIO NACIONAL, PARA LA SECRETARÍA DE BIENESTAR",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 40,
+        "monto_total_pp_mxn": 8966471456.84,
+        "anos_activos": [
+          0,
+          2024,
+          2025
+        ],
+        "n_anos_activos": 3,
+        "primer_ano": 0,
+        "ultimo_ano": 2025,
+        "n_instituciones_cliente_reciente": 32,
+        "pct_AD_acumulado": 0.5,
+        "cluster_tipologico": "anomalia_jumps"
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": 0.2555388559454476,
+        "share_top_proveedor": 0.486524934660893
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": false,
+        "flag_lof": false,
+        "flag_dbscan_noise": true,
+        "flag_efos": false
+      },
+      "interpretacion": "Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Año electoral (2024) + AD — patrón temporal sensible | Cluster tipológico: ANOMALÍA POR JUMPS de monto"
+    },
+    {
+      "rank": 11,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2695102",
+      "ano": 2022,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2022-02-23",
+      "proveedor": "Mota-Engil México S.A.P.I. de C.V.",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "4.Obra Pública",
+      "modalidad": "AD",
+      "modalidad_detalle": "06. Adjudicación Directa LOPSRM",
+      "monto_mxn": 4023658804.0,
+      "descripcion": "Ad Elaboración delProyecto Ejecutivo, Suministro de Materiales Construcción De — Elaboración delProyecto Ejecutivo, Suministro de Materiales Construcción de la Plataforma y Vía delTren Maya y Las Adecuaciones Carreteras, Correspondiente Al Tramo Comprendido Entre la Localidad de Chiná, Al Sur de la ",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 1,
+        "monto_total_pp_mxn": 4023658804.0,
+        "anos_activos": [
+          2022
+        ],
+        "n_anos_activos": 1,
+        "primer_ano": 2022,
+        "ultimo_ano": 2022,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 1.0,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": false,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Proveedor con 100% AD acumulado — patrón sistemático | Proveedor de aparición breve con monto alto — patrón one-shot"
+    },
+    {
+      "rank": 12,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2912714",
+      "ano": 2023,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2023-01-01",
+      "proveedor": "Agroasemex Sa",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "3.Servicios",
+      "modalidad": "OTRA",
+      "modalidad_detalle": "10. Contratos entre entes públicos",
+      "monto_mxn": 1906679760.34,
+      "descripcion": "Contratación Consolidada delServicio de Aseguramiento de Bienes Patrimoniales Para Las Dependencias y Entidades de la Administración Pública Federal Para Los Ejercicios Fiscales 2023 y 2024 — Contratación Consolidada delServicio de Aseguramiento de Bienes Patrimoniales Para Las Dependencias y Entida",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 276,
+        "monto_total_pp_mxn": 16690878810.3118,
+        "anos_activos": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "n_anos_activos": 9,
+        "primer_ano": 2016,
+        "ultimo_ano": 2024,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 0.072,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": false,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Sin patrón claro de alto riesgo aparente"
+    },
+    {
+      "rank": 13,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2758718",
+      "ano": 2022,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2022-05-09",
+      "proveedor": "Ozore Gestion de Agua Sa de Cv",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "6. Programas y Proyectos de Inversión - Obra Pública",
+      "modalidad": "AD",
+      "modalidad_detalle": "06. Adjudicación Directa LOPSRM",
+      "monto_mxn": 1688698686.51,
+      "descripcion": "Construcción y Suministro, Instalación y Prueba de Equipamiento de Planta Potabi — Construcción y Suministro, Instalación y Prueba de Equipamiento de Planta Potabilizadora delTipo Coagulación Convencional Para Una Capacidad de 6.34 M³/Seg: Caja de Llegada; Floculador; Sedimentador; Batería de Filtro",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 1,
+        "monto_total_pp_mxn": 1688698686.51,
+        "anos_activos": [
+          2022
+        ],
+        "n_anos_activos": 1,
+        "primer_ano": 2022,
+        "ultimo_ano": 2022,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 1.0,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": false,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Proveedor con 100% AD acumulado — patrón sistemático | Proveedor de aparición breve con monto alto — patrón one-shot"
+    },
+    {
+      "rank": 14,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2665739",
+      "ano": 2022,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2022-01-01",
+      "proveedor": "Laboratorios Pisa S.A. de C.V.",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "1.Adquisiciones",
+      "modalidad": "OTRA",
+      "modalidad_detalle": "08. Reporte de otras contrataciones y contrataciones con crédito externo",
+      "monto_mxn": 1299280281.46,
+      "descripcion": "La-012M7B998-E165-2021 Consolidada Medicamentos Insabi — Meicamentos",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 6359,
+        "monto_total_pp_mxn": 28014135203.801197,
+        "anos_activos": [
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "n_anos_activos": 15,
+        "primer_ano": 2010,
+        "ultimo_ano": 2024,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 0.764,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": false,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Sin patrón claro de alto riesgo aparente"
+    },
+    {
+      "rank": 15,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2936841",
+      "ano": 2023,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2023-01-01",
+      "proveedor": "Edenred Mexico Sa de Cv",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "3.Servicios",
+      "modalidad": "OTRA",
+      "modalidad_detalle": "08. Reporte de otras contrataciones y contrataciones con crédito externo",
+      "monto_mxn": 1292922345.43,
+      "descripcion": "Contratación Consolidada Para el Suministro de Combustible Para Vehículos Automotores Terrestres En Territorio Nacional — Contratación Consolidada Para el Suministro de Combustible Para Vehículos Automotores Terrestres En Territorio Nacional, Mediante el Servicio de Medios de Pago Electrónicos, Para",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 2285,
+        "monto_total_pp_mxn": 30459914548.485382,
+        "anos_activos": [
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "n_anos_activos": 15,
+        "primer_ano": 2010,
+        "ultimo_ano": 2024,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 0.425,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": false,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Sin patrón claro de alto riesgo aparente"
+    },
+    {
+      "rank": 16,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2924248",
+      "ano": 2023,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2023-01-01",
+      "proveedor": "Agroasemex Sa",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "3.Servicios",
+      "modalidad": "AD",
+      "modalidad_detalle": "05. Adjudicación Directa LAASSP",
+      "monto_mxn": 1091089170.24,
+      "descripcion": "Servicio de Aseguramiento de Bienes Patrimoniales Para Las Dependencias y Entidades de la Administracion Publica Federal Ejercicio Fiscal 2023-2024 — Servicio de Aseguramiento de Bienes Patrimoniales Para Las Dependencias y Entidades de la Administracion Publica Federal Ejercicio Fiscal 2023-2024",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 276,
+        "monto_total_pp_mxn": 16690878810.3118,
+        "anos_activos": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "n_anos_activos": 9,
+        "primer_ano": 2016,
+        "ultimo_ano": 2024,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 0.072,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": true,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": false,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Adjudicación Directa con monto >1 mil M — alto riesgo procedimental"
+    },
+    {
+      "rank": 17,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2945058",
+      "ano": 2023,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2023-01-02",
+      "proveedor": "Guarderia Reino Infantil Sc",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "3.Servicios",
+      "modalidad": "AD",
+      "modalidad_detalle": "05. Adjudicación Directa LAASSP",
+      "monto_mxn": 84092238.0,
+      "descripcion": "Aa-050Gyr031-E477-2022 Servicio de Guarderias En Esquema Vecinal Comunitario Unico (Mimr) — Servicio de Guarderias En Esquema Vecinal Comunitario Unico",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 1,
+        "monto_total_pp_mxn": 84092238.0,
+        "anos_activos": [
+          2023
+        ],
+        "n_anos_activos": 1,
+        "primer_ano": 2023,
+        "ultimo_ano": 2023,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 1.0,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": false,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": true,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Proveedor con 100% AD acumulado — patrón sistemático | Proveedor de guarderías — vinculado al programa de subrogación IMSS, históricamente problemático"
+    },
+    {
+      "rank": 18,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2949183",
+      "ano": 2023,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2023-01-02",
+      "proveedor": "Guarderia My Happy Baby Sc",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "3.Servicios",
+      "modalidad": "AD",
+      "modalidad_detalle": "05. Adjudicación Directa LAASSP",
+      "monto_mxn": 80836603.0,
+      "descripcion": "Proceso de Contratación Para la Continuidad delServicio de Guardería 2023-2027 — Contrato:Ccga222921050088, Adjudicación Directa Nacional, Electrónica, Número Aa-050Gyr018-E1078-2022, Que Efectúa el Órgano de Operación Administrativa Desconcentrada Regional Tamaulipas, Para el Proceso de Contratació",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 1,
+        "monto_total_pp_mxn": 80836603.0,
+        "anos_activos": [
+          2023
+        ],
+        "n_anos_activos": 1,
+        "primer_ano": 2023,
+        "ultimo_ano": 2023,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 1.0,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": false,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": true,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Proveedor con 100% AD acumulado — patrón sistemático | Proveedor de guarderías — vinculado al programa de subrogación IMSS, históricamente problemático"
+    },
+    {
+      "rank": 19,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "2945108",
+      "ano": 2023,
+      "sexenio": "AMLO (2018-2024)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2023-01-02",
+      "proveedor": "Centinela de Orientacion y Apoyo Sa de Cv",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "3.Servicios",
+      "modalidad": "AD",
+      "modalidad_detalle": "05. Adjudicación Directa LAASSP",
+      "monto_mxn": 80195040.0,
+      "descripcion": "Aa-050Gyr031-E477-2022 Servicio de Guarderias En Esquema Vecinal Comunitario Unico (Mimr) — Servicio de Guarderias En Esquema Vecinal Comunitario Unico",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 1,
+        "monto_total_pp_mxn": 80195040.0,
+        "anos_activos": [
+          2023
+        ],
+        "n_anos_activos": 1,
+        "primer_ano": 2023,
+        "ultimo_ano": 2023,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 1.0,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": false,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": true,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Proveedor con 100% AD acumulado — patrón sistemático"
+    },
+    {
+      "rank": 20,
+      "fuente_tier": "historico_5flags",
+      "dataset": "historico",
+      "contrato_id": "1162",
+      "ano": 2011,
+      "sexenio": "Calderón (2006-2012)",
+      "es_ano_electoral": false,
+      "fecha_firma": "2011-01-01",
+      "proveedor": "Seguridad y Consultoria Manzanillo Secoma Sc",
+      "rfc": null,
+      "institucion": null,
+      "ramo": "SERVICIOS_1",
+      "modalidad": "AD",
+      "modalidad_detalle": "V20151220 12. Adjudicación Directa Nacional Simplificada LAASSP",
+      "monto_mxn": 96000.0,
+      "descripcion": "Limpieza Sucursal Manzanillo — Limpieza Sucursal Manzanillo",
+      "trayectoria_proveedor": {
+        "n_contratos_total_pp": 14,
+        "monto_total_pp_mxn": 53306297.96,
+        "anos_activos": [
+          2011,
+          2012,
+          2013,
+          2014,
+          2016
+        ],
+        "n_anos_activos": 5,
+        "primer_ano": 2011,
+        "ultimo_ano": 2016,
+        "n_instituciones_cliente_reciente": 0,
+        "pct_AD_acumulado": 0.786,
+        "cluster_tipologico": null
+      },
+      "efos": {
+        "es_efos": false,
+        "info": null
+      },
+      "concentracion_institucion": {
+        "hhi": null,
+        "share_top_proveedor": null
+      },
+      "flags": {
+        "flag_monto_extremo": false,
+        "flag_isoforest": true,
+        "flag_lof": true,
+        "flag_efos_nombre": false,
+        "flag_post_presuncion": false,
+        "flag_proveedor_alto_score": true,
+        "flag_benford_anomalo": true,
+        "flag_temporal_jump": true
+      },
+      "interpretacion": "Sin patrón claro de alto riesgo aparente"
+    }
+  ]
+}

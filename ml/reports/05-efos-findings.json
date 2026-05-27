@@ -1,0 +1,175 @@
+{
+  "estatus": {
+    "DEFINITIVO": 11197,
+    "SENTENCIA_FAVORABLE": 1635,
+    "PRESUNTO": 971,
+    "DESVIRTUADO": 340
+  },
+  "lag": {
+    "mediano": 222.0,
+    "p25": 178.0,
+    "p75": 286.0,
+    "max": 2855.0,
+    "min": 0.0
+  },
+  "rachas": {
+    "mes_max": {
+      "mes_presuncion": "2018-06",
+      "n_presunciones": 473
+    },
+    "n_meses": 134,
+    "media_mensual": 105.54477611940298
+  },
+  "clusters": [
+    {
+      "cluster": 0,
+      "n": 3463,
+      "lag_medio": 228.91770141495812,
+      "ano_medio": 2020.6058330926942,
+      "pct_definitivo": 1.0,
+      "pct_favorable": 0.0
+    },
+    {
+      "cluster": 1,
+      "n": 597,
+      "lag_medio": 981.6515912897822,
+      "ano_medio": 2016.6348408710219,
+      "pct_definitivo": 0.9581239530988275,
+      "pct_favorable": 0.04187604690117253
+    },
+    {
+      "cluster": 2,
+      "n": 1271,
+      "lag_medio": 2.273013375295043,
+      "ano_medio": 2022.7985837922895,
+      "pct_definitivo": 0.0,
+      "pct_favorable": 0.0
+    },
+    {
+      "cluster": 3,
+      "n": 1610,
+      "lag_medio": 300.2701863354037,
+      "ano_medio": 2017.4875776397516,
+      "pct_definitivo": 0.0,
+      "pct_favorable": 1.0
+    },
+    {
+      "cluster": 4,
+      "n": 7202,
+      "lag_medio": 256.524576506526,
+      "ano_medio": 2016.8876700916412,
+      "pct_definitivo": 0.9944459872257706,
+      "pct_favorable": 0.0
+    }
+  ],
+  "cruce_existente": {
+    "shape": [
+      14,
+      25
+    ],
+    "columnas": [
+      "contrato_id",
+      "expediente_id",
+      "ramo",
+      "institucion",
+      "modalidad_raw",
+      "modalidad",
+      "cve_ent",
+      "orden_gobierno",
+      "monto",
+      "moneda",
+      "fecha_firma",
+      "proveedor",
+      "rfc_proveedor",
+      "descripcion",
+      "ano",
+      "primer_digito",
+      "rfc",
+      "contribuyente",
+      "estatus",
+      "fecha_presuncion",
+      "fecha_publicacion",
+      "posterior_a_presuncion",
+      "posterior_por_ano",
+      "posterior_a_presuncion_o_ano",
+      "en_ventana_2024_25"
+    ]
+  },
+  "cruce_directo": {
+    "n_contratos": 22,
+    "monto_total": 128495757.87,
+    "n_proveedores_efos_con_contratos": 13,
+    "top_10": [
+      {
+        "rfc_proveedor": "GDI010116TK8",
+        "nombre": "GEOTECNIA Y DESARROLLO DE INFRAESTRUCTURA SA DE CV",
+        "estatus": "DESVIRTUADO",
+        "n_contratos": 1,
+        "monto_total": 80773240.92
+      },
+      {
+        "rfc_proveedor": "NCO1012101Z7",
+        "nombre": "NEOMEGA CONSTRUCCIONES SA DE CV",
+        "estatus": "DESVIRTUADO",
+        "n_contratos": 2,
+        "monto_total": 18898182.64
+      },
+      {
+        "rfc_proveedor": "CPY110413I37",
+        "nombre": "CONSTRUCCIONES Y PAVIMENTOS YOVANA SA DE CV",
+        "estatus": "SENTENCIA_FAVORABLE",
+        "n_contratos": 1,
+        "monto_total": 13268637.21
+      },
+      {
+        "rfc_proveedor": "CBA220225AL7",
+        "nombre": "CONSTRUCTORA BARLE SA DE CV",
+        "estatus": "DEFINITIVO",
+        "n_contratos": 2,
+        "monto_total": 9972892.31
+      },
+      {
+        "rfc_proveedor": "CTE210319SQA",
+        "nombre": "CONSTRUCCIONES TEKSARE SA DE CV",
+        "estatus": "PRESUNTO",
+        "n_contratos": 2,
+        "monto_total": 2305086.21
+      },
+      {
+        "rfc_proveedor": "CCT1808139U3",
+        "nombre": "COMERCIO Y CONSTRUCCION DE TABASCO SA DE CV",
+        "estatus": "DEFINITIVO",
+        "n_contratos": 1,
+        "monto_total": 937566.22
+      },
+      {
+        "rfc_proveedor": "NIT1411243C7",
+        "nombre": "NITICOLOR SA DE CV",
+        "estatus": "DESVIRTUADO",
+        "n_contratos": 3,
+        "monto_total": 821615.17
+      },
+      {
+        "rfc_proveedor": "ESC110914563",
+        "nombre": "ENTERPRISE SOURCE CAPITAL DE MEXICO SA DE CV",
+        "estatus": "DESVIRTUADO",
+        "n_contratos": 2,
+        "monto_total": 471211.2
+      },
+      {
+        "rfc_proveedor": "APT040201KA5",
+        "nombre": "ACTITUD POSITIVA EN TONER S DE RL MI",
+        "estatus": "DESVIRTUADO",
+        "n_contratos": 2,
+        "monto_total": 344000.8
+      },
+      {
+        "rfc_proveedor": "CHO170605TF6",
+        "nombre": "CONSTRUAGREGADOS HOPELCHEN SA DE CV",
+        "estatus": "DEFINITIVO",
+        "n_contratos": 1,
+        "monto_total": 275679.3
+      }
+    ]
+  }
+}
