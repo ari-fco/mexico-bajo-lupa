@@ -102,3 +102,173 @@ export type DependenciaRiesgo = {
   /** 0..100; null cuando no se puede calcular */
   riesgo_score: number | null;
 };
+
+// === ML — Investigación no supervisada (2026-05) ===
+
+/** Contrato con múltiples señales de anomalía. */
+export type MlAnomaliaContrato = {
+  contrato_id: string;
+  institucion?: string | null;
+  ramo?: string | null;
+  modalidad: string;
+  monto: number;
+  fecha_firma?: string | null;
+  proveedor: string;
+  rfc_proveedor?: string | null;
+  descripcion: string;
+  n_flags: number;
+  score_combinado: number;
+  flag_monto_extremo?: boolean;
+  flag_isoforest?: boolean;
+  flag_lof?: boolean;
+  flag_dbscan_noise?: boolean;
+  flag_efos?: boolean;
+};
+
+/** Contrato histórico con señales de anomalía (8 señales). */
+export type MlAnomaliaContratoHistorico = {
+  contrato_id: string;
+  ano: number;
+  fecha_firma?: string | null;
+  ramo: string;
+  modalidad: string;
+  proveedor: string;
+  monto: number;
+  descripcion: string;
+  n_flags: number;
+  score_combinado: number;
+  flag_monto_extremo: boolean;
+  flag_isoforest: boolean;
+  flag_lof: boolean;
+  flag_efos_nombre: boolean;
+  flag_post_presuncion: boolean;
+  flag_proveedor_alto_score: boolean;
+  flag_benford_anomalo: boolean;
+  flag_temporal_jump: boolean;
+};
+
+/** One-shot wonder: proveedor con un solo contrato. */
+export type MlOneShot = {
+  proveedor: string;
+  proveedor_norm: string;
+  ano_unico: number;
+  sexenio_unico: string;
+  modalidad_unico: string;
+  ramo_unico: string;
+  monto_unico: number;
+  descripcion_unico: string;
+  es_efos: boolean;
+};
+
+/** Métricas por estado (32) con índice compuesto de riesgo. */
+export type MlEstadoRiesgo = {
+  cve_ent: string;
+  estado: string;
+  n_contratos: number;
+  monto_total_mxn: number;
+  pct_AD: number;
+  pct_LP: number;
+  n_proveedores: number;
+  n_instituciones: number;
+  top_proveedor_nombre: string | null;
+  top_proveedor_share: number;
+  top_institucion: string | null;
+  top_institucion_share: number;
+  hhi_proveedores: number;
+  hhi_instituciones: number;
+  pct_fecha_null: number;
+  delitos_total: number;
+  indice_riesgo: number;
+};
+
+/** Contrato a un proveedor EFOS, firmado DESPUÉS de su presunción. */
+export type MlEfosPostPresuncion = {
+  proveedor: string;
+  rfc_proveedor: string;
+  monto: number;
+  fecha_firma: string;
+  fecha_presuncion: string;
+  fecha_publicacion: string;
+  estatus: string;
+  modalidad?: string | null;
+  ramo?: string | null;
+  institucion?: string | null;
+};
+
+/** Proveedor por patrón de continuidad temporal. */
+export type MlContinuidadProveedor = {
+  proveedor: string;
+  n_contratos: number;
+  monto_total: number;
+  monto_max: number;
+  n_anos: number;
+  primer_ano: number;
+  ultimo_ano: number;
+  n_sexenios: number;
+  intensidad: number;
+  sexenio_dominante: string;
+  pct_dominante: number;
+  pct_Calderón: number;
+  pct_EPN: number;
+  pct_AMLO: number;
+  pct_Sheinbaum: number;
+  solo_electorales: boolean;
+  patron_temporal: "estandar" | "solo_electorales" | "transitorio" | "persistente";
+};
+
+/** Dependencia con concentración alta de gasto en pocos proveedores. */
+export type MlHhiDependencia = {
+  institucion: string;
+  monto_total: number;
+  n_contratos: number;
+  n_proveedores: number;
+  hhi: number;
+  top_share: number;
+  top_proveedor: string;
+  nombre_top_proveedor: string;
+};
+
+/** Contrato a empresa EFOS (cruce SAT × ComprasMX). */
+export type MlEfosContrato = {
+  contrato_id: string;
+  ramo: string;
+  modalidad: string;
+  monto: number;
+  fecha_firma?: string | null;
+  proveedor: string;
+  rfc_proveedor?: string | null;
+  ano: number;
+  fuente: "reciente" | "historico";
+};
+
+/** Metadatos del export ML (contadores agregados, fechas). */
+export type MlMeta = {
+  generated_at: string;
+  anomalias_robustas_reciente: {
+    n_total: number;
+    n_export: number;
+    n_flags_max: number;
+    monto_total_mxn: number;
+  };
+  anomalias_robustas_historico: {
+    n_total: number;
+    n_export: number;
+    n_5_flags: number;
+    n_4_flags: number;
+  };
+  oneshots: {
+    n_total: number;
+    pct_de_proveedores: number;
+    monto_total_mxn: number;
+    n_mayor_100M: number;
+    n_mayor_500M: number;
+    n_mayor_1000M: number;
+  };
+  efos_post_presuncion: { n: number };
+  estados: { n_estados: number };
+  continuidad: {
+    n_solo_electorales: number;
+    n_transitorios: number;
+    n_persistentes: number;
+  };
+};
