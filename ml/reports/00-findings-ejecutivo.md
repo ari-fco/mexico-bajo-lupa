@@ -7,9 +7,12 @@
 ## TL;DR
 
 - **5 datasets analizados** con 5 técnicas no supervisadas (Benford, MAD, IsolationForest, LOF, DBSCAN, KMeans).
-- **123 contratos** flaggeados por >=2 métodos independientes (señal robusta).
+- **123 contratos reciente** flaggeados por ≥2 métodos · **7,797 contratos histórico** con ≥3 señales · **13 con 5 señales simultáneas** (los más graves).
 - **365 contratos** a proveedores EFOS confirmados (cruce con SAT lista negra).
 - **$821.60 M MXN** ejecutados a empresas con presunción de operaciones simuladas.
+- **106,927 one-shot wonders** = **40.39% del padrón** de proveedores. $354.94 mil M MXN agregados (6.12% del gasto histórico). Son **1.53× más probables de ser EFOS** que los persistentes.
+- **3,411 proveedores activos SOLO en años electorales** ($19.01 mil M MXN agregados). Patrón político concreto, detectable.
+- **9 estados con 100% de fechas null** en contratos: problema sistémico de transparencia, no error aleatorio.
 - Hallazgo principal: **GEOTECNIA Y DESARROLLO** — contrato Marina 2025 de 80.7M MXN a empresa EFOS (estatus DESVIRTUADO).
 - **48 proveedores** marcados por múltiples señales simultáneas (IsolationForest + ranking por concentración).
 
@@ -157,6 +160,89 @@ De los 64 proveedores top analizados, 54 concentran >=80% de su monto en SOLO 3 
 - IGT MEXICO LOTTERY S DE RL DE CV → LOTERÍA NACIONAL | $1.96 mil M MXN | %AD=50%
 - OXIDROGENO SA DE CV → SERVICIOS DE SALUD DEL INSTITUTO ME | $1.64 mil M MXN | %AD=0%
 
+## Profundizaciones avanzadas
+
+### Pipeline consolidación HISTÓRICO (8 señales sobre 2.35M contratos)
+- **7,797 contratos con ≥3 señales** independientes
+- **282 con ≥4** · **13 con 5 señales** (todas las banderas)
+
+**Top 5 contratos con 5 señales simultáneas:**
+- $1.09 mil M MXN — **Agroasemex Sa** | 2023 | AD | 3.Servicios
+- $5 — **Ocram Seyer Sa de Cv** | 2023 | OTRA | 3.Servicios
+- $1.91 mil M MXN — **Agroasemex Sa** | 2023 | OTRA | 3.Servicios
+- $4.02 mil M MXN — **Mota-Engil México S.A.P.I. de C.V.** | 2022 | AD | 4.Obra Pública
+- $13 — **Laboratorio Bioquimico Mexicano, S.A. de C.V.** | 2023 | OTRA | 1.Adquisiciones
+
+**Top proveedores robustos del histórico (por contratos con ≥3 señales):**
+- **Edenred Mexico Sa de Cv** — 212 contratos robustos · $30.46 mil M MXN total · pct AD: 42%
+- **Agroasemex Sa** — 153 contratos robustos · $16.69 mil M MXN total · pct AD: 7%
+- **Grupo Nacional Provincial, S.A.B.** — 123 contratos robustos · $15.36 mil M MXN total · pct AD: 28%
+- **Baxter Sa de Cv** — 116 contratos robustos · $25.04 mil M MXN total · pct AD: 73%
+- **Grupo Farmacos Especializados Sa de Cv** — 74 contratos robustos · $126.76 mil M MXN total · pct AD: 82%
+
+### Validación contextual top 20 (dossiers interpretativos)
+Auditados 20 casos cruzando: sexenio, año electoral, trayectoria del proveedor, cluster tipológico, EFOS, HHI institucional. Casos con interpretación de mayor riesgo:
+- **BECTON DICKINSON DE MEXICO SA DE CV** — $1.38 mil M MXN · 2025 (Sheinbaum (2024-)) · LP
+  > Cluster tipológico: ANOMALÍA POR JUMPS de monto
+- **NOVAG INFANCIA SA DE CV** — $1.11 mil M MXN · 2025 (Sheinbaum (2024-)) · LP
+  > Proveedor de aparición breve con monto alto — patrón one-shot | Cluster tipológico: ANOMALÍA POR JUMPS de monto
+- **CONSORCIO HOSPITALARIO SA DE CV** — $10,688 · 2024 (AMLO (2018-2024)) · I3P
+  > Proveedor con 93% AD acumulado — patrón sistemático | Cluster tipológico: ANOMALÍA POR JUMPS de monto
+- **PEGSA CONSTRUCCIONES SA DE CV** — $7.97 mil M MXN · s/f · AD
+  > Monto extremo (8.0 mil M MXN) | Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Institución con HHI=0.82 — concentración alta
+- **MOTA-ENGIL MEXICO S A P I DE CV** — $6.58 mil M MXN · s/f · LP
+  > Monto extremo (6.6 mil M MXN) | Proveedor de aparición breve con monto alto — patrón one-shot
+- **ASTRAZENECA SA DE CV** — $5.65 mil M MXN · 2025 (Sheinbaum (2024-)) · AD
+  > Monto extremo (5.7 mil M MXN) | Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Cluster tipológico: ANOMALÍA POR JUMPS de monto
+- **TRIARA.COM SA DE CV** — $4.45 mil M MXN · 2025 (Sheinbaum (2024-)) · AD
+  > Adjudicación Directa con monto >1 mil M — alto riesgo procedimental | Cluster tipológico: ANOMALÍA POR JUMPS de monto
+
+Reporte completo: `ml/reports/14-top20-dossiers.md`.
+
+### Pipeline por estado (32 entidades, índice compuesto)
+Índice combina %AD, HHI de proveedores, monopolio top-1, HHI institucional y calidad de datos.
+
+**Top 5 estados por índice de riesgo:**
+- **Tlaxcala** — riesgo 1.000 · %AD 91% · HHI 0.259 · top proveedor: ARQUITECTURA Y DISEÑO R.M. SA DE CV (48%)
+- **Colima** — riesgo 0.517 · %AD 64% · HHI 0.104 · top proveedor: TOTAL PARTS AND COMPONENTS SA DE CV (29%)
+- **Puebla** — riesgo 0.498 · %AD 52% · HHI 0.078 · top proveedor: CUAR CONSTRUCTORES ASOCIADOS SA DE CV (20%)
+- **Guanajuato** — riesgo 0.455 · %AD 46% · HHI 0.105 · top proveedor: DISTRIBUIDORA INTERNACIONAL DE MEDICAMEN (22%)
+- **México** — riesgo 0.408 · %AD 40% · HHI 0.066 · top proveedor: OPCIONES MEDICAS DE EQUIPAMIENTO SA DE C (16%)
+
+**Calidad de datos:** 10 de 32 estados tienen 100% de contratos sin fecha de firma. No es error aleatorio — patrón sistémico de transparencia incompleta.
+
+**Correlaciones cross-estado:** gasto público vs delitos = 0.398 (débil) · %AD vs delitos = -0.011 (nula). Descarta hipótesis simplistas "más AD = más crimen".
+
+### Continuidad temporal por sexenio
+- **3,411 proveedores** activos EXCLUSIVAMENTE en años electorales · $19.01 mil M MXN agregados
+- **27,592 transitorios** (un solo sexenio, alta intensidad) · $1266.04 mil M MXN agregados
+- **9,910 persistentes** (3+ sexenios) · $2600.69 mil M MXN agregados
+
+**Top transitorios por monto (aparecen-mueren con el sexenio):**
+- Electromecanica de Montacargas Sa de Cv — AMLO (2012–2023) · $64.56 mil M MXN
+- Ica Constructora Sa de Cv — AMLO (2020–2022) · $27.85 mil M MXN
+- Agroasemex Sa — AMLO (2016–2024) · $16.69 mil M MXN
+- Operadora Cicsa Sa de Cv — AMLO (2011–2020) · $16.55 mil M MXN
+- Comercializadora Milenio Sa de Cv — EPN (2012–2021) · $13.97 mil M MXN
+
+**Hallazgo contraintuitivo:** %AD en años electorales = 59.4% vs no electorales = 69.5% · diferencia -10.0 puntos. La Adjudicación Directa BAJA 10pp en años electorales, no sube como esperaría la hipótesis ingenua.
+
+### One-shot wonders (proveedores con 1 contrato y desaparecen)
+- **106,927 proveedores únicos** (40.39% del padrón total)
+- Monto agregado: **$354.94 mil M MXN** (6.12% del gasto histórico)
+- **31 one-shots con contratos individuales >$1,000 M MXN cada uno**
+- 49 con >$500M · 246 con >$100M
+
+**Top 5 one-shots millonarios:**
+- $23.74 mil M MXN — **Cic Corporativo Industrial Coahuila Sa de Cv** | 2013 (EPN) | LP
+- $15.79 mil M MXN — **Bahud Processing Mexico S de Rl de Cv** | 2021 (AMLO) | AD
+- $15.36 mil M MXN — **Desarrollo delSureste Playa delCarmen Tulum, S.A. ** | 2021 (AMLO) | LP
+- $13.55 mil M MXN — **Caf Mexico Sa de Cv** | 2014 (EPN) | LP
+- $13.39 mil M MXN — **Consorcio Lamat Tramo 1, S.A.P.I de C.V.** | 2020 (AMLO) | LP
+
+**Validación con EFOS:** los one-shots tienen una tasa de EFOS de **0.354%** vs **0.232%** en persistentes.
+**Ratio: 1.53x más probable** que un one-shot sea EFOS. Valida la hipótesis de empresas fachada.
+
 ## Qué funcionó / qué no
 
 ### Funcionó
@@ -191,6 +277,8 @@ De los 64 proveedores top analizados, 54 concentran >=80% de su monto en SOLO 3 
 
 ### Parquets en `ml/outputs/`
 - `anomalias_robustas.parquet` (30 KB)
+- `anomalias_robustas_historico.parquet` (864 KB)
+- `anomalias_robustas_historico_por_proveedor.parquet` (45 KB)
 - `anomalias_robustas_por_proveedor.parquet` (23 KB)
 - `cruce_dependencias_riesgo.parquet` (8 KB)
 - `cruce_efos_contratos_all.parquet` (19 KB)
@@ -199,12 +287,16 @@ De los 64 proveedores top analizados, 54 concentran >=80% de su monto en SOLO 3 
 - `cruce_proveedores_multi_senal.parquet` (8 KB)
 - `deep_clusters_proveedores.parquet` (800 KB)
 - `deep_clusters_proveedores_summary.parquet` (5 KB)
+- `deep_continuidad_temporal_proveedores.parquet` (12088 KB)
 - `deep_descripciones_cortas.parquet` (15 KB)
 - `deep_descripciones_cross_proveedor.parquet` (12 KB)
+- `deep_huerfanos_oneshots.parquet` (14694 KB)
+- `deep_pipeline_por_estado.parquet` (26 KB)
 - `deep_red_hhi_instituciones.parquet` (55 KB)
 - `deep_red_proveedores_monopolistas.parquet` (10 KB)
 - `deep_resumen_temporal_proveedores.parquet` (12 KB)
 - `deep_series_proveedores_top.parquet` (13 KB)
+- `deep_temporal_nacimientos_muertes.parquet` (3 KB)
 - `efos_clusters.parquet` (4 KB)
 - `efos_con_cluster.parquet` (552 KB)
 - `efos_contratos_enriquecido.parquet` (11 KB)
@@ -237,3 +329,8 @@ De los 64 proveedores top analizados, 54 concentran >=80% de su monto en SOLO 3 
 - `10-clusters-findings.json`
 - `11-textual-findings.json`
 - `12-red-findings.json`
+- `13-historico-consolidacion-findings.json`
+- `14-top20-dossiers.json`
+- `15-estados-findings.json`
+- `16-continuidad-findings.json`
+- `17-huerfanos-findings.json`

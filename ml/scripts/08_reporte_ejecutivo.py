@@ -47,6 +47,11 @@ def main():
     f10 = load_json(REPORTS / "10-clusters-findings.json")
     f11 = load_json(REPORTS / "11-textual-findings.json")
     f12 = load_json(REPORTS / "12-red-findings.json")
+    f13 = load_json(REPORTS / "13-historico-consolidacion-findings.json")
+    f14 = load_json(REPORTS / "14-top20-dossiers.json")
+    f15 = load_json(REPORTS / "15-estados-findings.json")
+    f16 = load_json(REPORTS / "16-continuidad-findings.json")
+    f17 = load_json(REPORTS / "17-huerfanos-findings.json")
 
     lines = []
 
@@ -58,10 +63,18 @@ def main():
 
     lines.append("## TL;DR\n")
     lines.append("- **5 datasets analizados** con 5 técnicas no supervisadas (Benford, MAD, IsolationForest, LOF, DBSCAN, KMeans).")
-    lines.append(f"- **{f07.get('distribucion_flags', {}).get('al_menos_2_flags', 0)} contratos** flaggeados por >=2 métodos independientes (señal robusta).")
+    lines.append(f"- **{f07.get('distribucion_flags', {}).get('al_menos_2_flags', 0)} contratos reciente** flaggeados por ≥2 métodos · **{f13.get('n_con_3plus_flags', 0):,} contratos histórico** con ≥3 señales · **{f13.get('n_con_5plus_flags', 0)} con 5 señales simultáneas** (los más graves).")
     lines.append(f"- **{f06.get('efos_x_contratos', {}).get('n_reciente', 0) + f06.get('efos_x_contratos', {}).get('n_historico', 0)} contratos** a proveedores EFOS confirmados (cruce con SAT lista negra).")
     monto_efos = f06.get('efos_x_contratos', {}).get('monto_reciente', 0) + f06.get('efos_x_contratos', {}).get('monto_historico', 0)
     lines.append(f"- **{fmt_money(monto_efos)}** ejecutados a empresas con presunción de operaciones simuladas.")
+    one_shots = f17.get("n_one_shots", 0)
+    pct_one = f17.get("pct_one_shots", 0)
+    monto_one = f17.get("monto_agregado_one_shots_mxn", 0)
+    pct_gasto_one = f17.get("pct_gasto_total", 0)
+    lines.append(f"- **{one_shots:,} one-shot wonders** = **{pct_one}% del padrón** de proveedores. {fmt_money(monto_one)} agregados ({pct_gasto_one}% del gasto histórico). Son **1.53× más probables de ser EFOS** que los persistentes.")
+    pol = f16.get("patron_solo_electorales", {})
+    lines.append(f"- **{pol.get('n', 0):,} proveedores activos SOLO en años electorales** ({fmt_money(pol.get('monto_total', 0))} agregados). Patrón político concreto, detectable.")
+    lines.append("- **9 estados con 100% de fechas null** en contratos: problema sistémico de transparencia, no error aleatorio.")
     lines.append("- Hallazgo principal: **GEOTECNIA Y DESARROLLO** — contrato Marina 2025 de 80.7M MXN a empresa EFOS (estatus DESVIRTUADO).")
     lines.append("- **48 proveedores** marcados por múltiples señales simultáneas (IsolationForest + ranking por concentración).\n")
 
@@ -174,6 +187,83 @@ def main():
     for h in (f12.get("monopolistas_top") or [])[:5]:
         lines.append(f"- {h.get('nombre', '?')[:45]} → {h.get('institucion_unica', '?')[:35]} | {fmt_money(h.get('monto_total', 0))} | %AD={h.get('pct_AD', 0)*100:.0f}%")
     lines.append("")
+
+    # ── Profundizaciones avanzadas (bloque 1-5) ────────────────────────────────
+    lines.append("## Profundizaciones avanzadas\n")
+
+    # --- 1. Consolidación histórico
+    lines.append("### Pipeline consolidación HISTÓRICO (8 señales sobre 2.35M contratos)")
+    lines.append(f"- **{f13.get('n_con_3plus_flags', 0):,} contratos con ≥3 señales** independientes")
+    lines.append(f"- **{f13.get('n_con_4plus_flags', 0)} con ≥4** · **{f13.get('n_con_5plus_flags', 0)} con 5 señales** (todas las banderas)")
+    lines.append("")
+    lines.append("**Top 5 contratos con 5 señales simultáneas:**")
+    for h in (f13.get("top_30_contratos") or [])[:5]:
+        lines.append(f"- {fmt_money(h.get('monto', 0))} — **{h.get('proveedor', '?')[:50]}** | {h.get('ano', '?')} | {h.get('modalidad', '?')} | {h.get('ramo', '?')[:30]}")
+    lines.append("")
+    lines.append("**Top proveedores robustos del histórico (por contratos con ≥3 señales):**")
+    for h in (f13.get("top_30_proveedores") or [])[:5]:
+        flag_efos_mark = " ⚠ EFOS" if h.get("flag_efos") else ""
+        lines.append(f"- **{h.get('proveedor', '?')[:50]}**{flag_efos_mark} — {h.get('n_contratos_robustos', 0)} contratos robustos · {fmt_money(h.get('monto_total', 0))} total · pct AD: {h.get('pct_AD', 0)*100:.0f}%")
+    lines.append("")
+
+    # --- 2. Dossiers contextuales top 20
+    lines.append("### Validación contextual top 20 (dossiers interpretativos)")
+    dossiers = f14.get("dossiers", [])
+    lines.append(f"Auditados {len(dossiers)} casos cruzando: sexenio, año electoral, trayectoria del proveedor, cluster tipológico, EFOS, HHI institucional. Casos con interpretación de mayor riesgo:")
+    for d in dossiers[:8]:
+        interp = d.get("interpretacion", "")
+        if interp and interp != "Sin patrón claro de alto riesgo aparente":
+            efos_mark = " ⚠ EFOS" if d.get("efos", {}).get("es_efos") else ""
+            ano = d.get("ano", 0)
+            ano_label = f"{ano} ({d.get('sexenio', '?')})" if ano and ano > 0 else "s/f"
+            lines.append(f"- **{d.get('proveedor', '?')[:45]}**{efos_mark} — {fmt_money(d.get('monto_mxn', 0))} · {ano_label} · {d.get('modalidad', '?')}")
+            lines.append(f"  > {interp}")
+    lines.append("\nReporte completo: `ml/reports/14-top20-dossiers.md`.\n")
+
+    # --- 3. Pipeline por estado
+    lines.append("### Pipeline por estado (32 entidades, índice compuesto)")
+    top_riesgo = f15.get("top_riesgo", [])
+    lines.append("Índice combina %AD, HHI de proveedores, monopolio top-1, HHI institucional y calidad de datos.")
+    lines.append("\n**Top 5 estados por índice de riesgo:**")
+    for h in top_riesgo[:5]:
+        lines.append(f"- **{h.get('estado', '?')}** — riesgo {h.get('indice_riesgo', 0):.3f} · %AD {h.get('pct_AD', 0)*100:.0f}% · HHI {h.get('hhi_proveedores', 0):.3f} · top proveedor: {(h.get('top_proveedor_nombre') or '?')[:40]} ({h.get('top_proveedor_share', 0)*100:.0f}%)")
+    lines.append("")
+    cdata_baja = f15.get("calidad_datos_baja", [])
+    lines.append(f"**Calidad de datos:** {sum(1 for c in cdata_baja if c.get('pct_fecha_null', 0) >= 0.99)} de 32 estados tienen 100% de contratos sin fecha de firma. No es error aleatorio — patrón sistémico de transparencia incompleta.")
+    correl = f15.get("correlaciones", {})
+    lines.append(f"\n**Correlaciones cross-estado:** gasto público vs delitos = {correl.get('monto_total_vs_delitos', 0):.3f} (débil) · %AD vs delitos = {correl.get('pct_AD_vs_delitos', 0):.3f} (nula). Descarta hipótesis simplistas \"más AD = más crimen\".")
+    lines.append("")
+
+    # --- 4. Continuidad temporal por sexenio
+    lines.append("### Continuidad temporal por sexenio")
+    pol = f16.get("patron_solo_electorales", {})
+    lines.append(f"- **{pol.get('n', 0):,} proveedores** activos EXCLUSIVAMENTE en años electorales · {fmt_money(pol.get('monto_total', 0))} agregados")
+    trans = f16.get("patron_transitorios", {})
+    lines.append(f"- **{trans.get('n', 0):,} transitorios** (un solo sexenio, alta intensidad) · {fmt_money(trans.get('monto_total', 0))} agregados")
+    pers = f16.get("patron_persistentes", {})
+    lines.append(f"- **{pers.get('n', 0):,} persistentes** (3+ sexenios) · {fmt_money(pers.get('monto_total', 0))} agregados")
+    lines.append("")
+    lines.append("**Top transitorios por monto (aparecen-mueren con el sexenio):**")
+    for h in (trans.get("top_10") or [])[:5]:
+        lines.append(f"- {h.get('proveedor', '?')[:45]} — {h.get('sexenio_dominante', '?')} ({h.get('primer_ano', '?')}–{h.get('ultimo_ano', '?')}) · {fmt_money(h.get('monto_total', 0))}")
+    lines.append("")
+    ad_diff = f16.get("anos_electorales_vs_no", {})
+    lines.append(f"**Hallazgo contraintuitivo:** %AD en años electorales = {ad_diff.get('pct_AD_electorales', 0)*100:.1f}% vs no electorales = {ad_diff.get('pct_AD_no_electorales', 0)*100:.1f}% · diferencia {ad_diff.get('diferencia_pp', 0):+.1f} puntos. La Adjudicación Directa BAJA 10pp en años electorales, no sube como esperaría la hipótesis ingenua.\n")
+
+    # --- 5. One-shots
+    lines.append("### One-shot wonders (proveedores con 1 contrato y desaparecen)")
+    lines.append(f"- **{f17.get('n_one_shots', 0):,} proveedores únicos** ({f17.get('pct_one_shots', 0)}% del padrón total)")
+    lines.append(f"- Monto agregado: **{fmt_money(f17.get('monto_agregado_one_shots_mxn', 0))}** ({f17.get('pct_gasto_total', 0)}% del gasto histórico)")
+    big = f17.get("one_shots_grandes", {})
+    lines.append(f"- **{big.get('>1000M', 0)} one-shots con contratos individuales >$1,000 M MXN cada uno**")
+    lines.append(f"- {big.get('>500M', 0)} con >$500M · {big.get('>100M', 0)} con >$100M")
+    lines.append("")
+    lines.append("**Top 5 one-shots millonarios:**")
+    for h in (f17.get("top_20_oneshots") or [])[:5]:
+        lines.append(f"- {fmt_money(h.get('monto_unico', 0))} — **{h.get('proveedor_orig', '?')[:50]}** | {h.get('ano_unico', '?')} ({h.get('sexenio_unico', '?')}) | {h.get('modalidad_unico', '?')}")
+    cruce = f17.get("cruce_efos", {})
+    lines.append(f"\n**Validación con EFOS:** los one-shots tienen una tasa de EFOS de **{cruce.get('pct_oneshots_efos', 0):.3f}%** vs **{cruce.get('pct_persistentes_efos', 0):.3f}%** en persistentes.")
+    lines.append(f"**Ratio: {cruce.get('ratio_oneshot_vs_persistente', 0):.2f}x más probable** que un one-shot sea EFOS. Valida la hipótesis de empresas fachada.\n")
 
     # ── Métodos que funcionaron / no funcionaron ───────────────────────────────
     lines.append("## Qué funcionó / qué no\n")

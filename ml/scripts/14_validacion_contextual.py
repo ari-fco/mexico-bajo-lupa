@@ -47,6 +47,7 @@ def normaliza_nombre(s: str) -> str:
 
 
 def sexenio(ano: int) -> str:
+    if ano <= 0 or ano is None: return "Sin fecha"
     if ano <= 2012: return "Calderón (2006-2012)"
     if ano <= 2018: return "EPN (2012-2018)"
     if ano <= 2024: return "AMLO (2018-2024)"
