@@ -28,6 +28,7 @@ next-env.d.ts
 data/raw/
 data/processed/
 web/public/data/
+ml/outputs/
 
 # ---------------------------------------------------------------------------
 # Environment & secrets
