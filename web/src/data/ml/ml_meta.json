@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-05-27T13:48:32+00:00",
+  "anomalias_robustas_reciente": {
+    "n_total": 123,
+    "n_export": 100,
+    "n_flags_max": 3,
+    "monto_total_mxn": 73850955624.48
+  },
+  "anomalias_robustas_historico": {
+    "n_total": 7797,
+    "n_export": 100,
+    "n_5_flags": 13,
+    "n_4_flags": 282
+  },
+  "top_proveedores": {
+    "n_export": 50
+  },
+  "oneshots": {
+    "n_total": 106927,
+    "pct_de_proveedores": 40.4,
+    "monto_total_mxn": 354941713587.1689,
+    "n_mayor_100M": 246,
+    "n_mayor_500M": 49,
+    "n_mayor_1000M": 31
+  },
+  "estados": {
+    "n_estados": 32
+  },
+  "efos_post_presuncion": {
+    "n": 3
+  },
+  "continuidad": {
+    "n_solo_electorales": 52807,
+    "n_transitorios": 26902,
+    "n_persistentes": 9910
+  }
+}
