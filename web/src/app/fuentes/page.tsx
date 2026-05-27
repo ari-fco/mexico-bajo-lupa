@@ -75,7 +75,7 @@ const SOURCES = [
   {
     name: "ComprasMX",
     full: "Plataforma Digital de Contrataciones Públicas (ex-CompraNet)",
-    what: `Contratos públicos: institución, monto, modalidad, ganador, fechas. ${fmtInt(COMPRASMX_N)} contratos ${COMPRASMX_FIRST_YEAR}-${COMPRASMX_LAST_YEAR} integrados — ${fmtInt(COMPRASMX_N_FEDERAL)} FEDERALES (APF) y ${fmtInt(COMPRASMX_N_ESTATAL)} ESTATALES analizados por entidad federativa (% adjudicación directa y MAD Benford).${COMPRASMX_PCT_SIN_FECHA !== null ? ` Nota de calidad upstream: ${COMPRASMX_PCT_SIN_FECHA}% de las filas no traen fecha de firma del CSV oficial.` : ""}`,
+    what: `Contratos públicos: institución, monto, modalidad, ganador, fechas. ${fmtInt(COMPRASMX_N)} contratos ${COMPRASMX_FIRST_YEAR}-${COMPRASMX_LAST_YEAR} integrados — ${fmtInt(COMPRASMX_N_FEDERAL)} FEDERALES (APF) y ${fmtInt(COMPRASMX_N_ESTATAL)} ESTATALES analizados por entidad federativa (% adjudicación directa y MAD Benford).`,
     files: [
       `Contratos_CompraNet${COMPRASMX_FIRST_YEAR}.csv y subsiguientes (${fmtInt(COMPRASMX_N_FEDERAL + COMPRASMX_N_ESTATAL)} contratos totales)`,
       `Análisis estatal: ${fmtInt(COMPRASMX_N_ESTATAL)} contratos · 32 entidades · todas con muestra ≥100`,
@@ -84,6 +84,10 @@ const SOURCES = [
     url: "https://comprasmx.buengobierno.gob.mx/",
     update: "Continuo",
     status: "active" as const,
+    caveat:
+      COMPRASMX_PCT_SIN_FECHA !== null
+        ? `${COMPRASMX_PCT_SIN_FECHA}% de los contratos no traen fecha de firma en el CSV oficial. Es problema upstream — no nuestro. Lo exponemos en el frontend en lugar de imputar fechas falsas.`
+        : null,
   },
   {
     name: "SHCP",
@@ -204,6 +208,14 @@ export default function FuentesPage() {
                     <li key={f}>· {f}</li>
                   ))}
                 </ul>
+                {"caveat" in s && s.caveat && (
+                  <div className="mt-4 border-l-2 border-ash-accent pl-3 text-[12px] text-light-ash">
+                    <div className="text-ash-accent eyebrow mb-1">
+                      Nota de calidad upstream
+                    </div>
+                    {s.caveat}
+                  </div>
+                )}
               </div>
               <div className="md:col-span-3 flex flex-col gap-2 text-[12px]">
                 <div className="text-ash-accent">Actualización</div>

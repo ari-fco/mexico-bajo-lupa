@@ -74,7 +74,7 @@ def df_to_records(df: pd.DataFrame) -> list[dict]:
 
 def main():
     log("=== Exportando hallazgos ML a JSON para el frontend ===\n")
-    meta = {"generated_at": pd.Timestamp.utcnow().isoformat(timespec="seconds")}
+    meta = {"generated_at": pd.Timestamp.now(tz="UTC").isoformat(timespec="seconds")}
 
     # ── 1. Anomalías robustas RECIENTE (top 100, n_flags>=2) ──────────────────
     log("[1] Anomalías robustas — reciente...")

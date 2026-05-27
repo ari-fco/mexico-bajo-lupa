@@ -67,7 +67,7 @@ def _clean(v):
 def main() -> None:
     # Tracker for the meta JSON the frontend uses to label coverage.
     meta: dict = {
-        "generated_at": pd.Timestamp.utcnow().isoformat(timespec="seconds"),
+        "generated_at": pd.Timestamp.now(tz="UTC").isoformat(timespec="seconds"),
         "sesnsp": None,  # filled below
         "comprasmx": None,
         "comprasmx_historico": None,
