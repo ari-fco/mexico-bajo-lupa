@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { MlEstadosMap } from "@/components/ml-estados-map";
 import { qMlEstadosRiesgo } from "@/lib/ml-queries";
 import { fmtInt } from "@/lib/format";
 
@@ -42,8 +43,22 @@ export default function MlEstadosPage() {
         </div>
       </section>
 
+      <section className="py-10 border-b border-cloud-whisper/8">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <div className="eyebrow mb-2">Vista geográfica</div>
+          <h2 className="text-[22px] font-semibold mb-6">
+            México pintado por índice compuesto de riesgo ML
+          </h2>
+          <MlEstadosMap estados={estados} />
+        </div>
+      </section>
+
       <section className="py-10">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <div className="eyebrow mb-2">Detalle tabular</div>
+          <h2 className="text-[22px] font-semibold mb-6">
+            Ranking completo · 32 entidades
+          </h2>
           <div className="overflow-x-auto -mx-6 px-6">
             <table className="w-full text-[13px] min-w-[1000px]">
               <thead className="border-b border-cloud-whisper/15 text-light-ash">
