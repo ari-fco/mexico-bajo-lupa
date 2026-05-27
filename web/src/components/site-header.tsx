@@ -9,6 +9,7 @@ const NAV = [
   { href: "/mapa", label: "Mapa" },
   { href: "/anomalias", label: "Anomalías" },
   { href: "/efos", label: "EFOS" },
+  { href: "/ml", label: "ML" },
   { href: "/historico", label: "Histórico" },
   { href: "/compara", label: "Comparar" },
   { href: "/metodologia", label: "Metodología" },
