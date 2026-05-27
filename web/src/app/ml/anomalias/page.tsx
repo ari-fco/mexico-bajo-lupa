@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { MlAnomaliasTable } from "@/components/ml-anomalias-table";
 import { qMlAnomalias, qMlMeta } from "@/lib/ml-queries";
 import { fmtInt } from "@/lib/format";
 
@@ -91,51 +92,11 @@ export default function MlAnomaliasPage() {
       {/* Top con 2 flags por monto */}
       <section className="py-10">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="eyebrow mb-2">2 señales — top por monto</div>
+          <div className="eyebrow mb-2">2 señales — buscador y filtros</div>
           <h2 className="text-[22px] font-semibold mb-6">
             {con2.length} contratos adicionales con doble convergencia
           </h2>
-          <div className="overflow-x-auto -mx-6 px-6">
-            <table className="w-full text-[13px] min-w-[800px]">
-              <thead className="border-b border-cloud-whisper/15 text-light-ash">
-                <tr>
-                  <th className="text-left py-3 pr-3">Proveedor</th>
-                  <th className="text-left py-3 pr-3">Institución</th>
-                  <th className="text-right py-3 pr-3">Monto MXN</th>
-                  <th className="text-left py-3 pr-3">Mod.</th>
-                  <th className="text-left py-3">Señales</th>
-                </tr>
-              </thead>
-              <tbody className="text-cloud-whisper">
-                {con2.slice(0, 50).map((c) => (
-                  <tr
-                    key={c.contrato_id}
-                    className="border-b border-cloud-whisper/8 hover:bg-cloud-whisper/[0.03]"
-                  >
-                    <td className="py-3 pr-3 max-w-[240px] truncate" title={c.proveedor}>
-                      {c.proveedor}
-                    </td>
-                    <td className="py-3 pr-3 text-light-ash text-[12px] max-w-[200px] truncate" title={c.institucion ?? ""}>
-                      {c.institucion}
-                    </td>
-                    <td className="py-3 pr-3 text-right tabular">
-                      {fmtMonto(c.monto)}
-                    </td>
-                    <td className="py-3 pr-3 text-light-ash">{c.modalidad}</td>
-                    <td className="py-3 text-[11px] text-ash-accent">
-                      {[
-                        c.flag_monto_extremo && "MAD",
-                        c.flag_isoforest && "IF",
-                        c.flag_lof && "LOF",
-                        c.flag_dbscan_noise && "DBSCAN",
-                        c.flag_efos && "EFOS",
-                      ].filter(Boolean).join(" · ")}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <MlAnomaliasTable rows={con2} />
         </div>
       </section>
     </div>

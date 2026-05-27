@@ -2,14 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { StatCard } from "@/components/ui/card";
+import { MlOneshotsTable } from "@/components/ml-oneshots-table";
 import { qMlOneShots, qMlMeta } from "@/lib/ml-queries";
-import { fmtCompact, fmtInt } from "@/lib/format";
-
-function fmtMonto(n: number): string {
-  if (n >= 1e9) return `$${(n / 1e9).toFixed(2)} mil M`;
-  if (n >= 1e6) return `$${(n / 1e6).toFixed(0)} M`;
-  return `$${fmtInt(n)}`;
-}
+import { fmtCompact } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "One-shot wonders · ML",
@@ -76,50 +71,7 @@ export default function MlOneshotsPage() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="eyebrow mb-2">Top {oneshots.length} one-shots millonarios</div>
           <h2 className="text-[22px] font-semibold mb-6">Un contrato. Mucho dinero. Después, nada.</h2>
-          <div className="overflow-x-auto -mx-6 px-6">
-            <table className="w-full text-[13px] min-w-[900px]">
-              <thead className="border-b border-cloud-whisper/15 text-light-ash">
-                <tr>
-                  <th className="text-left py-3 pr-3">Proveedor</th>
-                  <th className="text-right py-3 pr-3">Monto</th>
-                  <th className="text-left py-3 pr-3">Año</th>
-                  <th className="text-left py-3 pr-3">Sexenio</th>
-                  <th className="text-left py-3 pr-3">Mod.</th>
-                  <th className="text-left py-3 pr-3">Ramo</th>
-                  <th className="text-left py-3">EFOS</th>
-                </tr>
-              </thead>
-              <tbody className="text-cloud-whisper">
-                {oneshots.map((o, i) => (
-                  <tr
-                    key={`${o.proveedor_norm}-${i}`}
-                    className="border-b border-cloud-whisper/8 hover:bg-cloud-whisper/[0.03]"
-                  >
-                    <td className="py-3 pr-3 max-w-[260px] truncate" title={o.proveedor}>
-                      {o.proveedor}
-                    </td>
-                    <td className="py-3 pr-3 text-right tabular">
-                      {fmtMonto(o.monto_unico)}
-                    </td>
-                    <td className="py-3 pr-3 tabular">{o.ano_unico}</td>
-                    <td className="py-3 pr-3 text-light-ash text-[12px]">
-                      {o.sexenio_unico}
-                    </td>
-                    <td className="py-3 pr-3 text-light-ash">{o.modalidad_unico}</td>
-                    <td
-                      className="py-3 pr-3 text-light-ash text-[12px] max-w-[180px] truncate"
-                      title={o.ramo_unico}
-                    >
-                      {o.ramo_unico}
-                    </td>
-                    <td className="py-3">
-                      {o.es_efos ? <Badge variant="lozenge">⚠ EFOS</Badge> : <span className="text-light-ash text-[11px]">—</span>}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <MlOneshotsTable rows={oneshots} />
         </div>
       </section>
     </div>
