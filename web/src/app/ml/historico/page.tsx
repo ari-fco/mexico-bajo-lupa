@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { FlagBadge } from "@/components/ui/flag-badge";
 import { qMlAnomaliasHistorico, qMlMeta } from "@/lib/ml-queries";
 import { fmtInt } from "@/lib/format";
 
@@ -86,7 +87,7 @@ export default function MlHistoricoPage() {
                 <div className="flex flex-wrap gap-1">
                   {Object.entries(flagLabels).map(([key, lbl]) =>
                     (c as unknown as Record<string, boolean>)[key] ? (
-                      <Badge key={key} variant="lozenge">{lbl}</Badge>
+                      <FlagBadge key={key} flag={lbl} />
                     ) : null
                   )}
                 </div>

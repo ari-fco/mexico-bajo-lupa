@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { FilterableTable, type Column } from "@/components/filterable-table";
+import { FLAG_DESCRIPTIONS } from "@/components/ui/flag-badge";
 import type { MlAnomaliaContrato } from "@/lib/types";
 import { fmtInt } from "@/lib/format";
 
@@ -49,19 +50,30 @@ export function MlAnomaliasTable({ rows }: Props) {
     },
     {
       header: "Señales",
-      render: (r) => (
-        <span className="text-[11px] text-ash-accent">
-          {[
-            r.flag_monto_extremo && "MAD",
-            r.flag_isoforest && "IF",
-            r.flag_lof && "LOF",
-            r.flag_dbscan_noise && "DBSCAN",
-            r.flag_efos && "EFOS",
-          ]
-            .filter(Boolean)
-            .join(" · ")}
-        </span>
-      ),
+      render: (r) => {
+        const active: string[] = [
+          r.flag_monto_extremo ? "MAD" : "",
+          r.flag_isoforest ? "IF" : "",
+          r.flag_lof ? "LOF" : "",
+          r.flag_dbscan_noise ? "DBSCAN" : "",
+          r.flag_efos ? "EFOS" : "",
+        ].filter(Boolean);
+        return (
+          <span className="text-[11px] text-ash-accent">
+            {active.map((flag, i) => (
+              <React.Fragment key={flag}>
+                <span
+                  title={FLAG_DESCRIPTIONS[flag] ?? undefined}
+                  className="border-b border-dotted border-ash-accent/40 cursor-help"
+                >
+                  {flag}
+                </span>
+                {i < active.length - 1 && " · "}
+              </React.Fragment>
+            ))}
+          </span>
+        );
+      },
       sortValue: (r) => r.n_flags,
     },
   ];
