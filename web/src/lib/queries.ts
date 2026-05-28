@@ -10,7 +10,18 @@
 
 import estadoMetricsJson from "@/data/estado_metrics.json";
 import incidenciaHomicidiosJson from "@/data/incidencia_homicidios.json";
-import incidenciaCategoriasJson from "@/data/incidencia_categorias.json";
+// Incidencia categorías: hasta 2026-05 era UN solo JSON de 2.3 MB. Ahora
+// está dividido por subtipo (~60 KB c/u). Importamos los 7 directamente —
+// Next.js/Turbopack tree-shake los no usados por cada chunk de página,
+// pero la red transfiere solo los necesarios porque cada uno es un módulo
+// separado. (Si el bundle vuelve a crecer, migrar a `import()` dinámico.)
+import incidenciaCatHomicidioJson from "@/data/incidencia_cat__homicidio_doloso.json";
+import incidenciaCatFeminicidioJson from "@/data/incidencia_cat__feminicidio.json";
+import incidenciaCatSecuestroJson from "@/data/incidencia_cat__secuestro.json";
+import incidenciaCatExtorsionJson from "@/data/incidencia_cat__extorsion.json";
+import incidenciaCatRoboVehiculoJson from "@/data/incidencia_cat__robo_vehiculo.json";
+import incidenciaCatRoboTranseunteJson from "@/data/incidencia_cat__robo_transeunte.json";
+import incidenciaCatViolenciaFamiliarJson from "@/data/incidencia_cat__violencia_familiar.json";
 import benfordNacionalJson from "@/data/benford_nacional.json";
 import dependenciasRiesgoJson from "@/data/dependencias_riesgo.json";
 
@@ -51,12 +62,13 @@ type EstadoMetricsRaw = {
   ano_compras_estatal?: number | null;
 };
 
-type IncidenciaCategoriaRaw = {
-  cve_ent: string;
-  ano: number;
-  mes: number;
+/** Formato columnar — arrays paralelos, ~40% más chico que array-of-objects. */
+type IncidenciaCategoriaColumnar = {
   subtipo: string;
-  total: number;
+  cve_ent: string[];
+  ano: number[];
+  mes: number[];
+  total: number[];
 };
 
 type DependenciaRaw = {
@@ -106,73 +118,66 @@ function realEstadoMetrics(): EstadoMetrics[] {
   });
 }
 
-const SUBTIPO_TO_DELITO: Record<string, DelitoCategoria> = {
-  "Homicidio doloso": "Homicidio doloso",
-  Feminicidio: "Feminicidio",
-  Secuestro: "Secuestro",
-  Extorsión: "Extorsión",
-  Extorsion: "Extorsión",
-  "Robo de vehículo": "Robo de vehículo",
-  "Robo de vehiculo": "Robo de vehículo",
-  "Robo a transeúnte en vía pública": "Robo a transeúnte",
-  "Robo a transeunte en via publica": "Robo a transeúnte",
-  "Violencia familiar": "Violencia familiar",
+// Mapeo de DelitoCategoria (lo que pide el UI) al JSON columnar del subtipo.
+const DELITO_TO_COLUMNAR: Record<DelitoCategoria, IncidenciaCategoriaColumnar> = {
+  "Homicidio doloso": incidenciaCatHomicidioJson as IncidenciaCategoriaColumnar,
+  Feminicidio: incidenciaCatFeminicidioJson as IncidenciaCategoriaColumnar,
+  Secuestro: incidenciaCatSecuestroJson as IncidenciaCategoriaColumnar,
+  Extorsión: incidenciaCatExtorsionJson as IncidenciaCategoriaColumnar,
+  "Robo de vehículo": incidenciaCatRoboVehiculoJson as IncidenciaCategoriaColumnar,
+  "Robo a transeúnte": incidenciaCatRoboTranseunteJson as IncidenciaCategoriaColumnar,
+  "Violencia familiar": incidenciaCatViolenciaFamiliarJson as IncidenciaCategoriaColumnar,
 };
 
 function realIncidencia(opts: {
   cve_ent?: string;
   delito?: DelitoCategoria | string;
 }): IncidenciaRow[] {
-  const target = opts.delito ?? "Homicidio doloso";
-  // Pick from categorías if available, else fall back to homicidios-only file
-  const useCategorias = (incidenciaCategoriasJson as IncidenciaCategoriaRaw[])
-    .length > 0;
+  const target = (opts.delito ?? "Homicidio doloso") as DelitoCategoria;
+  const columnar = DELITO_TO_COLUMNAR[target];
+  if (columnar) {
+    const n = columnar.cve_ent.length;
+    const rows: IncidenciaRow[] = [];
+    for (let i = 0; i < n; i++) {
+      const cve = columnar.cve_ent[i];
+      if (opts.cve_ent && cve !== opts.cve_ent) continue;
+      const e = ESTADOS_BY_CVE[cve];
+      if (!e) continue;
+      const total = columnar.total[i];
+      const por100k = (total / e.poblacion2020) * 100_000;
+      rows.push({
+        cve_ent: cve,
+        estado: e.nombre,
+        ano: columnar.ano[i],
+        mes: columnar.mes[i],
+        delito: target,
+        total,
+        por_100k: +por100k.toFixed(2),
+      });
+    }
+    return rows;
+  }
+  // Fallback: homicidios-only (formato legacy array-of-objects)
+  const matched = (incidenciaHomicidiosJson as Array<{
+    cve_ent: string;
+    ano: number;
+    mes: number;
+    total: number;
+  }>).filter((r) => !opts.cve_ent || r.cve_ent === opts.cve_ent);
   const rows: IncidenciaRow[] = [];
-  if (useCategorias) {
-    const matched = (incidenciaCategoriasJson as IncidenciaCategoriaRaw[]).filter(
-      (r) => {
-        if (opts.cve_ent && r.cve_ent !== opts.cve_ent) return false;
-        const mapped = SUBTIPO_TO_DELITO[r.subtipo];
-        if (!mapped) return false;
-        return mapped === target;
-      },
-    );
-    for (const r of matched) {
-      const e = ESTADOS_BY_CVE[r.cve_ent];
-      if (!e) continue;
-      const por100k = (r.total / e.poblacion2020) * 100_000;
-      rows.push({
-        cve_ent: r.cve_ent,
-        estado: e.nombre,
-        ano: r.ano,
-        mes: r.mes,
-        delito: target as DelitoCategoria,
-        total: r.total,
-        por_100k: +por100k.toFixed(2),
-      });
-    }
-  } else {
-    // Homicidios only
-    const matched = (incidenciaHomicidiosJson as Array<{
-      cve_ent: string;
-      ano: number;
-      mes: number;
-      total: number;
-    }>).filter((r) => !opts.cve_ent || r.cve_ent === opts.cve_ent);
-    for (const r of matched) {
-      const e = ESTADOS_BY_CVE[r.cve_ent];
-      if (!e) continue;
-      const por100k = (r.total / e.poblacion2020) * 100_000;
-      rows.push({
-        cve_ent: r.cve_ent,
-        estado: e.nombre,
-        ano: r.ano,
-        mes: r.mes,
-        delito: "Homicidio doloso",
-        total: r.total,
-        por_100k: +por100k.toFixed(2),
-      });
-    }
+  for (const r of matched) {
+    const e = ESTADOS_BY_CVE[r.cve_ent];
+    if (!e) continue;
+    const por100k = (r.total / e.poblacion2020) * 100_000;
+    rows.push({
+      cve_ent: r.cve_ent,
+      estado: e.nombre,
+      ano: r.ano,
+      mes: r.mes,
+      delito: "Homicidio doloso",
+      total: r.total,
+      por_100k: +por100k.toFixed(2),
+    });
   }
   return rows;
 }

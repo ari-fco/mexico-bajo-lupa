@@ -135,35 +135,44 @@ def main() -> None:
         ]
         write_json("incidencia_homicidios", records)
 
-        # Series por categoría de delito (subtipos principales)
+        # Series por categoría de delito (subtipos principales).
+        #
+        # Hasta 2026-05 generábamos UN solo incidencia_categorias.json con
+        # ~34K filas (2.3 MB). Importarlo estáticamente metía esos 2.3 MB
+        # en cualquier ruta que lo tocara. Ahora dividimos por subtipo: 7
+        # archivos chicos (~300 KB c/u) que el frontend importa selectivamente
+        # solo donde se usan, y un manifest para descubrirlos.
         SUBTIPOS = [
-            "Homicidio doloso",
-            "Feminicidio",
-            "Secuestro",
-            "Extorsión",
-            "Robo de vehículo",
-            "Robo a transeúnte en vía pública",
-            "Violencia familiar",
+            ("Homicidio doloso", "homicidio_doloso"),
+            ("Feminicidio", "feminicidio"),
+            ("Secuestro", "secuestro"),
+            ("Extorsión", "extorsion"),
+            ("Robo de vehículo", "robo_vehiculo"),
+            ("Robo a transeúnte en vía pública", "robo_transeunte"),
+            ("Violencia familiar", "violencia_familiar"),
         ]
-        cats = []
-        for sub in SUBTIPOS:
-            sub_df = df[df["subtipo"].str.contains(sub, case=False, na=False)]
+        manifest = []
+        for sub_label, sub_slug in SUBTIPOS:
+            sub_df = df[df["subtipo"].str.contains(sub_label, case=False, na=False)]
             if len(sub_df) == 0:
                 continue
             agg = sub_df.groupby(
                 ["cve_ent", "ano", "mes"], as_index=False
             )["total"].sum()
-            for _, r in agg.iterrows():
-                cats.append(
-                    {
-                        "cve_ent": r["cve_ent"],
-                        "ano": int(r["ano"]),
-                        "mes": int(r["mes"]),
-                        "subtipo": sub,
-                        "total": int(r["total"]),
-                    }
-                )
-        write_json("incidencia_categorias", cats)
+            # Formato columnar: arrays paralelos en lugar de objects por fila.
+            # Reduce ~40% el JSON respecto a array-of-objects.
+            rows = agg.sort_values(["cve_ent", "ano", "mes"])
+            payload = {
+                "subtipo": sub_label,
+                "cve_ent": rows["cve_ent"].tolist(),
+                "ano": [int(x) for x in rows["ano"]],
+                "mes": [int(x) for x in rows["mes"]],
+                "total": [int(x) for x in rows["total"]],
+            }
+            write_json(f"incidencia_cat__{sub_slug}", payload)
+            manifest.append({"subtipo": sub_label, "slug": sub_slug, "n_rows": len(rows)})
+
+        write_json("incidencia_categorias_manifest", manifest)
 
     # === Benford nacional ===
     p = DATA_PROCESSED / "benford_nacional.parquet"
