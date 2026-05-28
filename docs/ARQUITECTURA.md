@@ -10,6 +10,8 @@ Documentación técnica de cómo viajan los datos desde fuentes oficiales hasta 
 
 Mapa de extremo a extremo: cómo un dato federal o estatal termina pintando un polígono en el navegador. Hay una sola dirección de flujo (fuentes → ETL → store canónico → bridge JSON → build → CDN → browser) y ningún componente intermedio se ejecuta on-demand: lo que ve el usuario fue precomputado en build time. La capa DuckDB-WASM aparece punteada porque está prevista como camino de migración cuando el JSON sincrónico ya no escale (~5 MB).
 
+> El pipeline de ML no supervisado (`ml/scripts/*`) consume los mismos parquets canónicos y produce un segundo bridge a `web/src/data/ml/*.json`. Ver **Diagrama 5** abajo para los detalles. La sección `/ml` del sitio consume esos JSONs igual que el resto del frontend.
+
 ```mermaid
 flowchart TD
     subgraph Fuentes["Fuentes oficiales"]
@@ -294,3 +296,124 @@ Cada fuente vive en un script independiente bajo `etl/`. El refresh hoy es **man
 | **SHCP · gasto federalizado** | `repodatos.atdt.gob.mx/api_update/secretaria_hacienda/transferencias_entidades_federativas_2011_actual/transferencias_entidades_fed_012026.csv` | Mensual | `python etl/shcp_gasto.py`. Si SHCP rota la URL, editar `URL` o descargar manualmente a `data/raw/` |
 
 > **No hay scheduling automático**. La decisión es deliberada para V1: fuentes que rotan URLs sin previo aviso (SESNSP, ComprasMX) se monitorean a ojo y el refresh se hace cuando el responsable confirma que el upstream tiene datos nuevos. Cuando V3 estabilice los esquemas, mover a un cron diario o GitHub Action es trivial: el ETL ya está pensado para correr idempotente.
+
+---
+
+## Diagrama 5 · Pipeline ML no supervisado
+
+Cuando el ETL termina, opcionalmente se corre el pipeline ML sobre los Parquet de `data/processed/`. Es **investigación back-office**: produce reportes interpretativos y datasets para el frontend, pero **no es parte del path crítico del sitio** — la sección `/ml` consume JSONs estáticos pre-calculados.
+
+```mermaid
+flowchart LR
+    classDef data fill:#fff2cc,stroke:#d6a700
+    classDef ml fill:#d5e8d4,stroke:#82b366
+    classDef report fill:#dae8fc,stroke:#6c8ebf
+    classDef bridge fill:#e1d5e7,stroke:#9673a6
+    classDef web fill:#f8cecc,stroke:#b85450
+
+    subgraph fuentes[data/processed]
+        Pq1[comprasmx_historico.parquet 2.35M]:::data
+        Pq2[comprasmx_contratos.parquet 235K]:::data
+        Pq3[sesnsp_estatal.parquet 414K]:::data
+        Pq4[sat_efos.parquet 14K]:::data
+    end
+
+    subgraph fase1[Reconocimiento]
+        S01[01_reconocimiento]:::ml
+    end
+
+    subgraph fase2[Análisis por dataset]
+        S02[02_comprasmx_historico - Benford + IF + LOF]:::ml
+        S03[03_comprasmx_reciente - IF + LOF + DBSCAN]:::ml
+        S04[04_sesnsp - anomalías temporales]:::ml
+        S05[05_sat_efos - KMeans + cruce]:::ml
+        S06[06_cruces - integración EFOS]:::ml
+    end
+
+    subgraph fase3[Consolidación]
+        S07[07_consolidacion - multi-señal reciente]:::ml
+        S13[13_consolidacion_historico - 8 señales histórico]:::ml
+    end
+
+    subgraph fase4[Profundizaciones]
+        S09[09_series_proveedores]:::ml
+        S10[10_clustering]:::ml
+        S11[11_textual TF-IDF]:::ml
+        S12[12_red bipartita HHI]:::ml
+        S14[14_validacion top20]:::ml
+        S15[15_estados]:::ml
+        S16[16_continuidad sexenios]:::ml
+        S17[17_huerfanos oneshots]:::ml
+    end
+
+    subgraph fase5[Reporte y bridge]
+        S08[08_reporte_ejecutivo.md]:::report
+        S18[18_export_ml_json]:::bridge
+    end
+
+    subgraph outputs[ml/outputs - gitignored]
+        Parq1[anomalias_robustas.parquet]:::data
+        Parq2[anomalias_robustas_historico.parquet]:::data
+        ParqMas[+30 parquets más]:::data
+    end
+
+    subgraph bridge[web/src/data/ml - en repo]
+        Json1[ml_anomalias_robustas.json]:::bridge
+        Json2[ml_oneshots_grandes.json]:::bridge
+        Json3[ml_estados_riesgo.json]:::bridge
+        JsonMas[+8 JSONs más]:::bridge
+    end
+
+    subgraph web[web/src/app/ml/]
+        Page1[/ml landing]:::web
+        Page2[/ml/anomalias]:::web
+        Page3[/ml/oneshots]:::web
+        Page4[/ml/estados con mapa]:::web
+        PageMas[+3 sub-rutas]:::web
+    end
+
+    Pq1 --> S01 --> S02 --> S07
+    Pq2 --> S03 --> S07
+    Pq3 --> S04
+    Pq4 --> S05 --> S06
+    Pq1 --> S13
+
+    S07 --> S18
+    S13 --> S18
+    S09 --> S18
+    S10 --> S18
+    S11 --> S18
+    S12 --> S18
+    S14 --> S18
+    S15 --> S18
+    S16 --> S18
+    S17 --> S18
+
+    S02 -.-> outputs
+    S03 -.-> outputs
+    S07 -.-> outputs
+    S13 -.-> outputs
+
+    S18 --> Json1
+    S18 --> Json2
+    S18 --> Json3
+    S18 --> JsonMas
+
+    S08 -.-> Reporte[ml/reports/00-findings-ejecutivo.md]:::report
+
+    Json1 --> Page2
+    Json2 --> Page3
+    Json3 --> Page4
+    JsonMas --> Page1
+    JsonMas --> PageMas
+```
+
+**Decisiones clave del pipeline ML**:
+
+- **No supervisado, sin labels**. Todos los métodos (Isolation Forest, LOF, MAD, DBSCAN, KMeans, Benford, TF-IDF, HHI) son exploratorios. Ninguna anomalía detectada está "confirmada" como fraude — son señales para investigar.
+- **Multi-señal sobre individual**. Un contrato flaggeado por un solo método es ruido; con 2+ métodos independientes empieza a ser señal. El pipeline consolida en `anomalias_robustas.parquet`.
+- **Cruce EFOS como única señal supervisada externa**. La lista 69-B del SAT es el único anclaje a verdad documentada. Por eso aparece en casi todos los hallazgos importantes.
+- **Outputs gitignored, JSONs versionados**. Los parquets de `ml/outputs/` (~varios MB) están en gitignore; los JSONs del bridge (`web/src/data/ml/`, ~260 KB total) sí se commitean porque el frontend depende de ellos.
+- **Bridge sin lógica**. `18_export_ml_json.py` solo lee parquets y escribe JSONs. Toda la lógica ML está en los scripts 01-17, no en el bridge.
+
+Para refresh selectivo (ej: nueva lista EFOS publicada), ver `docs/etl-refresh.md`.

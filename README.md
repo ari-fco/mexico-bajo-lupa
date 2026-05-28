@@ -33,6 +33,7 @@ No es un dashboard descriptivo más. Cruza seguridad, gasto público y compras d
 | `/estado/[slug]` | Dossier por entidad: serie mensual de delito + cruces socioeconómicos |
 | `/anomalias` | Benford nacional + ranking filtrable de 200+ dependencias federales |
 | `/efos` | Cruce SAT 69-B × ComprasMX federal con búsqueda, filtro por estatus y sort |
+| `/ml` | **Investigación ML no supervisada** sobre 2.35M contratos. 6 sub-rutas: `/ml/anomalias` (multi-señal reciente), `/ml/historico` (8 señales sobre 2010-2024), `/ml/oneshots` (one-shot wonders), `/ml/estados` (mapa coroplético de riesgo), `/ml/efos` (post-presunción), `/ml/temporal` (continuidad por sexenio) |
 | `/compara` | Comparador A vs B entre estados |
 | `/historico` | 12 años de CompraNet 5.0: evolución de adjudicación directa, top proveedores recurrentes, Benford anual |
 | `/transparencia` | Página honesta sobre por qué V5 (transparencia estatal) no está activa todavía |

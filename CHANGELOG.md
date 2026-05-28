@@ -7,6 +7,52 @@ All notable changes to this project. Format follows
 
 ### Added
 
+- **ML investigation pipeline** (`ml/`): 18 reproducible Python scripts
+  applying Isolation Forest, LOF, MAD, DBSCAN, KMeans, TF-IDF, HHI and
+  Benford to the canonical parquets. Outputs 11 JSONs to
+  `web/src/data/ml/` for static frontend consumption.
+- **`/ml` section** in the web app: landing + 6 sub-routes
+  (`/ml/anomalias`, `/ml/historico`, `/ml/oneshots`, `/ml/estados`,
+  `/ml/efos`, `/ml/temporal`). Includes a choropleth map of risk
+  index per state, interactive filterable tables, and a dedicated
+  OpenGraph image. ML routes added to sitemap (48 total URLs).
+- **Content-Security-Policy** header in `next.config.ts` with
+  origin-specific allowances for maplibre tile glyphs and blob:
+  worker URIs. Defense in depth against XSS and data exfiltration.
+- **Tooltips on ML method abbreviations** (`MAD`, `IF`, `LOF`,
+  `DBSCAN`, `EFOS`, etc.) via a centralized `FlagBadge` component
+  with `FLAG_DESCRIPTIONS` dictionary, so hover discovery is
+  consistent across pages.
+- **Editorial-relevance split on `/ml/anomalias` Tier 3 cards**:
+  contracts ≥ \$100M MXN shown as "Mayor relevancia"; smaller ones
+  in a separate "Outliers estadísticos · monto menor" section with
+  a disclaimer.
+- **Visible data-quality caveat on `/fuentes`**: the 57% missing
+  fecha_firma in ComprasMX is now a dedicated callout instead of
+  fine print buried inside the source description.
+- **Three new architecture docs**:
+  `docs/performance-baseline.md` (bundle sizes + how to re-measure
+  Lighthouse), `docs/etl-refresh.md` (when and how to re-run the
+  ETL), `docs/duckdb-wasm-migration.md` (migration plan for when
+  the JSON bridge stops scaling).
+- **Diagrama 5 · Pipeline ML** in `docs/ARQUITECTURA.md` documenting
+  the parquets → ml scripts → JSON bridge → /ml pages flow.
+
+### Changed
+
+- **`incidencia_categorias.json` split from 2.3 MB monolith into 7
+  per-subtipo files** (~60 KB each) using a columnar format
+  (parallel arrays). The frontend chunk that ships incidencia data
+  dropped from ~2.3 MB to **41 KB**.
+- `lib/queries.ts` `realIncidencia()` rewritten to iterate columnar
+  arrays directly instead of filtering an array of objects.
+- `Timestamp.utcnow()` replaced with `Timestamp.now(tz='UTC')` in
+  `etl/export_json.py` and `ml/scripts/18_export_ml_json.py` to
+  silence the Pandas 4 deprecation warning.
+- Sexenio detection in `ml/scripts/14_validacion_contextual.py`
+  now returns "Sin fecha" instead of misclassifying `ano=0`
+  (records with NaT `fecha_firma`) as Calderón.
+
 - `Comparar` route in the main nav.
 - "Comparar con otro estado" CTA on every state dossier that deep-links
   to `/compara?a=<slug>` pre-selecting the current state.
